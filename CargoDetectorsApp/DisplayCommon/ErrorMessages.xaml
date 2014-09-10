@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="L3.Cargo.Detectors.Display.Common.ErrorMessages"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             Background="White" Margin="0,5" Visibility="Collapsed">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/L3.Cargo.Common.Dashboard;component/Presentation/Styles.xaml" />
+                <ResourceDictionary Source="/L3.Cargo.Detectors.Display.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0" Grid.RowSpan="3" Width="32" Height="32" RenderOptions.BitmapScalingMode="HighQuality" Source="/L3.Cargo.Detectors.Display.Common;component/Resources/Detector.ico" />
+        <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="0,0,0,1" Margin="0,0,0,5">
+            <TextBlock Text="{Binding Path=ERROR_MESSAGES_TITLE, Source={StaticResource Resources}}" Style="{StaticResource StatusMessageHeaderText}" />
+        </Border>
+        <ListBox Grid.Column="1" Grid.Row="1" Name="ErrorsText" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderThickness="0" ItemTemplate="{StaticResource StatusErrorItem}" />
+    </Grid>
+</UserControl>

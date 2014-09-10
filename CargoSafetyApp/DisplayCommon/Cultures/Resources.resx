@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERROR_MESSAGES_TITLE" xml:space="preserve">
+    <value>Safety System Errors</value>
+  </data>
+  <data name="WARNING_MESSAGES_TITLE" xml:space="preserve">
+    <value>Safety System Warnings</value>
+  </data>
+  <data name="SAFETY_RESET_FAULTS_BUTTON" xml:space="preserve">
+    <value>Clear Safety Faults</value>
+  </data>
+  <data name="SAFETY_RESET_TITLE" xml:space="preserve">
+    <value>Safety Faults</value>
+  </data>
+  <data name="ESTOP_STATE_0" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="ESTOP_STATE_1" xml:space="preserve">
+    <value>Engaged</value>
+  </data>
+  <data name="ESTOP_STATE_2" xml:space="preserve">
+    <value>Needs to be Cleared</value>
+  </data>
+  <data name="ESTOP_STATUS_TITLE" xml:space="preserve">
+    <value>E-Stops</value>
+  </data>
+  <data name="ESTOP_OPERATORS_CONSOLE_1" xml:space="preserve">
+    <value>Operator's console E-Stop is pressed and needs to be manually reset.</value>
+  </data>
+  <data name="ESTOP_OPERATORS_CONSOLE_2" xml:space="preserve">
+    <value>Operator's console E-Stop was reset, now waiting for operator to press "Clear Safety Faults" button.</value>
+  </data>
+  <data name="ESTOP_OPERATORS_CONSOLE_TITLE" xml:space="preserve">
+    <value>Operator's Console (ES1)</value>
+  </data>
+  <data name="ESTOP_XRAY_SOURCE_AREA_1" xml:space="preserve">
+    <value>X-ray source area E-Stop is pressed and needs to be manually reset.</value>
+  </data>
+  <data name="ESTOP_XRAY_SOURCE_AREA_2" xml:space="preserve">
+    <value>X-ray source area E-Stop was reset, now waiting for operator to press "Clear Safety Faults" button.</value>
+  </data>
+  <data name="ESTOP_XRAY_SOURCE_AREA_TITLE" xml:space="preserve">
+    <value>X-ray Source Area (ES2)</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_RIGHT_1" xml:space="preserve">
+    <value>Tunnel entry right E-Stop rope is pulled and needs to be manually reset.</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_RIGHT_2" xml:space="preserve">
+    <value>Tunnel entry right E-Stop was reset, now waiting for operator to press "Clear Safety Faults" button.</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_RIGHT_TITLE" xml:space="preserve">
+    <value>Tunnel Entry Right (ES3)</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_LEFT_1" xml:space="preserve">
+    <value>Tunnel entry left E-Stop rope is pulled and needs to be manually reset.</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_LEFT_2" xml:space="preserve">
+    <value>Tunnel entry left E-Stop was reset, now waiting for operator to press "Clear Safety Faults" button.</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_LEFT_TITLE" xml:space="preserve">
+    <value>Tunnel Entry Left (ES4)</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_RIGHT_1" xml:space="preserve">
+    <value>Tunnel exit right E-Stop rope is pulled and needs to be manually reset.</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_RIGHT_2" xml:space="preserve">
+    <value>Tunnel exit right E-Stop was reset, now waiting for operator to press "Clear Safety Faults" button.</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_RIGHT_TITLE" xml:space="preserve">
+    <value>Tunnel Exit Right (ES5)</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_LEFT_1" xml:space="preserve">
+    <value>Tunnel exit left E-Stop is pulled and needs to be manually reset.</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_LEFT_2" xml:space="preserve">
+    <value>Tunnel exit left E-Stop was reset, now waiting for operator to press "Clear Safety Faults" button.</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_LEFT_TITLE" xml:space="preserve">
+    <value>Tunnel Exit Left (ES6)</value>
+  </data>
+  <data name="ESTOP_VERT_DETECTOR_BOX_1" xml:space="preserve">
+    <value>Vertical detector box E-Stop is pressed and needs to be manually reset.</value>
+  </data>
+  <data name="ESTOP_VERT_DETECTOR_BOX_2" xml:space="preserve">
+    <value>Vertical detector box E-Stop was reset, now waiting for operator to press "Clear Safety Faults" button.</value>
+  </data>
+  <data name="ESTOP_VERT_DETECTOR_BOX_TITLE" xml:space="preserve">
+    <value>Vertical Detector Box (ES7)</value>
+  </data>
+  <data name="INTERLOCK_BYPASS_DISABLE" xml:space="preserve">
+    <value>Disable interlock checks</value>
+  </data>
+  <data name="INTERLOCK_BYPASS_ENABLE" xml:space="preserve">
+    <value>Enable interlock checks</value>
+  </data>
+  <data name="INTERLOCK_BYPASS_TITLE" xml:space="preserve">
+    <value>Interlock Bypass</value>
+  </data>
+  <data name="INTERLOCK_STATE_0" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="INTERLOCK_STATE_1" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="INTERLOCK_STATE_2" xml:space="preserve">
+    <value>Needs to be Cleared</value>
+  </data>
+  <data name="INTERLOCK_STATE_TITLE" xml:space="preserve">
+    <value>Interlocks</value>
+  </data>
+  <data name="INTERLOCK_DOOR_0" xml:space="preserve">
+    <value>LINAC room door is open.  A scan cannot be performed until the door has been closed.</value>
+  </data>
+  <data name="INTERLOCK_DOOR_2" xml:space="preserve">
+    <value>LINAC room door has been closed, but the "Clear Safety Faults" button must be pressed before a scan can be performed.</value>
+  </data>
+  <data name="INTERLOCK_DOOR_TITLE" xml:space="preserve">
+    <value>LINAC Room Door</value>
+  </data>
+  <data name="KSW_INTERLOCK_BYPASS_0" xml:space="preserve">
+    <value>Interlock bypass disabled</value>
+  </data>
+  <data name="KSW_INTERLOCK_BYPASS_1" xml:space="preserve">
+    <value>Interlock bypass enabled</value>
+  </data>
+  <data name="KSW_INTERLOCK_BYPASS_TITLE" xml:space="preserve">
+    <value>Safety Interlock Bypass Keyswitch (KSW2)</value>
+  </data>
+  <data name="INTERLOCK_KSW_XRAY_ENABLE_0" xml:space="preserve">
+    <value>X-ray enable keyswitch is off.  A scan cannot be performed until the X-ray enable keyswitch is on.</value>
+  </data>
+  <data name="INTERLOCK_KSW_XRAY_ENABLE_2" xml:space="preserve">
+    <value>X-ray enable keyswitch is now on, but the "Clear Safety Faults" button must be pressed before a scan can be performed.</value>
+  </data>
+  <data name="INTERLOCK_KSW_XRAY_ENABLE_TITLE" xml:space="preserve">
+    <value>X-ray Enable Keyswitch (KSW1)</value>
+  </data>
+  <data name="INTERLOCK_LC_SAFETY_STATE_0" xml:space="preserve">
+    <value>Light Curtain blocked</value>
+  </data>
+  <data name="INTERLOCK_LC_SAFETY_STATE_1" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="INTERLOCK_LC_SAFETY_STATE_2" xml:space="preserve">
+    <value>Needs to be Cleared</value>
+  </data>
+  <data name="INTERLOCK_LC1_0" xml:space="preserve">
+    <value>Personnel safety light curtain #1 is blocked.  A scan cannot be performed until the area is clear.</value>
+  </data>
+  <data name="INTERLOCK_LC1_1" xml:space="preserve">
+    <value>Personnel safety light curtain #1 is unblocked.</value>
+  </data>
+  <data name="INTERLOCK_LC1_2" xml:space="preserve">
+    <value>Personnel safety light curtain #1 was blocked, but the "Clear Safety Faults" button must be pressed before a scan can be performed.</value>
+  </data>
+  <data name="INTERLOCK_LC1_TITLE" xml:space="preserve">
+    <value>Personnel Safety Light Curtain #1 (LC1 OSSD1)</value>
+  </data>
+  <data name="INTERLOCK_LC2_0" xml:space="preserve">
+    <value>Personnel safety light curtain #1 is blocked.  A scan cannot be performed until the area is clear.</value>
+  </data>
+  <data name="INTERLOCK_LC2_1" xml:space="preserve">
+    <value>Personnel safety light curtain is unblocked.</value>
+  </data>
+  <data name="INTERLOCK_LC2_2" xml:space="preserve">
+    <value>Personnel safety light curtain #2 was blocked, but the "Clear Safety Faults" button must be pressed before a scan can be performed.</value>
+  </data>
+  <data name="INTERLOCK_LC2_TITLE" xml:space="preserve">
+    <value>Personnel Safety Light Curtain #2 (LC2 OSSD2)</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_STATE_0" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_STATE_1" xml:space="preserve">
+    <value>Presence of personnel detected</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_STATE_2" xml:space="preserve">
+    <value>Needs to be Cleared</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_1_1" xml:space="preserve">
+    <value>Person detected by motion detector #1.  A scan cannot be performed until the area is clear.</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_1_2" xml:space="preserve">
+    <value>Person was detected by motion detector #1, but the "Clear Safety Faults" button must be pressed before a scan can be performed.</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_1_TITLE" xml:space="preserve">
+    <value>Personnel Motion Detector #1 (MDS1-P)</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_2_1" xml:space="preserve">
+    <value>Person detected by motion detector #2.  A scan cannot be performed until the area is clear.</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_2_2" xml:space="preserve">
+    <value>Person was detected by motion detector #2, but the "Clear Safety Faults" button must be pressed before a scan can be performed.</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_2_TITLE" xml:space="preserve">
+    <value>Personnel Motion Detector #2 (MDS2-P)</value>
+  </data>
+  <data name="INFO_BUTTON_DESCRIPTION" xml:space="preserve">
+    <value>Display all information about the Safety system.</value>
+  </data>
+  <data name="INFO_BUTTON_TITLE" xml:space="preserve">
+    <value>Safety System</value>
+  </data>
+  <data name="WARNING_STATE_0" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="WARNING_STATE_1" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="WARNING_STATE_2" xml:space="preserve">
+    <value>Failed to turn on</value>
+  </data>
+  <data name="WARNING_STATE_TITLE" xml:space="preserve">
+    <value>Warning System</value>
+  </data>
+  <data name="COMPLETE_INFO_TITLE" xml:space="preserve">
+    <value>Safety Subsystem Information</value>
+  </data>
+  <data name="SAFETY_STATES_TITLE" xml:space="preserve">
+    <value>Safety Systems</value>
+  </data>
+  <data name="STATUSBAR_TITLE" xml:space="preserve">
+    <value>Safety Status</value>
+  </data>
+  <data name="UNKNOWN_RESOURCE" xml:space="preserve">
+    <value>UNKNOWN ERROR</value>
+  </data>
+  <data name="LOCATION" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="STATE" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="IN_MDS3_VEHICLE_MOTION_DET_1" xml:space="preserve">
+    <value>Vehicle was detected by motion detector #3, but the "Clear Safety Faults" button must be pressed before a scan can be performed.</value>
+  </data>
+  <data name="IN_MDS3_VEHICLE_MOTION_DET_TITLE" xml:space="preserve">
+    <value>Vehicle Motion Detector #3 (MDS3-P)</value>
+  </data>
+  <data name="IN_MDS4_VEHICLE_MOTION_DET_1" xml:space="preserve">
+    <value>Vehicle detected by motion detector #4.  A scan cannot be performed until the area is clear.</value>
+  </data>
+  <data name="IN_MDS4_VEHICLE_MOTION_DET_TITLE" xml:space="preserve">
+    <value>Vehicle Motion Detector #4  (MDS4-P)</value>
+  </data>
+  <data name="WARNING_STATUS_TITLE" xml:space="preserve">
+    <value>Warning System</value>
+  </data>
+  <data name="DOPPLER_RADAR_SENSOR_LEFT" xml:space="preserve">
+    <value>Doppler Radar Sensor Speed</value>
+  </data>
+  <data name="DOPPLER_RADAR_SENSOR_LEFT_TITLE" xml:space="preserve">
+    <value>Doppler Radar Sensor Speed (Exit Left)</value>
+  </data>
+  <data name="DOPPLER_RADAR_SENSOR_RIGHT" xml:space="preserve">
+    <value>Doppler Radar Sensor Speed</value>
+  </data>
+  <data name="DOPPLER_RADAR_SENSOR_RIGHT_TITLE" xml:space="preserve">
+    <value>Doppler Radar Sensor Speed (Exit Right)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_LEFT_1" xml:space="preserve">
+    <value>Vehicle Sensor Status (After XRay at the Left) no vehicle is present</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_LEFT_2" xml:space="preserve">
+    <value>Vehicle Sensor Status (After XRay at the Left) detected vehicle</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_LEFT_TITLE" xml:space="preserve">
+    <value>Vehicle Sensor Status (After XRay at the Left)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_RIGHT_1" xml:space="preserve">
+    <value>Vehicle Sensor Status (After XRay at the Right) no vehicle is present</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_RIGHT_2" xml:space="preserve">
+    <value>Vehicle Sensor Status (After XRay at the Right) detected vehicle</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_RIGHT_TITLE" xml:space="preserve">
+    <value>Vehicle Sensor Status (After XRay at the Right)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_LEFT_1" xml:space="preserve">
+    <value>Vehicle Sensor Status (At Gate at Left) no vehicle is present</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_LEFT_2" xml:space="preserve">
+    <value>Vehicle Sensor Status (At Gate at Left) detected vehicle</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_LEFT_TITLE" xml:space="preserve">
+    <value>Vehicle Sensor Status (At Gate at Left)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_RIGHT_1" xml:space="preserve">
+    <value>Vehicle Sensor Status (At Gate at Right) no vehicle is present</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_RIGHT_2" xml:space="preserve">
+    <value>Vehicle Sensor Status (At Gate at Right) detected vehicle</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_RIGHT_TITLE" xml:space="preserve">
+    <value>Vehicle Sensor Status (At Gate at Right)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_LEFT_1" xml:space="preserve">
+    <value>Vehicle Sensor Status (Before XRay at the Left) no vehicle is present</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_LEFT_2" xml:space="preserve">
+    <value>Vehicle Sensor Status (Before XRay at the Left) detected vehicle</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_LEFT_TITLE" xml:space="preserve">
+    <value>Vehicle Sensor Status (Before XRay at the Left)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_RIGHT_1" xml:space="preserve">
+    <value>Vehicle Sensor Status (Before XRay at the Right) no vehicle is present</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_RIGHT_2" xml:space="preserve">
+    <value>Vehicle Sensor Status (Before XRay at the Right) detected vehicle</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_RIGHT_TITLE" xml:space="preserve">
+    <value>Vehicle Sensor Status (Before XRay at the Right)</value>
+  </data>
+  <data name="VEHICLE_TYPE_STATE_0" xml:space="preserve">
+    <value>No Vehicle Detected</value>
+  </data>
+  <data name="VEHICLE_TYPE_STATE_1" xml:space="preserve">
+    <value>Small Vehicle Detected</value>
+  </data>
+  <data name="VEHICLE_TYPE" xml:space="preserve">
+    <value>Type of Vehicle Detected</value>
+  </data>
+  <data name="VEHICLE_TYPE_TITLE" xml:space="preserve">
+    <value>Type of Vehicle Detection Sensor</value>
+  </data>
+  <data name="VEHICLE_NOT_DETECTED_0" xml:space="preserve">
+    <value>Vehicle Not Present</value>
+  </data>
+  <data name="VEHICLE_NOT_DETECTED_1" xml:space="preserve">
+    <value>Vehicle Present</value>
+  </data>
+  <data name="SUMMARY_STATUS_TITLE" xml:space="preserve">
+    <value>Operational Status</value>
+  </data>
+  <data name="IN_MDS_VEHICLE_MOTION_DET_SAFETY_STATE_0" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="IN_MDS_VEHICLE_MOTION_DET_SAFETY_STATE_1" xml:space="preserve">
+    <value>Vehicle Detected</value>
+  </data>
+  <data name="VEHICLE_TYPE_STATE_2" xml:space="preserve">
+    <value>Medium Vehicle Detected</value>
+  </data>
+  <data name="VEHICLE_TYPE_STATE_3" xml:space="preserve">
+    <value>Large Vehicle Detected</value>
+  </data>
+  <data name="BARCODE_READ" xml:space="preserve">
+    <value>Barcode Sensor Status</value>
+  </data>
+  <data name="BARCODE_READ_TITLE" xml:space="preserve">
+    <value>Barcode Read Status</value>
+  </data>
+  <data name="BARCODE_STATE_0" xml:space="preserve">
+    <value>Barcode is Good</value>
+  </data>
+  <data name="BARCODE_STATE_1" xml:space="preserve">
+    <value>Barcode is Bad</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_1" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 1 - 2</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_10" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 3 -4 and 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_11" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 1 - 2 and 2 - 3 and 3 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_12" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 1 - 2 and 2 - 3 and 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_13" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 1 - 2 and 3 - 4 and 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_14" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 2 - 3 and 3 - 4 and 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_15" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 1 - 2 and 2 - 3 and 3 - 4 and 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_2" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 2 - 3</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_3" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 3 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_4" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_5" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 1 - 2 and 2 - 3</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_6" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 1 - 2 and 3 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_7" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 1 - 2 and 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_8" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 2 - 3 and 3 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_9" xml:space="preserve">
+    <value>Perimeter field has detected an intrusion between perimeter posts 2 - 3 and 1 - 4</value>
+  </data>
+  <data name="PERIMETER_MODE_0" xml:space="preserve">
+    <value>Disable Perimeter</value>
+  </data>
+  <data name="PERIMETER_MODE_1" xml:space="preserve">
+    <value>Enable Perimeter</value>
+  </data>
+  <data name="PERIMETER_MODE_TITLE" xml:space="preserve">
+    <value>Perimeter Detection</value>
+  </data>
+  <data name="RADIATION_MONITOR_1" xml:space="preserve">
+    <value>Cabin radiation has exceeded acceptable limits.  Please press Safety reset button to continue operations.</value>
+  </data>
+  <data name="RADIATION_MONITOR_2" xml:space="preserve">
+    <value>Cabin Radiation is nearing limits</value>
+  </data>
+  <data name="RADIATION_MONITOR_STATE_0" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="RADIATION_MONITOR_STATE_1" xml:space="preserve">
+    <value>Needs to be Cleared</value>
+  </data>
+  <data name="RADIATION_MONITOR_STATE_2" xml:space="preserve">
+    <value>Closed</value>
+  </data>
+  <data name="RADIATION_MONITOR_TITLE" xml:space="preserve">
+    <value>Radiation Monitor</value>
+  </data>
+</root>

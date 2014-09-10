@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCELERATOR_FLOW_STATUS_1" xml:space="preserve">
+    <value>مستوى تبريد المسرع منخفض</value>
+  </data>
+  <data name="ACCELERATOR_VACUUM_STATUS_1" xml:space="preserve">
+    <value>واجه المسرع الضغط العالي</value>
+  </data>
+  <data name="AFC_PV_TITLE" xml:space="preserve">
+    <value>AFC عملية متغير</value>
+  </data>
+  <data name="AFC_STEPPER_MOTOR_OUT_OF_BOUND_STATUS_1" xml:space="preserve">
+    <value>محرك السائر خارج الوقع</value>
+  </data>
+  <data name="COMPLETE_INFO_TITLE" xml:space="preserve">
+    <value>معلومات نظام المسرع</value>
+  </data>
+  <data name="COOLANT_TEMPERATURE_STATUS_1" xml:space="preserve">
+    <value>درجة حرارة المسرع اعلى من الحد المسموح</value>
+  </data>
+  <data name="CURRENT_MEASUREMENT" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="CUSTOMER_INTERLOCK1_STATUS_1" xml:space="preserve">
+    <value>واجه المسرع فصل تشابك الخارجي  (CI1)</value>
+  </data>
+  <data name="CUSTOMER_INTERLOCK2_STATUS_1" xml:space="preserve">
+    <value>واجه المسرع فصل تشابك الخارجي  (CI2)</value>
+  </data>
+  <data name="ENCLOSURE_PANELS_STATUS_1" xml:space="preserve">
+    <value>لوحة عالية الفولتية مفتوحة</value>
+  </data>
+  <data name="ENCLOSURE_TEMPERATURE_STATUS_1" xml:space="preserve">
+    <value>درجة حرارة المسرع اعلى من الحد المسموح</value>
+  </data>
+  <data name="ERROR_MESSAGES_TITLE" xml:space="preserve">
+    <value>أخطاء نظام المسرع</value>
+  </data>
+  <data name="FORWARD_POWER_TITLE" xml:space="preserve">
+    <value>إعادة توجيه طاقة (RF)</value>
+  </data>
+  <data name="GD_BEAM_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار (Gun Driver)</value>
+  </data>
+  <data name="GD_CATHODE_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت القطب السالب (Gun Driver)</value>
+  </data>
+  <data name="GD_FILAMENT_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار محرك الشبكة (Gun Driver)</value>
+  </data>
+  <data name="GD_FILAMENT_VOLATAGE_TITLE" xml:space="preserve">
+    <value>فولت محرك الشبكة (Gun Driver)</value>
+  </data>
+  <data name="GD_GRID_A_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت الشبكة  A(Gun Driver)</value>
+  </data>
+  <data name="GD_GRID_BIAS_TITLE" xml:space="preserve">
+    <value>شبكة تحيز (Gun Driver)</value>
+  </data>
+  <data name="GD_GRID_B_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت الشبكة B (Gun Driver)</value>
+  </data>
+  <data name="GD_GRID_DRIVE_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت شبكة تحيز (Gun Driver)</value>
+  </data>
+  <data name="GD_HEATER_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار السخان (Gun Driver)</value>
+  </data>
+  <data name="GD_HEATER_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت سخان (Gun Driver)</value>
+  </data>
+  <data name="GD_STATE_TITLE" xml:space="preserve">
+    <value>حالة (Gun Driver)</value>
+  </data>
+  <data name="GUN_DRIVER_INTERLOCK_STATUS_1" xml:space="preserve">
+    <value>واجه (Gun Driver) لتشابك السلامة</value>
+  </data>
+  <data name="INFO_BUTTON_DESCRIPTION" xml:space="preserve">
+    <value>عرض جميع معلومات عن نظام المسرع</value>
+  </data>
+  <data name="INFO_BUTTON_TITLE" xml:space="preserve">
+    <value>نظام المسرع</value>
+  </data>
+  <data name="ION_PUMP_1_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار مضخ الايون 1</value>
+  </data>
+  <data name="ION_PUMP_1_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت مضخ الايون 1</value>
+  </data>
+  <data name="ION_PUMP_2_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار مضخ الايون 2</value>
+  </data>
+  <data name="ION_PUMP_2_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت مضخ الايون 2</value>
+  </data>
+  <data name="ION_PUMP_3_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار مضخ الايون 3</value>
+  </data>
+  <data name="ION_PUMP_3_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت مضخ الايون 3</value>
+  </data>
+  <data name="KILOVOLTAGE_MEASUREMENT" xml:space="preserve">
+    <value>kV</value>
+  </data>
+  <data name="LINAC_ENERGY_TYPE_STATE_0" xml:space="preserve">
+    <value>تمييز المواد</value>
+  </data>
+  <data name="LINAC_ENERGY_TYPE_STATE_1" xml:space="preserve">
+    <value>عالية الاختراق </value>
+  </data>
+  <data name="LINAC_ENERGY_TYPE_STATE_2" xml:space="preserve">
+    <value>عالية التباين</value>
+  </data>
+  <data name="LINAC_ENERGY_TYPE_STATE_3" xml:space="preserve">
+    <value>جرعة قلبلة</value>
+  </data>
+  <data name="LINAC_ENGERY_TYPE_STATE_TITLE" xml:space="preserve">
+    <value>النظام المختار</value>
+  </data>
+  <data name="LINAC_ENGERY_TYPE_TITLE" xml:space="preserve">
+    <value>اختيار قوة المسح</value>
+  </data>
+  <data name="LINAC_ETHERNET_DISCONNECTED_1" xml:space="preserve">
+    <value>المسرع غير متصل بالشبكة</value>
+  </data>
+  <data name="LINAC_INTERNAL_SYSTEM_STATES_TITLE" xml:space="preserve">
+    <value>حالة النظام الداخلى</value>
+  </data>
+  <data name="LINAC_RESET_FAULT_BUTTON" xml:space="preserve">
+    <value>مسح اخطاء المسرع</value>
+  </data>
+  <data name="LINAC_RESET_FAULT_TITLE" xml:space="preserve">
+    <value>اخطاء المسرع</value>
+  </data>
+  <data name="LINAC_STATE_0" xml:space="preserve">
+    <value>الطاقة معطلة</value>
+  </data>
+  <data name="LINAC_STATE_1" xml:space="preserve">
+    <value>الطاقة مشغلة</value>
+  </data>
+  <data name="LINAC_STATE_2" xml:space="preserve">
+    <value>قيد الاحماء</value>
+  </data>
+  <data name="LINAC_STATE_3" xml:space="preserve">
+    <value>جاري اعداد النظام</value>
+  </data>
+  <data name="LINAC_STATE_4" xml:space="preserve">
+    <value>الاشعة السينية معطلة</value>
+  </data>
+  <data name="LINAC_STATE_5" xml:space="preserve">
+    <value>الاشعة السينية مشغلة</value>
+  </data>
+  <data name="LINAC_STATE_TITLE" xml:space="preserve">
+    <value>حالة المسرع</value>
+  </data>
+  <data name="LINAC_STATUS_0" xml:space="preserve">
+    <value>نظام صحي</value>
+  </data>
+  <data name="LINAC_STATUS_1" xml:space="preserve">
+    <value>واجه المسرع خطأ كبير</value>
+  </data>
+  <data name="LINAC_STATUS_2" xml:space="preserve">
+    <value>واجه المسرع ونظام السلامة اخطاء صغرى يجب أن إعادة تعيين.</value>
+  </data>
+  <data name="LINAC_STATUS_TITLE" xml:space="preserve">
+    <value>الوضع الحالي</value>
+  </data>
+  <data name="LINAC_STATUS_WIDGET_0" xml:space="preserve">
+    <value>نظام صحي</value>
+  </data>
+  <data name="LINAC_STATUS_WIDGET_1" xml:space="preserve">
+    <value>أخطاء كبرى </value>
+  </data>
+  <data name="LINAC_STATUS_WIDGET_2" xml:space="preserve">
+    <value>أخطاء صغرى </value>
+  </data>
+  <data name="LINAC_SYSTEM_INFO_TITLE" xml:space="preserve">
+    <value>نظام معلومات المسرع</value>
+  </data>
+  <data name="MAGNETRON_CURRENT_STATUS_1" xml:space="preserve">
+    <value>تيار الحالي للمنغطرون ومغير المسرع</value>
+  </data>
+  <data name="MAGNETRON_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار مغنطرون</value>
+  </data>
+  <data name="MAGNETRON_VACUUM_STATUS_1" xml:space="preserve">
+    <value>واجه المسرع ضغط عالي في المنغطرون</value>
+  </data>
+  <data name="MD_HEATER_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار حرار المغير</value>
+  </data>
+  <data name="MD_HEATER_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت حرار المغير</value>
+  </data>
+  <data name="MD_HVPS_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت طاقة عالية للمغير</value>
+  </data>
+  <data name="MD_STATE_TITLE" xml:space="preserve">
+    <value>حالة المغير</value>
+  </data>
+  <data name="MICROAMP_MEASUREMENT" xml:space="preserve">
+    <value>uA</value>
+  </data>
+  <data name="MODULATOR_COMMUNICATION_ERROR_STATUS_1" xml:space="preserve">
+    <value>فقد الاتصال بمغير المسرع</value>
+  </data>
+  <data name="MODULATOR_INTERLOCK_STATUS_1" xml:space="preserve">
+    <value>واجه المغير لتشابك الامان</value>
+  </data>
+  <data name="MOD_FILAMENT_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار شعيرة المغير</value>
+  </data>
+  <data name="MOD_FILAMENT_VOLTAGE_TITLE" xml:space="preserve">
+    <value>فولت شعيرة المغير</value>
+  </data>
+  <data name="REFLECTED_POWER_TITLE" xml:space="preserve">
+    <value>طاقة انعكاس RF</value>
+  </data>
+  <data name="REFLECTED_RF_POWER_STATUS_1" xml:space="preserve">
+    <value>طاقة الانعكاس العالي RF</value>
+  </data>
+  <data name="SF6_PRESSURE_STATUS_1" xml:space="preserve">
+    <value>SF6 ضغط غاز</value>
+  </data>
+  <data name="SOLENOID_CURRENT_MONITOR_TITLE" xml:space="preserve">
+    <value>تيار اللوبي المغناطيسي</value>
+  </data>
+  <data name="SOLENOID_CURRENT_STATUS_1" xml:space="preserve">
+    <value>تيار اللوبي المغناطيسي خارج النطاق</value>
+  </data>
+  <data name="SOLENOID_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار اللولبي المغناطيسي</value>
+  </data>
+  <data name="SOLENOID_VOLTAGE_MONITOR_TITLE" xml:space="preserve">
+    <value>فزلت اللوبي المغناطيسي</value>
+  </data>
+  <data name="STATUSBAR_TITLE" xml:space="preserve">
+    <value>حالة المسرع</value>
+  </data>
+  <data name="STEERING_1_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار التوجيه 1</value>
+  </data>
+  <data name="STEERING_2_CURRENT_TITLE" xml:space="preserve">
+    <value>تيار التوجيه 2</value>
+  </data>
+  <data name="STEERING_X_I_MON_TITLE" xml:space="preserve">
+    <value>عرض تيار التوجيه المغناطيسي X</value>
+  </data>
+  <data name="STEERING_Y_I_MON_TITLE" xml:space="preserve">
+    <value>عرض تيار التوجية المنغناطيسي Y</value>
+  </data>
+  <data name="STEPPER_PV_TITLE" xml:space="preserve">
+    <value>سائر عملية متغير</value>
+  </data>
+  <data name="TCU_TEMPERATURE_TITLE" xml:space="preserve">
+    <value>درجة حرارة مبرد المسرع TCU</value>
+  </data>
+  <data name="TEMPERATURE_MEASUREMENT" xml:space="preserve">
+    <value>°F</value>
+  </data>
+  <data name="UNKNOWN_RESOURCE" xml:space="preserve">
+    <value>خطأ غير معروف</value>
+  </data>
+  <data name="VOLTAGE_MEASUREMENT" xml:space="preserve">
+    <value>V</value>
+  </data>
+  <data name="WARNING_MESSAGES_TITLE" xml:space="preserve">
+    <value>تحذيرات نظام المسرع</value>
+  </data>
+  <data name="WATTAGE_MEASUREMENT" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="WAVEGUIDE_ARC_STATUS_1" xml:space="preserve">
+    <value>شهدت مكونات الترددات اللاسلكية الانحناء المفرطة في المسرع.</value>
+  </data>
+</root>

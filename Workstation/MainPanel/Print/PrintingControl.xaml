@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.MainPanel.Print.PrintingControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="415" d:DesignWidth="908">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="UserControlDataTemplate">
+                <ContentControl Content="{Binding Path=OptionsMenu}" />
+            </DataTemplate>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Left" Width="200" Grid.Column="0" Margin="2">
+            <StackPanel Margin="0,10"  HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button Margin="5" Height="25" Width="85" Click="SelectAllBtn_Click" Content="{Binding Path=SelectAll, Source={StaticResource Resources}}"></Button>
+                <Button Margin="5" Height="25" Width="85" Click="SelectNoneBtn_Click" Content="{Binding Path=DeselectAll, Source={StaticResource Resources}}"></Button>
+            </StackPanel>
+            <ListBox SelectionMode="Multiple" BorderBrush="#2F000000" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2" SelectionChanged="PluginListBox_SelectionChanged" Name="Plugin_ListBox" />
+        </DockPanel>
+        <DockPanel  DockPanel.Dock="Right" Width="450">
+            <DocumentViewer Name="PrintPreviewDocView" Grid.Column="2" />
+        </DockPanel>
+        <DockPanel Grid.Column="1" Margin="2" MinWidth="225">
+            <StackPanel Margin="0,10"  HorizontalAlignment="Center" DockPanel.Dock="Bottom" Orientation="Horizontal">
+                <Button Name="PrintButton" Margin="5" Height="25" Width="85" Click="PrintBtn_Click" Content="{Binding Path=Print, Source={StaticResource Resources}}" ></Button>
+                <Button Name="CancelButton" Margin="5" Height="25" Width="85" Click="CancelBtn_Click" Content="{Binding Path=Cancel, Source={StaticResource Resources}}" ></Button>
+            </StackPanel>
+            <TabControl Margin="2">
+                <TabItem Header="{Binding Path=Options, Source={StaticResource Resources}}" Visibility="Visible">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="UserList" ItemTemplate="{StaticResource UserControlDataTemplate}" />
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </DockPanel>
+</UserControl>
+
+
+

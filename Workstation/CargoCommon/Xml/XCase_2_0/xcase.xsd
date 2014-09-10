@@ -1,0 +1,128 @@
+﻿<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+      Case schema for Cargo project.
+      Copyright (c) 2011, L-3 Communications, Security &amp; Detection Systems.
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <!-- the root element -->
+  <xsd:element name="case" type="XCase" />
+
+  <!-- type XCase -->
+  <xsd:complexType name="XCase">
+    <xsd:sequence>
+      <xsd:element name="id" type="xsd:string" />
+      <xsd:element name="createTime" type="xsd:dateTime" />
+      <xsd:element name="currentArea" type="xsd:string" />
+      <xsd:element minOccurs="0" name="linkedCase" type="xsd:string" />
+      <xsd:element minOccurs="0" name="abortedby" type="xsd:string" />
+      <xsd:element minOccurs="0" name="systemInfo" type="SystemInfo" />
+      <xsd:element minOccurs="0" name="scanInfo" type="ScanInfo" />
+      <xsd:element minOccurs="0" name="results" type="Results" />
+      <xsd:element minOccurs="0" name="attachments" type="Attachments" />
+    </xsd:sequence>
+    <xsd:attribute name="version" type="xsd:string" />
+  </xsd:complexType>
+
+  <!-- type SystemInfo -->
+  <xsd:complexType name="SystemInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="systemType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="baseLocation" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- type ScanInfo -->
+  <xsd:complexType name="ScanInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="type" type="xsd:string" />
+      <xsd:element minOccurs="0" name="location" type="Location" />
+      <xsd:element minOccurs="0" name="conveyance" type="Conveyance" />
+      <xsd:element minOccurs="0" name="container" type="Container" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- type Location -->
+  <xsd:complexType name="Location">
+    <xsd:sequence>
+      <xsd:element name="latitude" type="xsd:string" />
+      <xsd:element name="longitude" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- type Conveyance -->
+  <xsd:complexType name="Conveyance">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="totalWeight" type="xsd:string" />
+      <xsd:element minOccurs="0" name="batchNum" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- type Container -->
+  <xsd:complexType name="Container">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="code" type="xsd:string" />
+      <xsd:element minOccurs="0" name="weight" type="xsd:string" />
+      <xsd:element minOccurs="0" name="sequenceNum" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- type Results -->
+  <xsd:complexType name="Results">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="result" type="Result" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- type Result -->
+  <xsd:complexType name="Result">
+    <xsd:sequence>
+      <xsd:element name="decision" type="xsd:int" />
+      <xsd:element name="reason" type="xsd:string" />
+      <xsd:element name="createTime" type="xsd:string" />
+      <xsd:element name="user" type="xsd:string" />
+      <xsd:element name="comment" type="xsd:string" />
+      <xsd:element name="stationType" type="xsd:string" />
+      <xsd:element name="analysisTime" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- type Attachments -->
+  <xsd:complexType name="Attachments">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="attachment" type="Attachment" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- type Attachment -->
+  <xsd:complexType name="Attachment">
+    <xsd:sequence>
+      <xsd:element name="user" type="xsd:string" />
+      <xsd:element name="type" type="xsd:string" />
+      <xsd:element name="filename" type="xsd:string" />
+      <xsd:element name="createTime" type="xsd:string" />
+      <xsd:element minOccurs="0" name="misc" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- the root element -->
+  <xsd:element name="EventHistory">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="EventRecord" type="EventRecord" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- type EventRecord -->
+  <xsd:complexType name="EventRecord">
+    <xsd:sequence>
+      <xsd:element name="createTime" type="xsd:dateTime" />
+      <xsd:element name="description" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

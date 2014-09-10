@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F9082CB-8116-4613-8308-D4AA1E3C8632}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L3.Cargo.Workstation.Plugins.XRayImageBase</RootNamespace>
+    <AssemblyName>L3.Cargo.Workstation.Plugins.XRayImageBase</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Workstation\bin\x64\Debug\Plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\Workstation\bin\x64\Release\Plugins\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EglinAFB|AnyCPU'">
+    <OutputPath>bin\EglinAFB\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EglinAFB|x86'">
+    <OutputPath>bin\x86\EglinAFB\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EglinAFB|x64'">
+    <OutputPath>bin\x64\EglinAFB\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Schiphol|AnyCPU'">
+    <OutputPath>bin\Schiphol\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Schiphol|x86'">
+    <OutputPath>bin\x86\Schiphol\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Schiphol|x64'">
+    <OutputPath>bin\x64\Schiphol\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adorners\AdornerBase.cs" />
+    <Compile Include="Adorners\Annotation.cs" />
+    <Compile Include="Adorners\MeasurementLine.cs" />
+    <Compile Include="XRayImages\XRayImageRenderer.cs" />
+    <Compile Include="XRayImages\StatusBarItems.cs" />
+    <Compile Include="XRayImages\XRayImages.cs" />
+    <Compile Include="Histogram\Histogram.xaml.cs">
+      <DependentUpon>Histogram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Histogram\RangeSlider.cs" />
+    <Compile Include="XRayView\AlgServerRequestEvent.cs" />
+    <Compile Include="Adorners\AnnotationAdorner.cs" />
+    <Compile Include="XRayView\AOIWindow.xaml.cs">
+      <DependentUpon>AOIWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Effects\ColorMappingEffect.cs" />
+    <Compile Include="Effects\MagnifyEffect.cs" />
+    <Compile Include="Adorners\MeasureAdorner.cs" />
+    <Compile Include="Adorners\AOIAdorner.cs" />
+    <Compile Include="Adorners\TIPAdorner.cs" />
+    <Compile Include="Effects\TrimatEffect.cs" />
+    <Compile Include="Common\ViewType.cs" />
+    <Compile Include="XRayView\XRayImagePreview.xaml.cs">
+      <DependentUpon>XRayImagePreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XRayView\XRayView.xaml.cs">
+      <DependentUpon>XRayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ViewObject.cs" />
+    <Compile Include="XRayImages\XRayImage.xaml.cs">
+      <DependentUpon>XRayImage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resources\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XRayImages\XRayImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Histogram\Histogram.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XRayView\AOIWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XRayView\XRayImagePreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XRayView\XRayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Trimat\InorganicStrip_94_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\MetalStrip_94_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\OrganicStrip_94_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Quadmat_94_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Trimat_94_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Effects\RenderMaterialDiscrimination.fx" />
+    <None Include="Effects\Trimat.fx" />
+    <None Include="Trimat\InorganicStrip_61_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\InorganicStrip_61_View1.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\InorganicStrip_75_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\InorganicStrip_76_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\InorganicStrip_82_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\InorganicStrip_82_View1.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\MetalStrip_61_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\MetalStrip_61_View1.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\MetalStrip_75_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\MetalStrip_76_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\MetalStrip_82_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\MetalStrip_82_View1.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\OrganicStrip_61_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\OrganicStrip_61_View1.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\OrganicStrip_75_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\OrganicStrip_76_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\OrganicStrip_82_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\OrganicStrip_82_View1.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Quadmat_61_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Quadmat_61_View1.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Quadmat_75_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Quadmat_76_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Trimat_61_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Trimat_61_View1.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Trimat_75_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Trimat_76_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Trimat_82_View0.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Trimat\Trimat_82_View1.psc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Effects\Trimat.ps" />
+    <Resource Include="Resources\Icons\MacroOff.png" />
+    <Resource Include="Resources\Icons\MacroEditOff.png" />
+    <Resource Include="Resources\Icons\HistoryOff.png" />
+    <Resource Include="Resources\Icons\SaveOff.png" />
+    <None Include="Effects\BoundShader.fx" />
+    <None Include="Effects\BoundShaderA.fx" />
+    <None Include="Effects\ColorMapping.fx" />
+    <None Include="Effects\Magnify.fx" />
+    <None Include="Effects\StretchShader.fx" />
+    <Content Include="Histogram\GrayUpper.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Histogram\GrayLower.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Histogram\ColorUpper.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="PseudoColor\Chrome.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\chromey.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\MapX.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\newchrome.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\Parrot.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\rainbow.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\rainbow2.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\test1.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\test2.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\test3.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\test4.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\test5.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\test6.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\test7.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\test8.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\test9.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\untitled2.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PseudoColor\xchrome.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="Effects\ColorMapping.ps" />
+    <Resource Include="Resources\Icons\Annotation.png" />
+    <Resource Include="Resources\Icons\aoi.png" />
+    <Resource Include="Resources\Icons\Draft.png" />
+    <Resource Include="Resources\Icons\Magnify.png" />
+    <Resource Include="Resources\Icons\Marker.png" />
+    <Resource Include="Resources\Icons\PanZoom.png" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Effects\Magnify.ps" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CargoCommon\L3.Cargo.Common.csproj">
+      <Project>{2F2B7DA0-A43B-430D-B43F-D6F8F63F2991}</Project>
+      <Name>L3.Cargo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CargoControls\L3.Cargo.Controls.csproj">
+      <Project>{A1DE3802-F3A2-4609-8CA4-E7679CF0039E}</Project>
+      <Name>L3.Cargo.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ProfileManagerCore\L3.Cargo.Workstation.ProfileManagerCore.csproj">
+      <Project>{D6C08560-F5D9-4BF5-BBD0-0EE39B5FBAEC}</Project>
+      <Name>L3.Cargo.Workstation.ProfileManagerCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemConfigurationCore\L3.Cargo.Workstation.SystemConfigurationCore.csproj">
+      <Project>{5E01FEE7-D88E-4606-88F7-DF3AA11F441C}</Project>
+      <Name>L3.Cargo.Workstation.SystemConfigurationCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\WorkstationCommon\L3.Cargo.Workstation.Common.csproj">
+      <Project>{CA535FD7-53D5-474A-A3E0-93C17E3E8CC7}</Project>
+      <Name>L3.Cargo.Workstation.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\L3.Cargo.Workstation.Plugins.Common.csproj">
+      <Project>{A40B6F48-84CD-4A81-A3C2-78BFBE923B04}</Project>
+      <Name>L3.Cargo.Workstation.Plugins.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manager\L3.Cargo.Workstation.Plugins.Manager.csproj">
+      <Project>{7F231580-36F2-4D95-ACE3-4806A1C08A16}</Project>
+      <Name>L3.Cargo.Workstation.Plugins.Manager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\SaveOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\HistoryOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\MacroEditOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\MacroOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Empty.png" />
+    <Resource Include="Resources\Icons\HEOff.png" />
+    <Resource Include="Resources\Icons\HEOn.png" />
+    <Resource Include="Resources\Icons\LEOff.png" />
+    <Resource Include="Resources\Icons\LEOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\checkmark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Cursors\magnify.cur" />
+    <EmbeddedResource Include="Resources\Cursors\ruler.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Histogram\ColorLower.lut">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

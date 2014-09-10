@@ -1,0 +1,9 @@
+﻿<Window x:Class="L3.Cargo.Workstation.Plugins.XRayImageBase.AOIWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:local="clr-namespace:L3.Cargo.Workstation.Plugins.XRayImageBase"
+        Title="AOIWindow" Topmost="True" Height="500" Width="600" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <DockPanel Name="MainPanel">
+        <local:XRayView x:Name="AOIXRayView" />
+    </DockPanel>
+</Window>

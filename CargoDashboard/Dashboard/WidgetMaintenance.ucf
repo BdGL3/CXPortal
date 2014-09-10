@@ -1,0 +1,88 @@
+﻿<?xml version="1.0"?>
+<maintenanceWidgetArea>
+  <widgetPage rows="580" columns="1340" page="1">
+    <widgetDisplay name="DetectorRealTimeViewer"
+                    row="0"
+                    column="0"
+                    rowspan="375"
+                    columnspan="740" />
+    <widgetDisplay name="SafetyPortalDisplay"
+                    row="0"
+                    column="740"
+                    rowspan="375"
+                    columnspan="600" />
+    
+    <widgetDisplay name="LinacState"
+                    row="375"
+                    column="0"
+                    rowspan="405"
+                    columnspan="447" />
+    <widgetDisplay name="ScanState"
+                    row="375"
+                    column="447"
+                    rowspan="405"
+                    columnspan="446" />
+    <widgetDisplay name="ScanAreaControls"
+                    row="375"
+                    column="893"
+                    rowspan="405"
+                    columnspan="447" />
+  </widgetPage>
+  <widgetPage rows="580" columns="1340" page="2">
+<!--
+    <widgetDisplay name="CollisionDetection"
+                    row="25"
+                    column="25"
+                    rowspan="270"
+                    columnspan="304" />
+                    -->
+    <widgetDisplay name="LinacEnergySelection"
+                    row="25"
+                    column="354"
+                    rowspan="270"
+                    columnspan="961" />
+    
+    <widgetDisplay name="SafetyReset"
+                    row="310"
+                    column="25"
+                    rowspan="270"
+                    columnspan="304" />
+    <widgetDisplay name="DeployBoomControl"
+                    row="310"
+                    column="354"
+                    rowspan="270"
+                    columnspan="304" />
+    <widgetDisplay name="PerimeterMode"
+                    row="310"
+                    column="682"
+                    rowspan="270"
+                    columnspan="304" />
+    <widgetDisplay name="ScanClickerControls"
+                    row="310"
+                    column="1011"
+                    rowspan="270"
+                    columnspan="304" />
+  </widgetPage>
+  <widgetPage rows="580" columns="1340" page="3">
+    <widgetDisplay name="BoomSiren"
+                row="25"
+                column="25"
+                rowspan="175"
+                columnspan="400" />
+    <widgetDisplay name="BypassInterlocks"
+                row="25"
+                column="450"
+                rowspan="175"
+                columnspan="400" />
+    <widgetDisplay name="ScanTypeControls"
+                row="25"
+                column="875"
+                rowspan="175"
+                columnspan="400" />
+    <widgetDisplay name="StartCalibrationControls"
+                row="225"
+                column="25"
+                rowspan="175"
+                columnspan="400" />
+  </widgetPage>
+</maintenanceWidgetArea>

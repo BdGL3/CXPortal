@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.DFCStatus.UserControl1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Loaded="UserControl_Loaded" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:my="clr-namespace:L3.Cargo.Workstation.Plugins.DFCStatus"
+    xmlns:common="clr-namespace:L3.Cargo.Common;assembly=L3.Cargo.Common"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="308" d:DesignHeight="439"
+    DataContext="{Binding}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+                <my:_Schiphol_ACXS_ScriptDataSet x:Key="_Schiphol_ACXS_ScriptDataSet" />
+            <CollectionViewSource x:Key="containerViewSource" Source="{Binding Path=Container, Source={StaticResource _Schiphol_ACXS_ScriptDataSet}}" />
+            <common:CaseObject x:Key="CaseObj"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel Name="InfoDisplayArea" DataContext="{StaticResource CaseObj}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="36" />
+                <RowDefinition Name="DFCDataArea"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" BorderBrush="#FFBDBDBD" BorderThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1.0" StartPoint="0.5,0.03">
+                        <GradientStop Color="#FF9F2D2D" Offset="0"/>
+                        <GradientStop Color="Maroon" Offset="0.6"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/L3Plugin-DFCStatus;component/Info.png" Height="19" Margin="5,0,0,0" />
+                    <Label Foreground="White" FontSize="12" Content="{Binding Path=ContainerInformation, Source={StaticResource Resources}}" FontWeight="Bold" />
+                </StackPanel>
+            </Border>
+            <DockPanel Grid.Row="1" Background="#D7D7D7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Label DockPanel.Dock="Left" FontSize="12" FontWeight="Bold" Margin="5" Content="{Binding Path=ULDNumber_Colon, Source={StaticResource Resources}}"  />
+                <TextBox Name="ULDNumberInput" FontSize="12" Height="26" Margin="5,5,10,5" FontWeight="Normal" HorizontalAlignment="Stretch" Text="{Binding Path=scanInfo.container.Id, Mode=TwoWay}" />
+            </DockPanel>
+            <DataGrid Grid.Row="2" AutoGenerateColumns="False" Name="dataGrid1" ItemsSource="{Binding Source={StaticResource containerViewSource}}" SelectionUnit="FullRow"
+                      Background="Transparent" CanUserAddRows="False" CanUserDeleteRows="False" AlternationCount="2" SelectionMode="Single" IsSynchronizedWithCurrentItem="True"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedCellsChanged="dataGrid1_SelectedCellsChanged">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridCell">
+                        <Style.Triggers>
+                            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                                <Setter Property="Background" Value="Maroon" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="BorderBrush" Value="Maroon" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.AlternatingRowBackground>
+                    <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#E8E8E8" Offset="0"></GradientStop>
+                            <GradientStop Color="#FFFFFF" Offset="0.5"></GradientStop>
+                            <GradientStop Color="#E8E8E8" Offset="1"></GradientStop>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </DataGrid.AlternatingRowBackground>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{Binding Path=ULDNumber, Source={StaticResource Resources}}" Binding="{Binding ULDNumber}" IsReadOnly="True" Width="100"/>
+                    <DataGridTextColumn Header="{Binding Path=FlightNumber, Source={StaticResource Resources}}" Binding="{Binding FlightNumber}" IsReadOnly="True" Width="115"/>
+                    <DataGridTextColumn Header="{Binding Path=Status, Source={StaticResource Resources}}" Binding="{Binding StatusMajor}" IsReadOnly="True" Width="60"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</UserControl>

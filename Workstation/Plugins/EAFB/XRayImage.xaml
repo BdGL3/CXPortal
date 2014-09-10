@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.EAFB.XRayImage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:L3.Cargo.Workstation.Plugins.XRayImageBase;assembly=L3.Cargo.Workstation.Plugins.XRayImageBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600" Loaded="XrayImage_Loaded">
+    <DockPanel Background="Transparent">
+        <DockPanel.ContextMenu>
+            <ContextMenu Name="XRayView_ContextMenu">
+                <MenuItem Name="PanZoom_MenuItem" Click="PanZoom_MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\Checkmark.gif" HorizontalAlignment="Center"></Image>                       
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Resources\PanZoom.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12">Pan and Zoom</TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="FragmentMark_MenuItem" Click="FragmentMark_MenuItem_Click">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Resources\FragmentData.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12">Fragment Marks</TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="FragmentUniformity_MenuItem" Click="FragmentUniformity_MenuItem_Click">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Resources\Uniformity.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12">Uniformity</TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+
+                <Separator />
+                <MenuItem Name="PanAndZoom_Normal" Click="PanAndZoom_Normal_MenuItem_Click" Visibility="Visible">
+                    <MenuItem.Icon>
+                        <Image Source="..\Plugins\XRayImageBase\Resources\Icons\checkmark.gif" HorizontalAlignment="Center" Visibility="Collapsed"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="3" FontSize="12">1:1</TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="PanAndZoom_FitToScreen" Click="PanAndZoom_FitToScreen_MenuItem_Click" Visibility="Visible">
+                    <MenuItem.Icon>
+                        <Image Source="..\Plugins\XRayImageBase\Resources\Icons\checkmark.gif" HorizontalAlignment="Center" Visibility="Collapsed"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="3" FontSize="12">Fit To Screen</TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="CreateFramgmentMark_Ellipse" Visibility="Collapsed" Click="CreateFramgmentMark_Ellipse_MenuItem_Click">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="3" FontSize="12">Create</TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>                
+                <MenuItem Name="FragmentRegisterView_Ellipse" Visibility="Collapsed" Click="FragmentRegisterView_Ellipse_MenuItem_Click">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="3" FontSize="12">Register View</TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <Separator Name="Options_Menu_Seperator" />
+                <MenuItem Name="FragmentMarks_Show" Visibility="Collapsed" Click="FragmentAddMarks_Show_MenuItem_Click">
+                    <MenuItem.Header>
+                        <TextBlock Margin="3" FontSize="12">Show Marks</TextBlock>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="FragmentMarks_Hide" Click="FragmentAddMarks_Hide_MenuItem_Click">
+                    <MenuItem.Header>
+                        <TextBlock Margin="3" FontSize="12">Hide Marks</TextBlock>
+                    </MenuItem.Header>
+                </MenuItem>
+            </ContextMenu>
+        </DockPanel.ContextMenu>
+        <AdornerDecorator>
+            <local:XRayView x:Name="MainXRayView" />
+        </AdornerDecorator>
+    </DockPanel>
+</UserControl>

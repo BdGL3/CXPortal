@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="message">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="addressInfo" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sender" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="payload" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="RevNumber" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="EventID" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="LaneID" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="ContEventType" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="EventTime" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="CaseNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Vehicle" minOccurs="0" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Code" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="FileName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="Confidence" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Cont" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Code" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="FileName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="Confidence" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="SizeType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="SizeTypeConfidence" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="ResultCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="ResultText" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:int" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Trailer" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Code" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="FileName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="Confidence" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="ResultCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="ResultText" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:int" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Video" minOccurs="0" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Left" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="Right" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="Top" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="Rear" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="base64Encoded" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="guid" type="xs:string" />
+            <xs:attribute name="ackRequired" type="xs:boolean" />
+            <xs:attribute name="messageType" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" />
+      <xs:attribute name="sentDateTime" type="xs:dateTime" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

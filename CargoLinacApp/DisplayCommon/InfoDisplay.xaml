@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="L3.Cargo.Linac.Display.Common.InfoDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:L3.Cargo.Linac.Display.Common"
+             xmlns:controls="clr-namespace:L3.Cargo.Controls;assembly=L3.Cargo.Controls"
+             mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="1000" Visibility="Collapsed">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/L3.Cargo.Common.Dashboard;component/Presentation/Styles.xaml" />
+                <ResourceDictionary Source="/L3.Cargo.Linac.Display.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#90000000" MouseDown="Display_MouseOrTouchDown" TouchDown="Display_MouseOrTouchDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="800" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="8*" />
+        </Grid.RowDefinitions>
+        <Grid Name="ContentArea" Grid.Column="1" Grid.Row="1" MouseDown="ContentArea_MouseOrTouchDown" TouchDown="ContentArea_MouseOrTouchDown" Background="{StaticResource InfoDisplayBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="10,10,10,0">
+                    <Image RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/LinacIcon.ico" Effect="{StaticResource GeneralDropShadow}" />
+                    <TextBlock Margin="10,0,0,0" Text="{Binding Path=COMPLETE_INFO_TITLE, Source={StaticResource Resources}}" Style="{StaticResource InfoDisplayHeaderText}" Effect="{StaticResource GeneralDropShadow}" />
+                </StackPanel>
+                <DockPanel Grid.Row="1" Background="Maroon" Margin="5,5,5,0" />
+            </Grid>
+            <TabControl Name="PreviewTabControl" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource WidgetTabControl}">
+                <controls:PreviewTabItem PreviewHeight="35" PreviewWidth="35" TouchDown="PreviewTabItem_TouchDown">
+                    <local:LinacGunDriver x:Name="linacStatesPage1"/>
+                </controls:PreviewTabItem>
+                <controls:PreviewTabItem PreviewHeight="35" PreviewWidth="35" TouchDown="PreviewTabItem_TouchDown">
+                    <local:LinacModulatorSolenoid x:Name="linacStatesPage2"/>
+                </controls:PreviewTabItem>
+                <controls:PreviewTabItem PreviewHeight="35" PreviewWidth="35" TouchDown="PreviewTabItem_TouchDown">
+                    <local:LinacOtherStates x:Name="linacStatesPage3"/>
+                </controls:PreviewTabItem>
+            </TabControl>
+            <!--<local:LinacInternalStates  x:Name="internalSystemStateDisplay" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />-->
+        </Grid>
+    </Grid>
+</UserControl>

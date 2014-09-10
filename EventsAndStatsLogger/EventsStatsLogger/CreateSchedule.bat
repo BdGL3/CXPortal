@@ -1,0 +1,1 @@
+schtasks /create /tn "Event DB Clean Up" /tr "C:\EventsStatsLogger\maintenance.bat" /sc WEEKLY /mo 1 /RU L3_Admin /RP L3_candyman

@@ -1,0 +1,51 @@
+﻿<Page x:Class="LoginManager.AccessLevel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="clr-namespace:LoginManager" Loaded="Page_Loaded">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Styles.xaml" />
+                <ResourceDictionary Source="/LoginManager;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:AccessToHeightConverter x:Key="AccessToHeight" />
+            <local:AccessToBooleanConverter x:Key="AccessToBoolean" />
+            <local:BooleanToModeConverter x:Key="BooleanToMode" />
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="172" />
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Calibri" FontSize="22" FontWeight="ExtraBold" Text="{Binding Path=PLEASE_SELECT_DASHBOARD_MODE, Source={StaticResource Resources}}" />
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{Binding Path=AccessLevel, Converter={StaticResource AccessToHeight}, ConverterParameter=Operator}" />
+                <RowDefinition Height="{Binding Path=AccessLevel, Converter={StaticResource AccessToHeight}, ConverterParameter=Supervisor}" />
+                <RowDefinition Height="{Binding Path=AccessLevel, Converter={StaticResource AccessToHeight}, ConverterParameter=Maintenance}" />
+                <RowDefinition Height="{Binding Path=AccessLevel, Converter={StaticResource AccessToHeight}, ConverterParameter=Engineer}" />
+            </Grid.RowDefinitions>
+            <RadioButton GroupName="AccessLevelSelect" Name="OperatorButton" VerticalAlignment="Center" Margin="10" IsChecked="{Binding Path=DashboardMode, Converter={StaticResource BooleanToMode}, ConverterParameter=Operator}" IsEnabled="{Binding Path=AccessLevel, Converter={StaticResource AccessToBoolean}, ConverterParameter=Operator}">
+                <RadioButton.Content>
+                    <TextBlock Text="{Binding Path=SYSTEM_MONITORING, Source={StaticResource Resources}}" FontFamily="Calibri" FontSize="18" FontWeight="ExtraBold" />
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton GroupName="AccessLevelSelect" Name="SupervisorButton" Grid.Row="1" VerticalAlignment="Center" Margin="10" IsChecked="{Binding Path=DashboardMode, Converter={StaticResource BooleanToMode}, ConverterParameter=Supervisor}" IsEnabled="{Binding Path=AccessLevel, Converter={StaticResource AccessToBoolean}, ConverterParameter=Supervisor}">
+                <RadioButton.Content>
+                    <TextBlock Text="{Binding Path=SYSTEM_MONITORING_AND_CONTROL, Source={StaticResource Resources}}" FontFamily="Calibri" FontSize="18" FontWeight="ExtraBold" />
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton GroupName="AccessLevelSelect" Name="MaintenanceButton" Grid.Row="2" VerticalAlignment="Center" Margin="10" IsChecked="{Binding Path=DashboardMode, Converter={StaticResource BooleanToMode}, ConverterParameter=Maintenance}" IsEnabled="{Binding Path=AccessLevel, Converter={StaticResource AccessToBoolean}, ConverterParameter=Maintenance}">
+                <RadioButton.Content>
+                    <TextBlock Text="{Binding Path=MAINTENANCE, Source={StaticResource Resources}}" FontFamily="Calibri" FontSize="18" FontWeight="ExtraBold" />
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton GroupName="AccessLevelSelect" Name="EngineerButton" Grid.Row="3" VerticalAlignment="Center" Margin="10" IsChecked="{Binding Path=DashboardMode, Converter={StaticResource BooleanToMode}, ConverterParameter=Engineer}" IsEnabled="{Binding Path=AccessLevel, Converter={StaticResource AccessToBoolean}, ConverterParameter=Engineer}">
+                <RadioButton.Content>
+                    <TextBlock Text="{Binding Path=SYSTEM_DEBUGGING, Source={StaticResource Resources}}" FontFamily="Calibri" FontSize="18" FontWeight="ExtraBold" />
+                </RadioButton.Content>
+            </RadioButton>
+        </Grid>
+    </Grid>
+</Page>

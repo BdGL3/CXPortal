@@ -1,0 +1,154 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+   Case schema for Cargo project.
+   Copyright (c) 2001, L-3 Security &amp; Detection Systems.
+  </xsd:documentation>
+	</xsd:annotation>
+	<!-- the root element -->
+	<xsd:element name="case" type="XCase" />
+	<!-- type XCase -->
+	<xsd:complexType name="XCase">
+		<xsd:sequence>
+			<xsd:element name="id" type="xsd:string" />
+			<xsd:element name="siteId" type="xsd:string" />
+			<xsd:element name="createTime" type="xsd:dateTime" minOccurs="0" />
+			<xsd:element name="vehicle" type="Vehicle" minOccurs="0" />
+			<xsd:element name="xRayImage" type="File" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="attachment" type="Attachment" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="tdsResultFile" type="xsd:string" minOccurs="0" />
+                        <xsd:element name="awsResult" type="AWSResult" minOccurs="0" />
+                        <xsd:element name="supResult" type="SUPResult" minOccurs="0" />
+                        <xsd:element name="insResult" type="INSResult" minOccurs="0" />
+			<xsd:element name="ewsResult" type="EWSResult" minOccurs="0" />
+			<xsd:element name="eventRecord" type="EventRecord" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="currentArea" type="xsd:string" minOccurs="0" />
+			<xsd:element name="abortedBy" type="xsd:string" minOccurs="0" />
+			<xsd:element name="linkedCase" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" />
+	</xsd:complexType>
+	<!-- type Vehicle -->
+	<xsd:complexType name="Vehicle">
+		<xsd:sequence>
+			<xsd:element name="id" type="xsd:string" minOccurs="0" />
+			<xsd:element name="registrationNum" type="xsd:string" minOccurs="0" />
+			<xsd:element name="manifest" type="Manifest" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="weight" type="xsd:int" minOccurs="0" />
+			<xsd:element name="maxManifest" type="xsd:int" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- type Manifest -->
+	<xsd:complexType name="Manifest">
+		<xsd:sequence>
+			<xsd:element name="id" type="xsd:string" minOccurs="0" />
+			<xsd:element name="image" type="File" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- type Attachment -->
+	<xsd:complexType name="Attachment">
+		<xsd:sequence>
+			<xsd:element name="type" type="xsd:string" minOccurs="0" />
+			<xsd:element name="File" type="File" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- type File -->
+	<xsd:simpleType name="File">
+		<xsd:restriction base="xsd:string" />
+	</xsd:simpleType>
+	<!-- type AWSResult -->
+	<xsd:complexType name="AWSResult">
+		<xsd:sequence>
+			<xsd:element name="decision" type="AWSDecision" minOccurs="0" />
+			<xsd:element name="reason" type="AWSReason" minOccurs="0" />
+			<xsd:element name="comment" type="xsd:string" minOccurs="0" />
+			<xsd:element name="marking" type="Rect" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="audioFilename" type="xsd:string" minOccurs="0" />
+			<xsd:element name="awsUserId" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- type AWSDecision -->
+	<xsd:simpleType name="AWSDecision">
+		<xsd:restriction base="xsd:NCName">
+			<xsd:enumeration value="AWS_UNKNOWN" />
+			<xsd:enumeration value="AWS_CLEAR" />
+			<xsd:enumeration value="AWS_REJECT" />
+			<xsd:enumeration value="AWS_CAUTION" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- type AWSReason -->
+	<xsd:simpleType name="AWSReason">
+		<xsd:restriction base="xsd:NCName">
+			<xsd:enumeration value="AWS_NOT_APPLICABLE" />
+			<xsd:enumeration value="AWS_TOO_COMPLEX" />
+			<xsd:enumeration value="AWS_TOO_DENSE" />
+			<xsd:enumeration value="AWS_ANOMALY_IDENTIFIED" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- type Rect -->
+	<xsd:complexType name="Rect">
+		<xsd:sequence>
+			<xsd:element name="xStart" type="xsd:int" />
+			<xsd:element name="yStart" type="xsd:int" />
+			<xsd:element name="xEnd" type="xsd:int" />
+			<xsd:element name="yEnd" type="xsd:int" />
+		</xsd:sequence>
+	</xsd:complexType>        
+        <!-- type SUPResult -->
+	<xsd:complexType name="SUPResult">
+		<xsd:sequence>
+			<xsd:element name="decision" type="SUPDecision" minOccurs="0" />
+			<xsd:element name="comment" type="xsd:string" minOccurs="0" />
+			<xsd:element name="supUserId" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- type SUPDecision -->
+	<xsd:simpleType name="SUPDecision">
+		<xsd:restriction base="xsd:NCName">
+			<xsd:enumeration value="SUP_UNKNOWN" />
+			<xsd:enumeration value="SUP_CLEAR" />
+			<xsd:enumeration value="SUP_REJECT" />			
+		</xsd:restriction>
+	</xsd:simpleType>
+        <!-- type INSResult -->
+	<xsd:complexType name="INSResult">
+		<xsd:sequence>
+			<xsd:element name="decision" type="INSDecision" minOccurs="0" />
+			<xsd:element name="comment" type="xsd:string" minOccurs="0" />
+			<xsd:element name="insUserId" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- type INSDecision -->
+	<xsd:simpleType name="INSDecision">
+		<xsd:restriction base="xsd:NCName">
+			<xsd:enumeration value="INS_UNKNOWN" />
+			<xsd:enumeration value="INS_CLEAR" />
+			<xsd:enumeration value="INS_REJECT" />			
+		</xsd:restriction>
+	</xsd:simpleType>        
+	<!-- type EventRecord -->
+	<xsd:complexType name="EventRecord">
+		<xsd:sequence>
+			<xsd:element name="createTime" type="xsd:dateTime" />
+			<xsd:element name="description" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- type EWSDecision -->
+	<xsd:simpleType name="EWSDecision">
+		<xsd:restriction base="xsd:NCName">
+			<xsd:enumeration value="EWS_UNKNOWN" />
+			<xsd:enumeration value="EWS_CLEAR" />
+			<xsd:enumeration value="EWS_REJECT" />
+			<xsd:enumeration value="EWS_RELEASE" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- type EWSResult -->
+	<xsd:complexType name="EWSResult">
+		<xsd:sequence>
+			<xsd:element name="decision" type="EWSDecision" minOccurs="0" />
+			<xsd:element name="comment" type="xsd:string" minOccurs="0" />
+			<xsd:element name="commentFilename" type="xsd:string" minOccurs="0" />
+			<xsd:element name="ewsUserId" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

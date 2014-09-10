@@ -1,0 +1,285 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.EAFB.FragmentDataDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:charting="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:L3.Cargo.Workstation.Plugins.EAFB"
+             mc:Ignorable="d"  Background="White"
+             d:DesignHeight="1000" d:DesignWidth="1920" Name="TableView" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+             <local:BoolToVisibilityConverter x:Key="boolToVis" />
+            <Style TargetType="{x:Type TextBlock}" x:Key="GridBlockStyle">
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+            <Style TargetType="{x:Type TextBlock}" x:Key="GridBlockStyleM">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Visibility" Value="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}, Converter={StaticResource boolToVis},ConverterParameter=False}" />
+            </Style>
+            <Style TargetType="{x:Type FrameworkElement}" x:Key="GridEditStyleM">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Visibility" Value="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}, Converter={StaticResource boolToVis}, ConverterParameter=True}" />
+            </Style>
+        </Grid.Resources> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="60*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="73*" />
+            <ColumnDefinition Width="27*" />
+        </Grid.ColumnDefinitions>
+        
+        <GroupBox Margin="100,50,50,0" Name="UniformityGroupBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="0">
+            <GroupBox.Header>
+                <TextBlock FontWeight="Bold" Text="{Binding Path=UniformityAnalysisGraph, Source={StaticResource Resources}}" />
+            </GroupBox.Header>
+            <WindowsFormsHost HorizontalAlignment="Stretch" Margin="0,15,0,0" Name="GraphHost" VerticalAlignment="Stretch">
+                <charting:Chart x:Name="UniformityChart">
+                    <charting:Chart.Series>
+                        <charting:Series x:Name="UniformityChartSeries" ChartType="Line" Color="Red" />
+                    </charting:Chart.Series>
+                    <charting:Chart.ChartAreas>
+                        <charting:ChartArea x:Name="UniformityChartArea" BorderDashStyle="Solid" BorderWidth="2">
+                            <charting:ChartArea.AxisX>
+                                <charting:Axis Enabled="True">
+                                    <charting:Axis.MajorTickMark>
+                                        <charting:TickMark Interval="Auto" />
+                                    </charting:Axis.MajorTickMark>
+                                </charting:Axis>
+                            </charting:ChartArea.AxisX>
+                            <charting:ChartArea.AxisY>
+                                <charting:Axis Minimum="0" Maximum="300" Enabled="True" IsMarginVisible="False">
+                                    <charting:Axis.MajorTickMark>
+                                        <charting:TickMark Interval="Auto" />
+                                    </charting:Axis.MajorTickMark>
+                                </charting:Axis>
+                            </charting:ChartArea.AxisY>
+                        </charting:ChartArea>
+                    </charting:Chart.ChartAreas>
+                </charting:Chart>
+            </WindowsFormsHost>
+        </GroupBox>
+        <GroupBox Margin="75,50,100,150" Name="UniformityResultsGroupBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1">
+            <GroupBox.Header>
+                <TextBlock FontWeight="Bold" Text="Uniformity Results" />
+            </GroupBox.Header>
+            <GroupBox.Background>
+                <RadialGradientBrush GradientOrigin="0, 0" Center="0,0" RadiusX="1" RadiusY="1">
+                    <GradientStop Color="#F4F4F4" Offset="0.0" />
+                    <GradientStop Color="White" Offset="1.0" />
+                </RadialGradientBrush>
+            </GroupBox.Background>
+            <Grid Margin="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="25,0,0,0" HorizontalAlignment="Stretch" Text="Mean Value:" VerticalAlignment="Center" />
+                <TextBlock Margin="25,0,0,0" Name="MeanValue" HorizontalAlignment="Stretch" Text="0" VerticalAlignment="Center" Grid.Column="1" />
+                <TextBlock Margin="25,0,0,0" HorizontalAlignment="Stretch" Text="STD:" VerticalAlignment="Center" Grid.Row="1" />
+                <TextBlock Margin="25,0,0,0" Name="STDValue" HorizontalAlignment="Stretch" Text="0" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" />
+                <TextBlock Margin="25,0,0,0" HorizontalAlignment="Stretch" Text="STD %:" VerticalAlignment="Center" Grid.Row="2" />
+                <TextBlock Margin="25,0,0,0" Name="STDPercentValue" HorizontalAlignment="Stretch" Text="0" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" />
+                <TextBlock Margin="25,0,0,0" HorizontalAlignment="Stretch" Text="Minimum:" VerticalAlignment="Center" Grid.Row="3" />
+                <TextBlock Margin="25,0,0,0" Name="MinValue" HorizontalAlignment="Stretch" Text="0" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" />
+                <TextBlock Margin="25,0,0,0" HorizontalAlignment="Stretch" Text="Maximum:" VerticalAlignment="Center" Grid.Row="4" />
+                <TextBlock Margin="25,0,0,0" Name="MaxValue" HorizontalAlignment="Stretch" Text="0" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" />
+            </Grid>
+            
+        </GroupBox>
+        <Button Content="{Binding Path=ResetUniformity, Source={StaticResource Resources}}" Height="31" HorizontalAlignment="Center" Margin="0,0,0,52" Name="button1" VerticalAlignment="Bottom" Width="149" Grid.Column="1" Click="RemoveUnifirmity_Click" />
+        <GroupBox Margin="100,50,50,50" Name="FragmentDataGroupBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="1">
+            <GroupBox.Header>
+                <TextBlock FontWeight="Bold" Text="{Binding Path=FragmentAnalysis, Source={StaticResource Resources}}" />
+            </GroupBox.Header>
+            <ListView Name="DataTable" BorderBrush="Black" BorderThickness="2" Grid.RowSpan="2" 
+                  SelectionChanged="DataTable_SelectionChanged" Margin="20" 
+                  Grid.Row="1" Grid.ColumnSpan="3" Foreground="Black" 
+                  ItemsSource="{Binding ElementName=TableView,Path=TableStrinsCollection}" DataContext="{Binding}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="80">
+                            <GridViewColumnHeader  
+                                  Tag="Frag" 
+                                 Content="{Binding Path=Frag_Num, Source={StaticResource Resources}}"/>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Path=FragData}" 
+                                    Style="{StaticResource GridBlockStyle}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Content="Θ1(deg)" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Path=Theta1Data}" 
+                                    Style="{StaticResource GridBlockStyle}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Content="Θ2(deg)" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Path=Theta2Data}" 
+                                    Style="{StaticResource GridBlockStyle}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader  Content="Z(mm)" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Path=ZData}" 
+                                    Style="{StaticResource GridBlockStyle}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Content="X(mm)" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Path=XData}" 
+                                    Style="{StaticResource GridBlockStyle}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Content="Y(mm)" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock Text="{Binding Path=YData}" 
+                                    Style="{StaticResource GridBlockStyle}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Content="{Binding Path=Type, Source={StaticResource Resources}}" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <TextBlock Text="{Binding Path=TypeData}" 
+                                    Style="{StaticResource GridBlockStyleM}"/>
+                                        <ComboBox Name="TypeCombo" SelectedItem="{Binding Path=TypeData}" 
+                                        ItemsSource="{Binding ElementName=TableView,Path=TypeCollection}"
+                                              Style="{StaticResource GridEditStyleM}" SelectionChanged="ComboBox_SelectionChanged" ></ComboBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Content="{Binding Path=Shape, Source={StaticResource Resources}}" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <TextBlock Text="{Binding Path=ShapeData}" Style="{StaticResource GridBlockStyleM}"/>
+                                        <ComboBox Name="ShapeCmb"  SelectedItem="{Binding Path=ShapeData}" 
+                                        ItemsSource="{Binding ElementName=TableView,Path=ShapeCollection}"
+                                              Style="{StaticResource GridEditStyleM}" SelectionChanged="ComboBox_SelectionChanged" ></ComboBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="125">
+                            <GridViewColumnHeader Content="{Binding Path=Size, Source={StaticResource Resources}}" />
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <TextBlock Text="{Binding Path=SizeData}"    Style="{StaticResource GridBlockStyleM}"/>
+                                        <ComboBox  Name="SizeCmb" SelectedItem="{Binding Path=SizeData}" 
+                                        ItemsSource="{Binding ElementName=TableView,Path=SizeCollection}"
+                                              Style="{StaticResource GridEditStyleM}"  SelectionChanged="ComboBox_SelectionChanged"></ComboBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+                <ListView.ContextMenu>
+                    <ContextMenu >
+                        <MenuItem Name="DelString" Header="{Binding Path=RemoveMarkings, Source={StaticResource Resources}}" Click="DelString_Click" ></MenuItem>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+            </ListView>
+        </GroupBox>
+
+
+        <GroupBox Margin="75,50,100,200" Name="ReportGroupBox" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="1">
+            <GroupBox.Header>
+                <TextBlock FontWeight="Bold" Text="{Binding Path=ReportGeneration, Source={StaticResource Resources}}" />
+            </GroupBox.Header>
+            <GroupBox.Background>
+                <RadialGradientBrush GradientOrigin="0, 0" Center="0,0" RadiusX="1" RadiusY="1">
+                    <GradientStop Color="#F4F4F4" Offset="0.0" />
+                    <GradientStop Color="White" Offset="1.0" />
+                </RadialGradientBrush>
+            </GroupBox.Background>
+            <Grid Margin="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Test Name:" Margin="10,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                <TextBox HorizontalAlignment="Stretch" Margin="5" Name="TestNameField" VerticalAlignment="Stretch" Grid.Column="1" />
+                <TextBlock Text="Project:" Margin="10,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="1" />
+                <TextBox HorizontalAlignment="Stretch" Margin="5" Name="ProjectNameField" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" />
+                <TextBlock Text="Mission:" Margin="10,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="2" />
+                <TextBox HorizontalAlignment="Stretch" Margin="5" Name="MissionNameField" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="2" />
+                <TextBlock Text="Bundle:" Margin="10,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Row="3" />
+                <TextBox HorizontalAlignment="Stretch" Margin="5" Name="BundleField" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="3" />
+                
+                <DockPanel Grid.ColumnSpan="2" Grid.Row="4" >
+                    <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="10"  Text="Notes:" VerticalAlignment="Top" />
+                    <TextBox HorizontalAlignment="Stretch" Margin="10,0,10,10" Name="CommentsField" 
+                             VerticalAlignment="Stretch" BorderBrush="Black" BorderThickness="1"
+                             VerticalScrollBarVisibility="Auto"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True" />
+                </DockPanel>
+                
+
+            </Grid>
+        </GroupBox>
+
+
+
+        <Button Content="{Binding Path=CreateReport, Source={StaticResource Resources}}" Height="31" HorizontalAlignment="Center" Margin="0,0,0,125" Name="button2" VerticalAlignment="Bottom" Width="149" Grid.Column="1" Grid.Row="1" Click="SaveReportBtn_Click"  />
+    </Grid>
+</UserControl>

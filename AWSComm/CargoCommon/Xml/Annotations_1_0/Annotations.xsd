@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Annotations" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Annotations" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Annotation">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TopLeft.X" type="xs:string" minOccurs="0" />
+              <xs:element name="TopLeft.Y" type="xs:string" minOccurs="0" />
+              <xs:element name="Width" type="xs:string" minOccurs="0" />
+              <xs:element name="Height" type="xs:string" minOccurs="0" />
+              <xs:element name="RadiusX" type="xs:string" minOccurs="0" />
+              <xs:element name="RadiusY" type="xs:string" minOccurs="0" />
+              <xs:element name="Comment" type="xs:string" minOccurs="0" />
+              <xs:element name="View" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

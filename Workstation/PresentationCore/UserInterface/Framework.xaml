@@ -1,0 +1,93 @@
+﻿<Window xmlns:my="clr-namespace:L3.Cargo.Workstation.PresentationCore"  x:Class="L3.Cargo.Workstation.PresentationCore.Framework"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:L3.Cargo.Workstation.PresentationCore"
+        xmlns:globalization="clr-namespace:System.Globalization;assembly=mscorlib"
+        Title="Workstation" WindowState="Maximized" Height="633" Width="1200"
+        xmlns:custom="clr-namespace:L3.Cargo.Common;assembly=L3.Cargo.Common" Closing="Window_Closing"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        Background="White" MinWidth="1024" MinHeight="768" Name="FrameWorkWindow" Icon="/L3.Cargo.Workstation.PresentationCore;component/UserInterface/Resources/Icons/Workstation.ico">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml"/>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type globalization:CultureInfo}">
+                <TextBlock Text="{Binding NativeName}"/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Canvas Height="65">
+                <Canvas.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#DDDDDD" Offset="0.0" />
+                        <GradientStop Color="White" Offset="0.7" />
+                    </LinearGradientBrush>
+                </Canvas.Background>
+                <StackPanel Margin="0,11" Orientation="Horizontal" Canvas.Left="0" Canvas.Top="0" Panel.ZIndex="1" Name="MainPanelStackPanel">
+                </StackPanel>
+                <ToggleButton Style="{StaticResource AboutBoxButton}" Background="Transparent" Margin="8" Canvas.Right="0" Canvas.Top="0" Panel.ZIndex="0" Click="Button_Click">
+                    <Image Height="45"  Source="Resources\Icons\ClearViewLogo.png" />
+                </ToggleButton>
+                <Popup PopupAnimation="Fade" AllowsTransparency="True" Name="AboutBoxPopUp" PlacementTarget="{Binding ElementName=FrameWorkWindow}" Placement="Center" StaysOpen="False">
+                    <Border BorderBrush="Maroon" BorderThickness="2">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="#DDDDDD" Offset="0.0" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel HorizontalAlignment="Center" Margin="10" Orientation="Vertical">
+                            <Image Height="45"  Source="Resources\Icons\ClearViewLogo.png" />
+                            <StackPanel Margin="0,5" Background="Maroon" Height="1" Width="Auto" />
+                            <Grid Margin="25,0" Width="250">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="0,5" Grid.Row="0" Grid.Column="0" Text="{Binding Path=Version_Colon, Source={StaticResource Resources}}" />
+                                <TextBlock Margin="0,5" Grid.Row="0" Grid.Column="1" Name="VersionNumber"/>
+                                <TextBlock Margin="0,5" Grid.Row="1" Grid.Column="0" Text="{Binding Path=BuildNumber_Colon, Source={StaticResource Resources}}" />
+                                <TextBlock Margin="0,5" Grid.Row="1" Grid.Column="1" Name="BuildNumber"/>
+                                <TextBlock Margin="0,5" Grid.Row="2" Grid.Column="0" Text="{Binding Path=BuildDate_Colon, Source={StaticResource Resources}}" />
+                                <TextBlock Margin="0,5" Grid.Row="2" Grid.Column="1" Name="BuildDate"/>
+                            </Grid>
+                            
+                        </StackPanel>
+                    </Border>
+                </Popup>
+                <ComboBox IsSynchronizedWithCurrentItem="True" Canvas.Right="420" Canvas.Top="22" Height="23" x:Name="cbLanguages" Width="85" ItemsSource="{Binding Path=SupportedCultures, Mode=OneWay, Source={StaticResource CultureResourcesDS}}" SelectionChanged="cbLanguages_SelectionChanged" Initialized="cbLanguages_Initialized" />
+            </Canvas>
+            <DockPanel Height="10">
+                <DockPanel.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#AB0B23" Offset="0.0" />
+                        <GradientStop Color="Maroon" Offset="1.0" />
+                    </LinearGradientBrush>
+                </DockPanel.Background>
+                <StackPanel Background="Transparent"></StackPanel>
+
+            </DockPanel>
+        </StackPanel>
+        <StatusBar Name="StatusBar" DockPanel.Dock="Bottom" Height="25" Width="Auto" HorizontalAlignment="Stretch"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Style="{StaticResource CompareGridRow}"/>
+            </Grid.RowDefinitions>
+            <TabControl Name="PrimaryTabControl" Grid.Column="0" Grid.Row="0" BorderThickness="0" Background="Transparent" />
+            <TabControl Name="CompareTabControl" Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="Black" Background="Transparent" />
+        </Grid>
+    </DockPanel>
+</Window>

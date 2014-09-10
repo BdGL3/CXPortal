@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CALIBRATION_SCAN_0" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="CALIBRATION_SCAN_1" xml:space="preserve">
+    <value>معايرة</value>
+  </data>
+  <data name="CALIBRATION_SCAN_DISABLED" xml:space="preserve">
+    <value>التحويل إلى وضع المعايرة</value>
+  </data>
+  <data name="CALIBRATION_SCAN_ENABLED" xml:space="preserve">
+    <value>التحويل إلى وضع المسح</value>
+  </data>
+  <data name="CALIBRATION_SCAN_TITLE" xml:space="preserve">
+    <value>نوع المسح</value>
+  </data>
+  <data name="CALIBRATION_STATE_0" xml:space="preserve">
+    <value>جاهز لتنفيذ المعايرة</value>
+  </data>
+  <data name="CALIBRATION_STATE_1" xml:space="preserve">
+    <value>غير جاهز لتنفيذ المعايرة</value>
+  </data>
+  <data name="CALIBRATION_STATE_10" xml:space="preserve">
+    <value>معايرة للبيانات المظللة قيد التنفيذ</value>
+  </data>
+  <data name="CALIBRATION_STATE_11" xml:space="preserve">
+    <value>الانتهاء من معايرة البيانات المظللة</value>
+  </data>
+  <data name="CALIBRATION_STATE_12" xml:space="preserve">
+    <value>تنفيذ معايرة بالجرعة المنخفضة</value>
+  </data>
+  <data name="CALIBRATION_STATE_13" xml:space="preserve">
+    <value>الانتهاء من معايرة بالجرعة المنخفضة</value>
+  </data>
+  <data name="CALIBRATION_STATE_2" xml:space="preserve">
+    <value>فشلت المعايرة</value>
+  </data>
+  <data name="CALIBRATION_STATE_3" xml:space="preserve">
+    <value>تنفيذ معايرة بالطاقة العالية</value>
+  </data>
+  <data name="CALIBRATION_STATE_4" xml:space="preserve">
+    <value>الإنتهاء من تنفيذ معايرة عالية الطاقة</value>
+  </data>
+  <data name="CALIBRATION_STATE_5" xml:space="preserve">
+    <value>تنفيذ معايرة بالطاقة المنخفضة</value>
+  </data>
+  <data name="CALIBRATION_STATE_6" xml:space="preserve">
+    <value>الانتهاء من معايرة الطاقة منخفضة</value>
+  </data>
+  <data name="CALIBRATION_STATE_7" xml:space="preserve">
+    <value>تنفيذ معايرة بالطاقة المزدوجة</value>
+  </data>
+  <data name="CALIBRATION_STATE_8" xml:space="preserve">
+    <value>الانتهاء من معايرة الطاقة المزدوجة</value>
+  </data>
+  <data name="CALIBRATION_STATE_9" xml:space="preserve">
+    <value>تمت المعايرة بنجاح</value>
+  </data>
+  <data name="CALIBRATION_STATE_TITLE" xml:space="preserve">
+    <value>حالة المعايرة</value>
+  </data>
+  <data name="CLICKER_DISABLE" xml:space="preserve">
+    <value>تعطيل التحكم عن بعد</value>
+  </data>
+  <data name="CLICKER_ENABLE" xml:space="preserve">
+    <value>تمكين التحكم عن بعد</value>
+  </data>
+  <data name="CLICKER_ENABLE_TITLE" xml:space="preserve">
+    <value>جهاز التحكم المسؤول عن الموقع</value>
+  </data>
+  <data name="ERROR_MESSAGES_TITLE" xml:space="preserve">
+    <value>مسح أخطاء النظام</value>
+  </data>
+  <data name="INFO_BUTTON_DESCRIPTION" xml:space="preserve">
+    <value>عرض جميع معلومات عن نظام المسح </value>
+  </data>
+  <data name="INFO_BUTTON_TITLE" xml:space="preserve">
+    <value>نظام المسح</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_0" xml:space="preserve">
+    <value>غير جاهز للمسح</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_1" xml:space="preserve">
+    <value>جاهز للمسح</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_DISABLED" xml:space="preserve">
+    <value>جاهز للمسح</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_ENABLED" xml:space="preserve">
+    <value>غير جاهز للمسح</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_TITLE" xml:space="preserve">
+    <value>منطقة المسح</value>
+  </data>
+  <data name="SCAN_COMPLETE_INFO_TITLE" xml:space="preserve">
+    <value>معلومات نظام المسح</value>
+  </data>
+  <data name="SCAN_CONFIGURATION_TITLE" xml:space="preserve">
+    <value>تكوين إعدادات</value>
+  </data>
+  <data name="SCAN_DRIVE_DIRECTION_0" xml:space="preserve">
+    <value>توقف</value>
+  </data>
+  <data name="SCAN_DRIVE_DIRECTION_1" xml:space="preserve">
+    <value>إلى الأمام</value>
+  </data>
+  <data name="SCAN_DRIVE_DIRECTION_2" xml:space="preserve">
+    <value>إلى الخلف</value>
+  </data>
+  <data name="SCAN_DRIVE_DIRECTION_TITLE" xml:space="preserve">
+    <value>الإتجاه</value>
+  </data>
+  <data name="SCAN_DRIVE_HAND_BRAKE_1" xml:space="preserve">
+    <value>تمكين فرامل اليد</value>
+  </data>
+  <data name="SCAN_DRIVE_HAND_BRAKE_DISABLED" xml:space="preserve">
+    <value>تعطيل</value>
+  </data>
+  <data name="SCAN_DRIVE_HAND_BRAKE_ENABLED" xml:space="preserve">
+    <value>تمكين</value>
+  </data>
+  <data name="SCAN_DRIVE_HAND_BRAKE_TITLE" xml:space="preserve">
+    <value>فرملة اليد</value>
+  </data>
+  <data name="SCAN_DRIVE_HYDRAULIC_OIL_LEVEL_MEASUREMENT" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="SCAN_DRIVE_HYDRAULIC_OIL_LEVEL_TITLE" xml:space="preserve">
+    <value>مستوى زيت محرك المسح</value>
+  </data>
+  <data name="SCAN_DRIVE_HYDRAULIC_OIL_TEMPERATURE_MEASUREMENT" xml:space="preserve">
+    <value>°C</value>
+  </data>
+  <data name="SCAN_DRIVE_HYDRAULIC_OIL_TEMPERATURE_TITLE" xml:space="preserve">
+    <value>درجة حرارة محرك المسح</value>
+  </data>
+  <data name="SCAN_DRIVE_POWER_STATUS_0" xml:space="preserve">
+    <value>محرك المسح في حالة ايقاف التشغيل</value>
+  </data>
+  <data name="SCAN_DRIVE_REALTIME_SPEED_MEASUREMENT" xml:space="preserve">
+    <value>m/s</value>
+  </data>
+  <data name="SCAN_DRIVE_REALTIME_SPEED_TITLE" xml:space="preserve">
+    <value>السرعة الفعلية</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_0" xml:space="preserve">
+    <value>السرعة المخصصة</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_1" xml:space="preserve">
+    <value>مسح بالسرعة المنخفضة</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_2" xml:space="preserve">
+    <value>مسح بالسرعة المتوسطة</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_3" xml:space="preserve">
+    <value>مسح بالسرعة العالية</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_TITLE" xml:space="preserve">
+    <value>تحديد السرعة</value>
+  </data>
+  <data name="SCAN_DRIVE_SIGN_OF_LIFE_0" xml:space="preserve">
+    <value>محرك المسح لا يستجيب</value>
+  </data>
+  <data name="SCAN_DRIVE_SPEED_FAILURE_1" xml:space="preserve">
+    <value>محرك مسح غير قادر على تحقيق الحد الأدنى من سرعة عتبة لسرعة الفحص المحددة.</value>
+  </data>
+  <data name="SCAN_DRIVE_SPEED_FAILURE_2" xml:space="preserve">
+    <value>محرك مسح غير قادر على البقاء دون عتبة السرعة القصوى للسرعة الفحص المحددة.</value>
+  </data>
+  <data name="SCAN_DRIVE_STATE_0" xml:space="preserve">
+    <value>توقف</value>
+  </data>
+  <data name="SCAN_DRIVE_STATE_1" xml:space="preserve">
+    <value>تسريع</value>
+  </data>
+  <data name="SCAN_DRIVE_STATE_2" xml:space="preserve">
+    <value>تبطيئ</value>
+  </data>
+  <data name="SCAN_DRIVE_STATE_3" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="SCAN_DRIVE_STATUS_TITLE" xml:space="preserve">
+    <value>حالة محرك المسح</value>
+  </data>
+  <data name="SCAN_DRIVE_TITLE" xml:space="preserve">
+    <value>محرك المسح الفرعي</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_0" xml:space="preserve">
+    <value>مسح مفرد</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_1" xml:space="preserve">
+    <value>مسح متعدد</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_DISABLED" xml:space="preserve">
+    <value>تعيين إلى الوضع متعدد</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_ENABLED" xml:space="preserve">
+    <value>تعيين لمسح مفرد</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_TITLE" xml:space="preserve">
+    <value>وضع المسح</value>
+  </data>
+  <data name="SCAN_SETTINGS_TITLE" xml:space="preserve">
+    <value>اعدادت المسح</value>
+  </data>
+  <data name="SCAN_STATE_0" xml:space="preserve">
+    <value>جاهز لتنفيذ المسح</value>
+  </data>
+  <data name="SCAN_STATE_1" xml:space="preserve">
+    <value>غير جاهز لتنفيذ المسح</value>
+  </data>
+  <data name="SCAN_STATE_2" xml:space="preserve">
+    <value>مسح قيد التشغيل حاليا</value>
+  </data>
+  <data name="SCAN_STATE_TITLE" xml:space="preserve">
+    <value>الحالة الحالية</value>
+  </data>
+  <data name="SCAN_STATUS_TITLE" xml:space="preserve">
+    <value>حالات المسح</value>
+  </data>
+  <data name="SCAN_STEP_LAST_TITLE" xml:space="preserve">
+    <value>اخر خطوة تم الوصول اليها </value>
+  </data>
+  <data name="SCAN_STEP_TITLE" xml:space="preserve">
+    <value>خطوة رقم</value>
+  </data>
+  <data name="STATUSBAR_TITLE" xml:space="preserve">
+    <value>حالة المسح </value>
+  </data>
+  <data name="UNKNOWN_RESOURCE" xml:space="preserve">
+    <value>خطأ غير معروف</value>
+  </data>
+  <data name="WARNING_MESSAGES_TITLE" xml:space="preserve">
+    <value>تحذير نظام المسح</value>
+  </data>
+</root>

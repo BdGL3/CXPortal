@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84114810-DCEC-4454-B66D-F80B21F398D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L3.Cargo.Detectors.BusinessCore</RootNamespace>
+    <AssemblyName>L3.Cargo.Detectors.BusinessCore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calibration\CalibrationInline.cs" />
+    <Compile Include="Calibration\CalibrationPersistent.cs" />
+    <Compile Include="Scanning\ArchiveData.cs" />
+    <Compile Include="BusinessManager.cs" />
+    <Compile Include="Calibration\Calibration.cs" />
+    <Compile Include="Calibration\CalibrationData.cs" />
+    <Compile Include="Calibration\CalibrationDataCollection.cs" />
+    <Compile Include="Common\PixelDataType.cs" />
+    <Compile Include="Scanning\NormalizeData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scanning\ObjectSearch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CargoCommon\Dashboard\Displays\L3.Cargo.Common.Dashboard.Display.csproj">
+      <Project>{471112EB-1360-4A09-8536-BFF9C0420159}</Project>
+      <Name>L3.Cargo.Common.Dashboard.Display</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommon\PxeAccess\L3.Cargo.Common.PxeAccess.csproj">
+      <Project>{DE010BCB-2AF8-4C72-AC62-0687AC270C55}</Project>
+      <Name>L3.Cargo.Common.PxeAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\APCS\L3.Cargo.Communications.APCS.csproj">
+      <Project>{1C33E2BB-97AD-4259-B9B6-7CDBFB52D219}</Project>
+      <Name>L3.Cargo.Communications.APCS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\CargoHost\L3.Cargo.Communications.CargoHost.csproj">
+      <Project>{9D6BC3A8-EFD1-45DF-A90D-F2896559148A}</Project>
+      <Name>L3.Cargo.Communications.CargoHost</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\Common\L3.Cargo.Communications.Common.csproj">
+      <Project>{90399276-EC47-4658-9B88-C535BDBAC702}</Project>
+      <Name>L3.Cargo.Communications.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\DetectorPlot\L3.Cargo.Communications.DetectorPlot.csproj">
+      <Project>{E847DBCB-E8C7-4FA1-BCA3-8CDEAF3855E7}</Project>
+      <Name>L3.Cargo.Communications.DetectorPlot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\Detectors\L3.Cargo.Communications.Detectors.csproj">
+      <Project>{A7353DD4-91F5-4036-8FB1-8DA9044DED91}</Project>
+      <Name>L3.Cargo.Communications.Detectors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\EventsLogger\L3.Cargo.Communications.EventsLogger.csproj">
+      <Project>{12318AE9-DC80-450A-911D-798393BA0A55}</Project>
+      <Name>L3.Cargo.Communications.EventsLogger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\OPC\L3.Cargo.Communications.OPC.csproj">
+      <Project>{4B24DF20-9242-4568-8B83-895592DBA064}</Project>
+      <Name>L3.Cargo.Communications.OPC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoSubsystems\DataAccessCore\L3.Cargo.Subsystem.DataAccessCore.csproj">
+      <Project>{34FB9545-E271-4A21-99C0-5D13EB2500B1}</Project>
+      <Name>L3.Cargo.Subsystem.DataAccessCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoSubsystems\RequestManagerCore\L3.Cargo.Subsystem.RequestManagerCore.csproj">
+      <Project>{2FB737B4-F436-4EA8-A199-DD7DDB2BC9C5}</Project>
+      <Name>L3.Cargo.Subsystem.RequestManagerCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoSubsystems\StatusManagerCore\L3.Cargo.Subsystem.StatusManagerCore.csproj">
+      <Project>{C62C0493-3793-4568-8C35-324CCEEF08B4}</Project>
+      <Name>L3.Cargo.Subsystem.StatusManagerCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\L3.Cargo.Detectors.Common.csproj">
+      <Project>{B400EB7C-C320-4EBC-9FEA-F210734736FE}</Project>
+      <Name>L3.Cargo.Detectors.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessCore\L3.Cargo.Detectors.DataAccessCore.csproj">
+      <Project>{FADBC31A-AB1E-49C1-A841-7B73C9AF43AA}</Project>
+      <Name>L3.Cargo.Detectors.DataAccessCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RequestManagerCore\L3.Cargo.Detectors.RequestManagerCore.csproj">
+      <Project>{BADA0FBD-F8A6-46E8-9040-AAAEEB4C70FC}</Project>
+      <Name>L3.Cargo.Detectors.RequestManagerCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StatusManagerCore\L3.Cargo.Detectors.StatusManagerCore.csproj">
+      <Project>{ABFD8289-35C9-4C7A-8037-CD1DE448DE58}</Project>
+      <Name>L3.Cargo.Detectors.StatusManagerCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

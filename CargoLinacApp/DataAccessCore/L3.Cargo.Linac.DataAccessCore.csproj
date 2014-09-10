@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{163A3223-4686-4ED2-BA1B-334971CC4D0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L3.Cargo.Linac.DataAccessCore</RootNamespace>
+    <AssemblyName>L3.Cargo.Linac.DataAccessCore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LinacDataAccess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CargoCommunications\Common\L3.Cargo.Communications.Common.csproj">
+      <Project>{90399276-EC47-4658-9B88-C535BDBAC702}</Project>
+      <Name>L3.Cargo.Communications.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\EventsLogger\L3.Cargo.Communications.EventsLogger.csproj">
+      <Project>{12318AE9-DC80-450A-911D-798393BA0A55}</Project>
+      <Name>L3.Cargo.Communications.EventsLogger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\Linac\L3.Cargo.Communications.Linac.csproj">
+      <Project>{6BDE3B59-4C18-474C-9C76-F3D61DBE4621}</Project>
+      <Name>L3.Cargo.Communications.Linac</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoSubsystems\DataAccessCore\L3.Cargo.Subsystem.DataAccessCore.csproj">
+      <Project>{34FB9545-E271-4A21-99C0-5D13EB2500B1}</Project>
+      <Name>L3.Cargo.Subsystem.DataAccessCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

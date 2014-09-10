@@ -1,0 +1,22 @@
+﻿<Window x:Class="L3.Cargo.WSCommunications.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About" Height="200" Width="404" Icon="/WSComm;component/WSComm.ico">
+    <DockPanel>
+        <Image Margin="12,12,6,12" Height="98" Name="image1" Stretch="Uniform" Width="98" Source="L3_Logo.png" />
+        <StackPanel>
+            <TextBlock Margin="10,10,0,0" Text="L-3 Communications," Height="20" />
+            <TextBlock Margin="10,0,0,0" Text="Security and Detection Systems" Height="20" />
+            <TextBlock Margin="10,5,0,0" Text="WSCommunications" Height="20" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10,5,0,0" Text="Version" Height="20" />
+                <TextBlock Margin="10,5,0,0" Height="20" Name="VerionNumber" />
+            </StackPanel>
+            <TextBlock Margin="10,5,0,0" Text="Copyright (C) 2011" Height="20" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="10,5,0,0" Text="Build Date" Height="25" />
+                <TextBlock Margin="10,5,0,0" Height="20" Name="BuildDate" />
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

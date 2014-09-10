@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnalysisTime_Colon" xml:space="preserve">
+    <value>Analysis Time:</value>
+  </data>
+  <data name="AnomalyIdentified" xml:space="preserve">
+    <value>Anomaly Identified</value>
+  </data>
+  <data name="BaseLocation_Colon" xml:space="preserve">
+    <value>Base Location:</value>
+  </data>
+  <data name="BatchNumber_Colon" xml:space="preserve">
+    <value>Batch Number:</value>
+  </data>
+  <data name="Bundle_Colon" xml:space="preserve">
+    <value>Bundle:</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CaseAttachments" xml:space="preserve">
+    <value>Case Attachments</value>
+  </data>
+  <data name="CaseId_Colon" xml:space="preserve">
+    <value>Case Id:</value>
+  </data>
+  <data name="CaseInformation" xml:space="preserve">
+    <value>Case Information</value>
+  </data>
+  <data name="CaseInformationPrintOptions" xml:space="preserve">
+    <value>Case Information Print Options</value>
+  </data>
+  <data name="Caution" xml:space="preserve">
+    <value>Caution</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="ClearScreen" xml:space="preserve">
+    <value>Clear Screen</value>
+  </data>
+  <data name="Code_Colon" xml:space="preserve">
+    <value>Code:</value>
+  </data>
+  <data name="Comment_Colon" xml:space="preserve">
+    <value>Comment:</value>
+  </data>
+  <data name="ContainerInformation" xml:space="preserve">
+    <value>Container Information</value>
+  </data>
+  <data name="ConveyanceInformation" xml:space="preserve">
+    <value>Conveyance Information</value>
+  </data>
+  <data name="CreateReport" xml:space="preserve">
+    <value>Create Report</value>
+  </data>
+  <data name="CreateTime" xml:space="preserve">
+    <value>Create Time</value>
+  </data>
+  <data name="CreateTime_Colon" xml:space="preserve">
+    <value>Create Time:</value>
+  </data>
+  <data name="DamagedBundle" xml:space="preserve">
+    <value>Damaged Bundle</value>
+  </data>
+  <data name="Decision" xml:space="preserve">
+    <value>Decision</value>
+  </data>
+  <data name="Decision_Colon" xml:space="preserve">
+    <value>Decision:</value>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>Deselect All</value>
+  </data>
+  <data name="FlightNumber" xml:space="preserve">
+    <value>Flight Number</value>
+  </data>
+  <data name="FragmentAnalysis" xml:space="preserve">
+    <value>Fragment Analysis</value>
+  </data>
+  <data name="Frag_Num" xml:space="preserve">
+    <value>Frag #</value>
+  </data>
+  <data name="GiveDecision" xml:space="preserve">
+    <value>Give Decision</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Id_Colon" xml:space="preserve">
+    <value>Id:</value>
+  </data>
+  <data name="Inconclusive" xml:space="preserve">
+    <value>Inconclusive</value>
+  </data>
+  <data name="Latitude_Colon" xml:space="preserve">
+    <value>Latitude:</value>
+  </data>
+  <data name="LocationInformation" xml:space="preserve">
+    <value>Location Information</value>
+  </data>
+  <data name="Longitude_Colon" xml:space="preserve">
+    <value>Longitude:</value>
+  </data>
+  <data name="ManualInspection" xml:space="preserve">
+    <value>Manual Inspection</value>
+  </data>
+  <data name="Maximum_Colon" xml:space="preserve">
+    <value>Maximum:</value>
+  </data>
+  <data name="MeanValue_Colon" xml:space="preserve">
+    <value>Mean Value:</value>
+  </data>
+  <data name="Minimum_Colon" xml:space="preserve">
+    <value>Minimum:</value>
+  </data>
+  <data name="Mission_Colon" xml:space="preserve">
+    <value>Mission:</value>
+  </data>
+  <data name="NeedsRescan" xml:space="preserve">
+    <value>Needs Rescan</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>No Image</value>
+  </data>
+  <data name="NoOptionsAvailable" xml:space="preserve">
+    <value>No Options Available</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>Not Applicable</value>
+  </data>
+  <data name="Notes_Colon" xml:space="preserve">
+    <value>Notes:</value>
+  </data>
+  <data name="OCRImagesPrintOptions" xml:space="preserve">
+    <value>OCR Images Print Options</value>
+  </data>
+  <data name="PhysicalDeviation" xml:space="preserve">
+    <value>Physical Deviation</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Project_Colon" xml:space="preserve">
+    <value>Project:</value>
+  </data>
+  <data name="Reason_Colon" xml:space="preserve">
+    <value>Reason:</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="ReportGeneration" xml:space="preserve">
+    <value>Report Generation</value>
+  </data>
+  <data name="ResetUniformity" xml:space="preserve">
+    <value>Reset Uniformity</value>
+  </data>
+  <data name="Reusable" xml:space="preserve">
+    <value>Re-usable</value>
+  </data>
+  <data name="ScanTypeInformation" xml:space="preserve">
+    <value>Scan Type Information</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="SequenceNumber_Colon" xml:space="preserve">
+    <value>Sequence Number:</value>
+  </data>
+  <data name="Shape" xml:space="preserve">
+    <value>Shape</value>
+  </data>
+  <data name="SiteId_Colon" xml:space="preserve">
+    <value>Site Id:</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="Source_Colon" xml:space="preserve">
+    <value>Source:</value>
+  </data>
+  <data name="StationType_Colon" xml:space="preserve">
+    <value>Station Type:</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="STD_Colon" xml:space="preserve">
+    <value>STD:</value>
+  </data>
+  <data name="STD_Percent" xml:space="preserve">
+    <value>STD %</value>
+  </data>
+  <data name="SystemInformation" xml:space="preserve">
+    <value>System Information</value>
+  </data>
+  <data name="Tentative" xml:space="preserve">
+    <value>Tentative</value>
+  </data>
+  <data name="TestName_Colon" xml:space="preserve">
+    <value>Test Name:</value>
+  </data>
+  <data name="TooComplex" xml:space="preserve">
+    <value>Too Complex</value>
+  </data>
+  <data name="TooDense" xml:space="preserve">
+    <value>Too Dense</value>
+  </data>
+  <data name="TotalWeight_Colon" xml:space="preserve">
+    <value>Total Weight:</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Type_Colon" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="ULDNumber" xml:space="preserve">
+    <value>ULD Number</value>
+  </data>
+  <data name="ULDNumber_Colon" xml:space="preserve">
+    <value>ULD Number:</value>
+  </data>
+  <data name="UniformityAnalysisGraph" xml:space="preserve">
+    <value>Uniformity Analysis Graph</value>
+  </data>
+  <data name="UniformityResults" xml:space="preserve">
+    <value>Uniformity Results</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="User_Colon" xml:space="preserve">
+    <value>User:</value>
+  </data>
+  <data name="Weight_Colon" xml:space="preserve">
+    <value>Weight:</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="FitToScreen" xml:space="preserve">
+    <value>Fit To Screen</value>
+  </data>
+  <data name="FragmentMarks" xml:space="preserve">
+    <value>Fragment Marks</value>
+  </data>
+  <data name="HideMarks" xml:space="preserve">
+    <value>Hide Marks</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PanAndZoom" xml:space="preserve">
+    <value>Pan and Zoom</value>
+  </data>
+  <data name="PrintTime_Colon" xml:space="preserve">
+    <value>Print Time:</value>
+  </data>
+  <data name="RadiationDetectionPrintOptions" xml:space="preserve">
+    <value>Radiation Detection Print Options</value>
+  </data>
+  <data name="RegisterView" xml:space="preserve">
+    <value>Register View</value>
+  </data>
+  <data name="ScanTime_Colon" xml:space="preserve">
+    <value>Scan Time:</value>
+  </data>
+  <data name="ShowMarks" xml:space="preserve">
+    <value>Show Marks</value>
+  </data>
+  <data name="Uniformity" xml:space="preserve">
+    <value>Uniformity</value>
+  </data>
+  <data name="Annotation" xml:space="preserve">
+    <value>Annotation</value>
+  </data>
+  <data name="AreaOfInterest" xml:space="preserve">
+    <value>Area of Interest</value>
+  </data>
+  <data name="ColorBackground" xml:space="preserve">
+    <value>Color Background</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="Ellipse" xml:space="preserve">
+    <value>Ellipse</value>
+  </data>
+  <data name="GrayBackground" xml:space="preserve">
+    <value>Gray Background</value>
+  </data>
+  <data name="HideAnnotation" xml:space="preserve">
+    <value>Hide Annotation</value>
+  </data>
+  <data name="HideMeasurements" xml:space="preserve">
+    <value>Hide Measurements</value>
+  </data>
+  <data name="Magnifier" xml:space="preserve">
+    <value>Magnifier</value>
+  </data>
+  <data name="Measurements" xml:space="preserve">
+    <value>Measurements</value>
+  </data>
+  <data name="PositionA" xml:space="preserve">
+    <value>Position A</value>
+  </data>
+  <data name="PositionB" xml:space="preserve">
+    <value>Position B</value>
+  </data>
+  <data name="Rectangle" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
+  <data name="RemoveBackground" xml:space="preserve">
+    <value>Remove Background</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Set" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="ShowAnnotation" xml:space="preserve">
+    <value>Show Annotation</value>
+  </data>
+  <data name="ShowMeasurements" xml:space="preserve">
+    <value>Show Measurements</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="XrayImagePrintOptions" xml:space="preserve">
+    <value>Xray Image Print Options</value>
+  </data>
+  <data name="BuildDate_Colon" xml:space="preserve">
+    <value>Build Date:</value>
+  </data>
+  <data name="BuildNumber_Colon" xml:space="preserve">
+    <value>Build Number:</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Version_Colon" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="Error_CaseCurrentlyInUse" xml:space="preserve">
+    <value>The case requested is currently in use.</value>
+  </data>
+  <data name="Error_CaseDoesNotExist" xml:space="preserve">
+    <value>Specified Case does not exist in the Case List.</value>
+  </data>
+  <data name="Error_CaseIdInvalid" xml:space="preserve">
+    <value>The case id is empty, null, or invalid.</value>
+  </data>
+  <data name="Error_CaseListNotAvailable" xml:space="preserve">
+    <value>The list of available cases is currently not available.</value>
+  </data>
+  <data name="Error_CaseNotAccessible" xml:space="preserve">
+    <value>The Workstation does not have access to this case.</value>
+  </data>
+  <data name="Error_CaseNotListed" xml:space="preserve">
+    <value>Case is not listed in the case list:</value>
+  </data>
+  <data name="Error_CaseVersionMismatch" xml:space="preserve">
+    <value>XML file version does not match schema.</value>
+  </data>
+  <data name="Error_FilenameEmpty" xml:space="preserve">
+    <value>The filename length is 0, please provide a valid filename</value>
+  </data>
+  <data name="Error_InvalidFunction" xml:space="preserve">
+    <value>The function being called is invalid or has not been implemented.</value>
+  </data>
+  <data name="Error_InvalidLogin" xml:space="preserve">
+    <value>Username and password are incorrect.  Please contact your system administrator.</value>
+  </data>
+  <data name="Error_LoadBalanceDelayCaseRequirements" xml:space="preserve">
+    <value>Case Request not processed for load balance reasons.</value>
+  </data>
+  <data name="Error_NoArchiveSources" xml:space="preserve">
+    <value>There are currently no available archive case sources</value>
+  </data>
+  <data name="Error_NoLiveCase" xml:space="preserve">
+    <value>There are currently no available pending cases.</value>
+  </data>
+  <data name="Error_NoLiveSources" xml:space="preserve">
+    <value>There are currently no available pending case sources</value>
+  </data>
+  <data name="Error_NoUserProfile" xml:space="preserve">
+    <value>No user profile could be found.  Please contact your system administrator.</value>
+  </data>
+  <data name="Error_OnePendingCaseOnly" xml:space="preserve">
+    <value>The pending case is currently being shown and must be cleared before a new one can be selected</value>
+  </data>
+  <data name="Error_SourceNotAvailable" xml:space="preserve">
+    <value>The case source is no longer available.</value>
+  </data>
+  <data name="Error_SourceTypeUnknown" xml:space="preserve">
+    <value>The select case source Type is unknown.</value>
+  </data>
+  <data name="Error_ThumbnailCreateFail" xml:space="preserve">
+    <value>The Dll was unable to create a thumbnail from the PXE file passed.</value>
+  </data>
+  <data name="MaxNumberOfMacrosHaveBeenMetPleaseReplaceOneOfTheMacros" xml:space="preserve">
+    <value>Max number of macros have been met.\nPlease replace one of the macros.</value>
+  </data>
+  <data name="PleaseEnterANameForTheMacro" xml:space="preserve">
+    <value>Please enter a name for the macro</value>
+  </data>
+  <data name="BD_Colon" xml:space="preserve">
+    <value>BD:</value>
+    <comment>BD stands for Board Detector</comment>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="D_Colon" xml:space="preserve">
+    <value>D:</value>
+    <comment>D stands for Detector</comment>
+  </data>
+  <data name="Height_Colon" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="HighEnergy" xml:space="preserve">
+    <value>High Energy</value>
+  </data>
+  <data name="LowEnergy" xml:space="preserve">
+    <value>Low Energy</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="ValueForMinRangeCannotBeLessThan0" xml:space="preserve">
+    <value>value for MinRange cannot be less than 0</value>
+  </data>
+  <data name="Value_Colon" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="Width_Colon" xml:space="preserve">
+    <value>Width:</value>
+  </data>
+  <data name="X_Colon" xml:space="preserve">
+    <value>X:</value>
+  </data>
+  <data name="Y_Colon" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="Zoom_Colon" xml:space="preserve">
+    <value>Zoom:</value>
+  </data>
+  <data name="AddCriteria" xml:space="preserve">
+    <value>Add Criteria</value>
+  </data>
+  <data name="Analyst" xml:space="preserve">
+    <value>Analyst</value>
+  </data>
+  <data name="AnalystComment" xml:space="preserve">
+    <value>Analyst Comment</value>
+  </data>
+  <data name="ArchiveCases" xml:space="preserve">
+    <value>Archive Cases</value>
+  </data>
+  <data name="AutoSelect" xml:space="preserve">
+    <value>Auto Select</value>
+  </data>
+  <data name="CaseId" xml:space="preserve">
+    <value>Case Id</value>
+  </data>
+  <data name="DeleteCriteria" xml:space="preserve">
+    <value>Delete Criteria</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="NoSourceSelected" xml:space="preserve">
+    <value>No Source Selected</value>
+  </data>
+  <data name="OpenAsComparison_Question" xml:space="preserve">
+    <value>Open as comparison?</value>
+  </data>
+  <data name="Password_Colon" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="PendingCases" xml:space="preserve">
+    <value>Pending Cases</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="UpdateTime" xml:space="preserve">
+    <value>Update Time</value>
+  </data>
+  <data name="Username_Colon" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="Cases" xml:space="preserve">
+    <value>Cases</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ObjectId" xml:space="preserve">
+    <value>Object ID</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="EditContainerId" xml:space="preserve">
+    <value>Edit Container Id</value>
+  </data>
+  <data name="ScanContainerId" xml:space="preserve">
+    <value>Scan Container Id</value>
+  </data>
+  <data name="ScanContainerInformation" xml:space="preserve">
+    <value>Scan Container Information</value>
+  </data>
+  <data name="ScanConveyanceInformation" xml:space="preserve">
+    <value>Scan Conveyance Information</value>
+  </data>
+  <data name="ScanLocationInformation" xml:space="preserve">
+    <value>Scan Location Information</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EditSnapshots" xml:space="preserve">
+    <value>Edit Snapshots</value>
+  </data>
+  <data name="ExistingMacros" xml:space="preserve">
+    <value>Existing Macros</value>
+  </data>
+  <data name="ImageHistory" xml:space="preserve">
+    <value>Image History</value>
+  </data>
+  <data name="InorganicStrip" xml:space="preserve">
+    <value>Inorganic Strip</value>
+  </data>
+  <data name="MacroName" xml:space="preserve">
+    <value>Macro Name</value>
+  </data>
+  <data name="MetalStrip" xml:space="preserve">
+    <value>Metal Strip</value>
+  </data>
+  <data name="Minus_Sign" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="One_Colon_One" xml:space="preserve">
+    <value>1:1</value>
+  </data>
+  <data name="OrganicStrip" xml:space="preserve">
+    <value>Organic Strip</value>
+  </data>
+  <data name="Plus_Sign" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="Presets" xml:space="preserve">
+    <value>Presets</value>
+  </data>
+  <data name="PseudoColorMappings" xml:space="preserve">
+    <value>Pseudo Color Mappings</value>
+  </data>
+  <data name="Quadmat" xml:space="preserve">
+    <value>Quadmat</value>
+  </data>
+  <data name="SaveImageAs_Ellipsis" xml:space="preserve">
+    <value>Save Image As...</value>
+  </data>
+  <data name="Scans" xml:space="preserve">
+    <value>Scans</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Trimat" xml:space="preserve">
+    <value>Trimat</value>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>User Macros</value>
+  </data>
+  <data name="View1" xml:space="preserve">
+    <value>View 1</value>
+  </data>
+  <data name="ViewHistory" xml:space="preserve">
+    <value>View History</value>
+  </data>
+  <data name="AttachmentFile" xml:space="preserve">
+    <value>Attachment File</value>
+  </data>
+  <data name="AttachmentType" xml:space="preserve">
+    <value>Attachment Type</value>
+  </data>
+  <data name="AvailableImages" xml:space="preserve">
+    <value>Available Images</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="CaseInfo" xml:space="preserve">
+    <value>Case Info</value>
+  </data>
+  <data name="CaseSourceName" xml:space="preserve">
+    <value>Case Source Name</value>
+  </data>
+  <data name="Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Shift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="SiteId" xml:space="preserve">
+    <value>Site ID</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="CloseTab" xml:space="preserve">
+    <value>Close Tab</value>
+  </data>
+  <data name="RemoveMarkings" xml:space="preserve">
+    <value>Remove Markings</value>
+  </data>
+  <data name="UpdateContainerId" xml:space="preserve">
+    <value>Update Container ID</value>
+  </data>
+  <data name="HighDensityCargo" xml:space="preserve">
+    <value>High Density Cargo</value>
+  </data>
+  <data name="LowDensityCargo" xml:space="preserve">
+    <value>Low Density Cargo</value>
+  </data>
+  <data name="NormalDensityCargo" xml:space="preserve">
+    <value>Normal Density Cargo</value>
+  </data>
+  <data name="BlurEffect" xml:space="preserve">
+    <value>Blur Effect</value>
+  </data>
+  <data name="EdgeEnhancement" xml:space="preserve">
+    <value>Edge Enhancement</value>
+  </data>
+  <data name="Invert" xml:space="preserve">
+    <value>Invert</value>
+  </data>
+  <data name="Sharpen" xml:space="preserve">
+    <value>Sharpen</value>
+  </data>
+  <data name="GammaNeutronProfile" xml:space="preserve">
+    <value>Gamma/Neutron Profile</value>
+  </data>
+  <data name="NuclearIsotopeAnalysis" xml:space="preserve">
+    <value>Nuclear Isotope Analysis</value>
+  </data>
+  <data name="OCRImage" xml:space="preserve">
+    <value>OCR Image</value>
+  </data>
+  <data name="Others" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="PageOfPage" xml:space="preserve">
+    <value>Page 1 of 2</value>
+    <comment>The values in this string are not parameterized. It was hardcoded in the code so it is hardcoded here. There is no "Page 2 of 2" string anywhere in the code. This can be paramterized if needed but it will take some effort.</comment>
+  </data>
+  <data name="AnalysisHistory" xml:space="preserve">
+    <value>Analysis History</value>
+  </data>
+  <data name="ClearCase" xml:space="preserve">
+    <value>ClearCase</value>
+  </data>
+  <data name="DFCStatus" xml:space="preserve">
+    <value>DFC Status</value>
+  </data>
+  <data name="Manifests" xml:space="preserve">
+    <value>Manifests</value>
+  </data>
+  <data name="XRayImage" xml:space="preserve">
+    <value>Xray Image</value>
+  </data>
+  <data name="FragmentData" xml:space="preserve">
+    <value>Fragment Data</value>
+  </data>
+  <data name="Histogram" xml:space="preserve">
+    <value>Histogram</value>
+  </data>
+  <data name="OCRImages" xml:space="preserve">
+    <value>OCR Images</value>
+  </data>
+  <data name="RadiationDetectorData" xml:space="preserve">
+    <value>Radiation Detector Data</value>
+  </data>
+  <data name="XRayPlugin" xml:space="preserve">
+    <value>XRayPlugin</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="SelectedCaseIsAlreadyBeingDisplayed" xml:space="preserve">
+    <value>Selected case is already being displayed</value>
+  </data>
+  <data name="Chrome" xml:space="preserve">
+    <value>Chrome</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="chromey" xml:space="preserve">
+    <value>chromey</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="MapX" xml:space="preserve">
+    <value>MapX</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="newchrome" xml:space="preserve">
+    <value>newchrome</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="Parrot" xml:space="preserve">
+    <value>Parrot</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="rainbow" xml:space="preserve">
+    <value>rainbow</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="rainbow2" xml:space="preserve">
+    <value>rainbow2</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="test2" xml:space="preserve">
+    <value>test2</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test3" xml:space="preserve">
+    <value>test3</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test4" xml:space="preserve">
+    <value>test4</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test5" xml:space="preserve">
+    <value>test5</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test6" xml:space="preserve">
+    <value>test6</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test7" xml:space="preserve">
+    <value>test7</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test8" xml:space="preserve">
+    <value>test8</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test9" xml:space="preserve">
+    <value>test9</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="untitled2" xml:space="preserve">
+    <value>untitled2</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="xchrome" xml:space="preserve">
+    <value>xchrome</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="Buffer" xml:space="preserve">
+    <value>Buffer</value>
+  </data>
+  <data name="DualEnergy" xml:space="preserve">
+    <value>Dual Energy</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>Original</value>
+  </data>
+  <data name="PseudoColor" xml:space="preserve">
+    <value>PseudoColor</value>
+  </data>
+  <data name="Setup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="test1" xml:space="preserve">
+    <value>test1</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="Reapply" xml:space="preserve">
+    <value>Reapply</value>
+  </data>
+  <data name="Alarms" xml:space="preserve">
+    <value>Alarms</value>
+  </data>
+  <data name="NORMAlarms" xml:space="preserve">
+    <value>NORMAlarms</value>
+  </data>
+  <data name="Warnings" xml:space="preserve">
+    <value>Warnings</value>
+  </data>
+  <data name="Range_Colon" xml:space="preserve">
+    <value>Range:</value>
+  </data>
+  <data name="MaxAnnotationErrorMessage" xml:space="preserve">
+    <value>Maximum number of annotations is reached, please remove to add another one</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="SelectAnAttachmentToRemove" xml:space="preserve">
+    <value>Select an attachment to remove from the newly added attachment list</value>
+  </data>
+  <data name="Annotations" xml:space="preserve">
+    <value>Annotations</value>
+  </data>
+  <data name="FTIImage" xml:space="preserve">
+    <value>FTIImage</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="Manifest" xml:space="preserve">
+    <value>Manifest</value>
+  </data>
+  <data name="TDSResultFile" xml:space="preserve">
+    <value>TDSResultFile</value>
+  </data>
+  <data name="XRayPluginView0" xml:space="preserve">
+    <value>XRayPlugin-View0</value>
+  </data>
+  <data name="XRayPluginView1" xml:space="preserve">
+    <value>XRayPlugin-View1</value>
+  </data>
+  <data name="Copy_CtrlC" xml:space="preserve">
+    <value>Copy (Ctrl+C)</value>
+  </data>
+  <data name="DecreaseTheSizeOfTheContent_CtrlMinus" xml:space="preserve">
+    <value>Decrease the size of the content (Ctrl -)</value>
+  </data>
+  <data name="IncreaseTheSizeOfTheContent_CtrlPlus" xml:space="preserve">
+    <value>Increase the size of the content (Ctrl +)</value>
+  </data>
+  <data name="OneHundredPercent_Ctrl1" xml:space="preserve">
+    <value>100% (Ctrl+1)</value>
+  </data>
+  <data name="PageWidth_Ctrl2" xml:space="preserve">
+    <value>Page Width (Ctrl+2)</value>
+  </data>
+  <data name="Print_CtrlP" xml:space="preserve">
+    <value>Print (Ctrl+P)</value>
+  </data>
+  <data name="TwoPages_Ctrl4" xml:space="preserve">
+    <value>Two Pages (Ctrl+4)</value>
+  </data>
+  <data name="WholePage_Ctrl3" xml:space="preserve">
+    <value>Whole Page (Ctrl+3)</value>
+  </data>
+  <data name="DensityAlarm" xml:space="preserve">
+    <value>Density Alarm Threshold</value>
+  </data>
+  <data name="ResetDefaults" xml:space="preserve">
+    <value>Reset Default</value>
+  </data>
+</root>

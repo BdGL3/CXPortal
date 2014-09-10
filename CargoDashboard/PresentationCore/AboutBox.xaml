@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="L3.Cargo.Dashboard.PresentationCore.AboutBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Visibility="Collapsed"
+             d:DesignHeight="600" d:DesignWidth="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/L3.Cargo.Common.Dashboard;component/Presentation/Styles.xaml" />
+                <ResourceDictionary Source="/L3.Cargo.Common.Dashboard;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#90000000" MouseDown="Display_MouseOrTouchDown" TouchDown="Display_MouseOrTouchDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="350" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="170"/>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1" Grid.Row="1"  BorderBrush="Maroon" BorderThickness="2">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#DDDDDD" Offset="0.0" />
+                    <GradientStop Color="White" Offset="0.5" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel HorizontalAlignment="Center" Margin="10" Orientation="Vertical">
+                <Image Height="45"  Source="/L3.Cargo.Dashboard.PresentationCore;component/Resources/Images/ClearViewLogo.png" />
+                <StackPanel Margin="0,5" Background="Maroon" Height="1" Width="Auto" />
+                <Grid Margin="25,0" Width="250">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Margin="0,5" Grid.Row="0" Grid.Column="0" Text="{Binding Path=VERSION_COLON, Source={StaticResource Resources}}" />
+                    <TextBlock Margin="0,5" Grid.Row="0" Grid.Column="1" Name="VersionNumber"/>
+                    <TextBlock Margin="0,5" Grid.Row="1" Grid.Column="0" Text="{Binding Path=BUILDNUMBER_COLON, Source={StaticResource Resources}}" />
+                    <TextBlock Margin="0,5" Grid.Row="1" Grid.Column="1" Name="BuildNumber"/>
+                    <TextBlock Margin="0,5" Grid.Row="2" Grid.Column="0" Text="{Binding Path=BUILDDATE_COLON, Source={StaticResource Resources}}" />
+                    <TextBlock Margin="0,5" Grid.Row="2" Grid.Column="1" Name="BuildDate"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

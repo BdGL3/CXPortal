@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACCELERATOR_FLOW_STATUS_1" xml:space="preserve">
+    <value>Accelerator coolant flow is faulted.</value>
+  </data>
+  <data name="ACCELERATOR_VACUUM_STATUS_1" xml:space="preserve">
+    <value>Linac has encountered excessive pressure in accelerator.</value>
+  </data>
+  <data name="AFC_PV_TITLE" xml:space="preserve">
+    <value>AFC Process Variable</value>
+  </data>
+  <data name="AFC_STEPPER_MOTOR_OUT_OF_BOUND_STATUS_1" xml:space="preserve">
+    <value>Stepper Motor is out of position.</value>
+  </data>
+  <data name="COMPLETE_INFO_TITLE" xml:space="preserve">
+    <value>Linac System Information</value>
+  </data>
+  <data name="COOLANT_TEMPERATURE_STATUS_1" xml:space="preserve">
+    <value>Linac accelerator temperature is above acceptable limits.</value>
+  </data>
+  <data name="CURRENT_MEASUREMENT" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="CUSTOMER_INTERLOCK1_STATUS_1" xml:space="preserve">
+    <value>Linac has encountered an external interlock. (CI1)</value>
+  </data>
+  <data name="CUSTOMER_INTERLOCK2_STATUS_1" xml:space="preserve">
+    <value>Linac has encountered an external interlock. (CI2)</value>
+  </data>
+  <data name="ENCLOSURE_PANELS_STATUS_1" xml:space="preserve">
+    <value>Enclosure panels are open.  Please close panels before continuing operations.</value>
+  </data>
+  <data name="ENCLOSURE_TEMPERATURE_STATUS_1" xml:space="preserve">
+    <value>Linac enclosure temperature is above acceptable limits.</value>
+  </data>
+  <data name="ERROR_MESSAGES_TITLE" xml:space="preserve">
+    <value>Linac System Errors</value>
+  </data>
+  <data name="FORWARD_POWER_TITLE" xml:space="preserve">
+    <value>RF Forward Power</value>
+  </data>
+  <data name="GD_BEAM_CURRENT_TITLE" xml:space="preserve">
+    <value>Gun Driver Beam Current</value>
+  </data>
+  <data name="GD_CATHODE_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Gun Driver Cathode Voltage</value>
+  </data>
+  <data name="GD_FILAMENT_CURRENT_TITLE" xml:space="preserve">
+    <value>Gun Driver Grid Drive Current</value>
+  </data>
+  <data name="GD_FILAMENT_VOLATAGE_TITLE" xml:space="preserve">
+    <value>Gun Driver Grid Drive Voltage</value>
+  </data>
+  <data name="GD_GRID_A_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Gun Driver Grid A Voltage</value>
+  </data>
+  <data name="GD_GRID_BIAS_TITLE" xml:space="preserve">
+    <value>Gun Driver Grid Bias</value>
+  </data>
+  <data name="GD_GRID_B_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Gun Driver Grid B Voltage</value>
+  </data>
+  <data name="GD_GRID_DRIVE_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Gun Driver Grid Drive Voltage</value>
+  </data>
+  <data name="GD_HEATER_CURRENT_TITLE" xml:space="preserve">
+    <value>Gun Driver Heater Current</value>
+  </data>
+  <data name="GD_HEATER_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Gun Driver Heater Voltage</value>
+  </data>
+  <data name="GD_STATE_TITLE" xml:space="preserve">
+    <value>Gun Driver State</value>
+  </data>
+  <data name="GUN_DRIVER_INTERLOCK_STATUS_1" xml:space="preserve">
+    <value>Gun driver has encountered an interlock.</value>
+  </data>
+  <data name="INFO_BUTTON_DESCRIPTION" xml:space="preserve">
+    <value>Display all information about the Linac system</value>
+  </data>
+  <data name="INFO_BUTTON_TITLE" xml:space="preserve">
+    <value>Linac System</value>
+  </data>
+  <data name="ION_PUMP_1_CURRENT_TITLE" xml:space="preserve">
+    <value>Ion Pump 1 Current</value>
+  </data>
+  <data name="ION_PUMP_1_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Ion Pump 1 Voltage</value>
+  </data>
+  <data name="ION_PUMP_2_CURRENT_TITLE" xml:space="preserve">
+    <value>Ion Pump 2 Current</value>
+  </data>
+  <data name="ION_PUMP_2_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Ion Pump 2 Voltage</value>
+  </data>
+  <data name="ION_PUMP_3_CURRENT_TITLE" xml:space="preserve">
+    <value>Ion Pump 3 Current</value>
+  </data>
+  <data name="ION_PUMP_3_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Ion Pump 3 Voltage</value>
+  </data>
+  <data name="KILOVOLTAGE_MEASUREMENT" xml:space="preserve">
+    <value>kV</value>
+  </data>
+  <data name="LINAC_ENERGY_TYPE_STATE_0" xml:space="preserve">
+    <value>Material Discrimination</value>
+  </data>
+  <data name="LINAC_ENERGY_TYPE_STATE_1" xml:space="preserve">
+    <value>High Penetration</value>
+  </data>
+  <data name="LINAC_ENERGY_TYPE_STATE_2" xml:space="preserve">
+    <value>High Contrast</value>
+  </data>
+  <data name="LINAC_ENERGY_TYPE_STATE_3" xml:space="preserve">
+    <value>Low Dose</value>
+  </data>
+  <data name="LINAC_ENGERY_TYPE_STATE_TITLE" xml:space="preserve">
+    <value>Selected Mode</value>
+  </data>
+  <data name="LINAC_ENGERY_TYPE_TITLE" xml:space="preserve">
+    <value>Linac Mode Selection</value>
+  </data>
+  <data name="LINAC_ETHERNET_DISCONNECTED_1" xml:space="preserve">
+    <value>No Ethernet connection to LINAC</value>
+  </data>
+  <data name="LINAC_INTERNAL_SYSTEM_STATES_TITLE" xml:space="preserve">
+    <value>Internal System States</value>
+  </data>
+  <data name="LINAC_RESET_FAULT_BUTTON" xml:space="preserve">
+    <value>Clear Linac Faults</value>
+  </data>
+  <data name="LINAC_RESET_FAULT_TITLE" xml:space="preserve">
+    <value>Linac Faults</value>
+  </data>
+  <data name="LINAC_STATE_0" xml:space="preserve">
+    <value>Powered Off</value>
+  </data>
+  <data name="LINAC_STATE_1" xml:space="preserve">
+    <value>Powered On</value>
+  </data>
+  <data name="LINAC_STATE_2" xml:space="preserve">
+    <value>Warming Up</value>
+  </data>
+  <data name="LINAC_STATE_3" xml:space="preserve">
+    <value>Readying System</value>
+  </data>
+  <data name="LINAC_STATE_4" xml:space="preserve">
+    <value>X-Rays Off</value>
+  </data>
+  <data name="LINAC_STATE_5" xml:space="preserve">
+    <value>X-Rays On</value>
+  </data>
+  <data name="LINAC_STATE_TITLE" xml:space="preserve">
+    <value>Linac State</value>
+  </data>
+  <data name="LINAC_STATUS_0" xml:space="preserve">
+    <value>System Healthy</value>
+  </data>
+  <data name="LINAC_STATUS_1" xml:space="preserve">
+    <value>Linac has encountered a Major fault</value>
+  </data>
+  <data name="LINAC_STATUS_2" xml:space="preserve">
+    <value>Linac has encounted a Minor fault and safety system must be reset.</value>
+  </data>
+  <data name="LINAC_STATUS_TITLE" xml:space="preserve">
+    <value>Current Status</value>
+  </data>
+  <data name="LINAC_STATUS_WIDGET_0" xml:space="preserve">
+    <value>System Healthy</value>
+  </data>
+  <data name="LINAC_STATUS_WIDGET_1" xml:space="preserve">
+    <value>Major fault</value>
+  </data>
+  <data name="LINAC_STATUS_WIDGET_2" xml:space="preserve">
+    <value>Minor fault</value>
+  </data>
+  <data name="LINAC_SYSTEM_INFO_TITLE" xml:space="preserve">
+    <value>Linac System Information</value>
+  </data>
+  <data name="MAGNETRON_CURRENT_STATUS_1" xml:space="preserve">
+    <value>Magnetron and modulator encountered excessive current.</value>
+  </data>
+  <data name="MAGNETRON_CURRENT_TITLE" xml:space="preserve">
+    <value>Magnetron Current</value>
+  </data>
+  <data name="MAGNETRON_VACUUM_STATUS_1" xml:space="preserve">
+    <value>Linac has encountered excessive pressure in magnetron.</value>
+  </data>
+  <data name="MD_HEATER_CURRENT_TITLE" xml:space="preserve">
+    <value>Modulator Heater Current</value>
+  </data>
+  <data name="MD_HEATER_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Modulator Heater Voltage</value>
+  </data>
+  <data name="MD_HVPS_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Modulator HVPS Voltage</value>
+  </data>
+  <data name="MD_STATE_TITLE" xml:space="preserve">
+    <value>Modulator State</value>
+  </data>
+  <data name="MICROAMP_MEASUREMENT" xml:space="preserve">
+    <value>uA</value>
+  </data>
+  <data name="MODULATOR_COMMUNICATION_ERROR_STATUS_1" xml:space="preserve">
+    <value>Modulator communications have been lost.</value>
+  </data>
+  <data name="MODULATOR_INTERLOCK_STATUS_1" xml:space="preserve">
+    <value>Modulator has encountered an interlock.</value>
+  </data>
+  <data name="MOD_FILAMENT_CURRENT_TITLE" xml:space="preserve">
+    <value>Modulator Filament Current</value>
+  </data>
+  <data name="MOD_FILAMENT_VOLTAGE_TITLE" xml:space="preserve">
+    <value>Modulator Filament Voltage</value>
+  </data>
+  <data name="REFLECTED_POWER_TITLE" xml:space="preserve">
+    <value>RF Reflected Power</value>
+  </data>
+  <data name="REFLECTED_RF_POWER_STATUS_1" xml:space="preserve">
+    <value>Magnetron encountered high reverse RF power.</value>
+  </data>
+  <data name="SF6_PRESSURE_STATUS_1" xml:space="preserve">
+    <value>Linac SF6 gas is low.  Please refill SF6 gas to continue operations.</value>
+  </data>
+  <data name="SOLENOID_CURRENT_MONITOR_TITLE" xml:space="preserve">
+    <value>Solenoid Magnet Current</value>
+  </data>
+  <data name="SOLENOID_CURRENT_STATUS_1" xml:space="preserve">
+    <value>Solenoid current is out of range.</value>
+  </data>
+  <data name="SOLENOID_CURRENT_TITLE" xml:space="preserve">
+    <value>Solenoid Current</value>
+  </data>
+  <data name="SOLENOID_VOLTAGE_MONITOR_TITLE" xml:space="preserve">
+    <value>Solenoid Magnet Voltage</value>
+  </data>
+  <data name="STATUSBAR_TITLE" xml:space="preserve">
+    <value>Linac Status</value>
+  </data>
+  <data name="STEERING_1_CURRENT_TITLE" xml:space="preserve">
+    <value>Steering 1 Current</value>
+  </data>
+  <data name="STEERING_2_CURRENT_TITLE" xml:space="preserve">
+    <value>Steering 2 Current</value>
+  </data>
+  <data name="STEERING_X_I_MON_TITLE" xml:space="preserve">
+    <value>Steering Magnet X Current Monitor</value>
+  </data>
+  <data name="STEERING_Y_I_MON_TITLE" xml:space="preserve">
+    <value>Steering Magnet Y Current Monitor</value>
+  </data>
+  <data name="STEPPER_PV_TITLE" xml:space="preserve">
+    <value>Stepper Process Variable</value>
+  </data>
+  <data name="TCU_TEMPERATURE_TITLE" xml:space="preserve">
+    <value>TCU Temperature</value>
+  </data>
+  <data name="TEMPERATURE_MEASUREMENT" xml:space="preserve">
+    <value>°F</value>
+  </data>
+  <data name="UNKNOWN_RESOURCE" xml:space="preserve">
+    <value>UNKNOWN ERROR</value>
+  </data>
+  <data name="VOLTAGE_MEASUREMENT" xml:space="preserve">
+    <value>V</value>
+  </data>
+  <data name="WARNING_MESSAGES_TITLE" xml:space="preserve">
+    <value>Linac System Warnings</value>
+  </data>
+  <data name="WATTAGE_MEASUREMENT" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="WAVEGUIDE_ARC_STATUS_1" xml:space="preserve">
+    <value>Linac RF components experienced excessive arcing in power.</value>
+  </data>
+</root>

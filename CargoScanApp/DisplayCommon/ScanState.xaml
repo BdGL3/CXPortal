@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="L3.Cargo.Scan.Display.Common.ScanState"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="192" d:DesignWidth="521">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/L3.Cargo.Common.Dashboard;component/Presentation/Styles.xaml" />
+                <ResourceDictionary Source="/L3.Cargo.Scan.Display.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border Style="{StaticResource WidgetBorder}" Effect="{StaticResource BorderDropShadow}">
+        <Grid Background="{StaticResource WidgetBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Margin="10,10,10,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/ScanIcon.ico" Effect="{StaticResource GeneralDropShadow}" />
+                <Viewbox Grid.Column="1" Margin="5,0" HorizontalAlignment="Left">
+                    <TextBlock Text="{Binding Path=SCAN_STATUS_TITLE, Source={StaticResource Resources}}" Style="{StaticResource DashboardHeaderText}" />
+                </Viewbox>
+            </Grid>
+            <DockPanel Grid.Row="1" Style="{StaticResource WidgetLine}" />
+            <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="5,0,5,5">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <TextBlock Style="{StaticResource WidgetStateHeaderText}" Text="{Binding Path=SCAN_STATE_TITLE, Source={StaticResource Resources}}" />
+                        <DockPanel Style="{StaticResource WidgetStateLine}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Margin="20,5,5,5" Height="24" RenderOptions.BitmapScalingMode="HighQuality" Name="ScanStateImage" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource WidgetStateText}" Name="ScanStateText" />
+                        </Grid>
+                        <TextBlock Style="{StaticResource WidgetStateHeaderText}" Text="{Binding Path=SCAN_AREA_CLEAR_TITLE, Source={StaticResource Resources}}" />
+                        <DockPanel Style="{StaticResource WidgetStateLine}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="54" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Margin="20,5,5,5" Height="24" RenderOptions.BitmapScalingMode="HighQuality" Name="ScanAreaImage" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource WidgetStateText}" Name="ScanAreaText" />
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Stretch">
+                        <TextBlock Style="{StaticResource WidgetStateHeaderText}" Text="{Binding Path=SCAN_STEP_TITLE, Source={StaticResource Resources}}" />
+                        <DockPanel Style="{StaticResource WidgetStateLine}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Margin="20,5,5,5" Height="24" RenderOptions.BitmapScalingMode="HighQuality" Name="ScanDriveStateImage" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource WidgetStateText}" Name="ScanDriveStateText" />
+                        </Grid>
+                        <TextBlock Style="{StaticResource WidgetStateHeaderText}" Text="{Binding Path=SCAN_STEP_LAST_TITLE, Source={StaticResource Resources}}" />
+                        <DockPanel Style="{StaticResource WidgetStateLine}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Margin="20,5,5,5" Height="24" RenderOptions.BitmapScalingMode="HighQuality" Name="DirectionImage" />
+                            <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource WidgetStateText}" Name="LastStepText" />
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>

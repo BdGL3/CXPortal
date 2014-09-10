@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BARCODE_READ" xml:space="preserve">
+    <value>حساس قارئ الباركود</value>
+  </data>
+  <data name="BARCODE_READ_TITLE" xml:space="preserve">
+    <value>حالة قارئ الباركود</value>
+  </data>
+  <data name="BARCODE_STATE_0" xml:space="preserve">
+    <value>الباركود فى حالة جيدة</value>
+  </data>
+  <data name="BARCODE_STATE_1" xml:space="preserve">
+    <value>الباركود فى حالة سيئة</value>
+  </data>
+  <data name="COMPLETE_INFO_TITLE" xml:space="preserve">
+    <value>معلومات عن نظام السلامة</value>
+  </data>
+  <data name="DOPPLER_RADAR_SENSOR_LEFT" xml:space="preserve">
+    <value>حساسات سرعة السيارة</value>
+  </data>
+  <data name="DOPPLER_RADAR_SENSOR_LEFT_TITLE" xml:space="preserve">
+    <value>حساس سرعة السيارة فى المخرج الجانب الايسر</value>
+  </data>
+  <data name="DOPPLER_RADAR_SENSOR_RIGHT" xml:space="preserve">
+    <value>حساسات سرعة السيارة</value>
+  </data>
+  <data name="DOPPLER_RADAR_SENSOR_RIGHT_TITLE" xml:space="preserve">
+    <value>حساس سرعة السيارة فى المخرج الجانب الايمن</value>
+  </data>
+  <data name="ERROR_MESSAGES_TITLE" xml:space="preserve">
+    <value>اخطاء نظام السلامة</value>
+  </data>
+  <data name="ESTOP_OPERATORS_CONSOLE_1" xml:space="preserve">
+    <value>يلزم اعاده مفتاح الطوارئ بلوحة التحكم الي وضعه الطبيعي</value>
+  </data>
+  <data name="ESTOP_OPERATORS_CONSOLE_2" xml:space="preserve">
+    <value>تم اعادة تشغيل مفتاح الطوارئ, يجب الضغط على مفتاح "ازالة اخطاء السلامة"</value>
+  </data>
+  <data name="ESTOP_OPERATORS_CONSOLE_TITLE" xml:space="preserve">
+    <value>مفتاح الطوارئ بلوحة التحكم (ES1)</value>
+  </data>
+  <data name="ESTOP_STATE_0" xml:space="preserve">
+    <value>لا يوجد مشكلة</value>
+  </data>
+  <data name="ESTOP_STATE_1" xml:space="preserve">
+    <value>معشق</value>
+  </data>
+  <data name="ESTOP_STATE_2" xml:space="preserve">
+    <value>يلزم حل المشاكل </value>
+  </data>
+  <data name="ESTOP_STATUS_TITLE" xml:space="preserve">
+    <value>مفاتيح الطوارئ</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_LEFT_1" xml:space="preserve">
+    <value>يلزم اعاده مفتاح الطوارئ الايسر بمدخل الممر الي وضعه الطبيعي</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_LEFT_2" xml:space="preserve">
+    <value>تم اعادة تشغيل مفتاح الطوارئ الايسر بمدخل الممر, يجب الضغط على مفتاح "ازالة اخطاء السلامة"</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_LEFT_TITLE" xml:space="preserve">
+    <value>مفتاح الطوارئ الايسر بمدخل الممر (ES4)</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_RIGHT_1" xml:space="preserve">
+    <value>يلزم اعاده مفتاح الطوارئ الايمن بمدخل الممر الي وضعه الطبيعي</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_RIGHT_2" xml:space="preserve">
+    <value>تم اعادة تشغيل مفتاح الطوارئ الايمن بمدخل الممر, يجب الضغط على مفتاح "ازالة اخطاء السلامة"</value>
+  </data>
+  <data name="ESTOP_TUNNEL_ENTRY_RIGHT_TITLE" xml:space="preserve">
+    <value>مفتاح الطوارئ الايمن بمدخل الممر (ES3)</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_LEFT_1" xml:space="preserve">
+    <value>يلزم اعاده مفتاح الطوارئ الايسر بمخرج الممر الي وضعه الطبيعي</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_LEFT_2" xml:space="preserve">
+    <value>تم اعادة تشغيل مفتاح الطوارئ الايسر بمخرج الممر, يجب الضغط على مفتاح "ازالة اخطاء السلامة"</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_LEFT_TITLE" xml:space="preserve">
+    <value>مفتاح الطوارئ الايسر بمخرج الممر (ES6)</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_RIGHT_1" xml:space="preserve">
+    <value>يلزم اعاده مفتاح الطوارئ الايمن بمخرج الممر الي وضعه الطبيعي</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_RIGHT_2" xml:space="preserve">
+    <value>تم اعادة تشغيل مفتاح الطوارئ الايمن بمخرج الممر, يجب الضغط على مفتاح "ازالة اخطاء السلامة"</value>
+  </data>
+  <data name="ESTOP_TUNNEL_EXIT_RIGHT_TITLE" xml:space="preserve">
+    <value>مفتاح الطوارئ الايمن بمخرج الممر (ES5)</value>
+  </data>
+  <data name="ESTOP_VERT_DETECTOR_BOX_1" xml:space="preserve">
+    <value>توقيف طارئ في الباب الخلفي الايسر، ويحتاج إلى إعادة تعيين يدويا.</value>
+  </data>
+  <data name="ESTOP_VERT_DETECTOR_BOX_2" xml:space="preserve">
+    <value>توقيف طارئ الباب الخلفي الايسر ينتظر الضغط على زر تصحيح الاخطأ</value>
+  </data>
+  <data name="ESTOP_VERT_DETECTOR_BOX_TITLE" xml:space="preserve">
+    <value>الباب الخلفي الايسر (ES7)</value>
+  </data>
+  <data name="ESTOP_XRAY_SOURCE_AREA_1" xml:space="preserve">
+    <value>توقيف طارئ الباب الامامي الايسر، ويحتاج إلى إعادة تعيين يدويا.</value>
+  </data>
+  <data name="ESTOP_XRAY_SOURCE_AREA_2" xml:space="preserve">
+    <value>توقيف طارئ الباب الامامي الايسر ينتظر الضغط على زر تصحيح الاخطاء</value>
+  </data>
+  <data name="ESTOP_XRAY_SOURCE_AREA_TITLE" xml:space="preserve">
+    <value>مفتاح غرفة مصدر الاشعة (ES2)</value>
+  </data>
+  <data name="INFO_BUTTON_DESCRIPTION" xml:space="preserve">
+    <value>اظهار جميع معلومات نظام السلامة</value>
+  </data>
+  <data name="INFO_BUTTON_TITLE" xml:space="preserve">
+    <value>نظام السلامة</value>
+  </data>
+  <data name="INTERLOCK_BYPASS_DISABLE" xml:space="preserve">
+    <value>تعطيل فحص التشابك</value>
+  </data>
+  <data name="INTERLOCK_BYPASS_ENABLE" xml:space="preserve">
+    <value>تمكين فحص التشابك</value>
+  </data>
+  <data name="INTERLOCK_BYPASS_TITLE" xml:space="preserve">
+    <value>تجاوز التشابك</value>
+  </data>
+  <data name="INTERLOCK_DOOR_0" xml:space="preserve">
+    <value>باب غرفة مصدر الاشعة مفتوح ولا يمكن اتمام عملية المسح حتي يتم غلقه</value>
+  </data>
+  <data name="INTERLOCK_DOOR_2" xml:space="preserve">
+    <value>تم اغلاق باب مقصورة السائق الايسر، يجب الضغط على زر تصحيح الاخطاء قبل أن تتمكن من إجراء الفحص.</value>
+  </data>
+  <data name="INTERLOCK_DOOR_TITLE" xml:space="preserve">
+    <value>باب غرفة مصدر الاشعة</value>
+  </data>
+  <data name="INTERLOCK_KSW_XRAY_ENABLE_0" xml:space="preserve">
+    <value>مفتاح تشغيل الاشعة السينية مغلق و يجب وضع المفتاح فى حاله التشغيل حتي يمكن اتمام عمليه المسح</value>
+  </data>
+  <data name="INTERLOCK_KSW_XRAY_ENABLE_2" xml:space="preserve">
+    <value>مفتاح تشغيل الاشعة السينية فى حالة التشغيل, يجب الضغط على "مفتاح ازاله اخطاء الامان" قبل بدء عملية المسح.</value>
+  </data>
+  <data name="INTERLOCK_KSW_XRAY_ENABLE_TITLE" xml:space="preserve">
+    <value>مفتاح تشغيل الاشعة السينية (KSW1)</value>
+  </data>
+  <data name="INTERLOCK_LC1_0" xml:space="preserve">
+    <value>الستارة الضوئية 1# مسدودة, لا يمكن اتمام عملية المسح حتى يتم اخلاء مسار الستارة الضوئية.</value>
+  </data>
+  <data name="INTERLOCK_LC1_1" xml:space="preserve">
+    <value>الستارة الضوئية 1# غير مسدودة</value>
+  </data>
+  <data name="INTERLOCK_LC1_2" xml:space="preserve">
+    <value>الستارة الضوئية 1# مسدودة, يجب الضغط على "مفتاح ازاله اخطاء الامان" قبل بدء عملية المسح.</value>
+  </data>
+  <data name="INTERLOCK_LC1_TITLE" xml:space="preserve">
+    <value>الستارة الضوئية (LC1)</value>
+  </data>
+  <data name="INTERLOCK_LC2_0" xml:space="preserve">
+    <value>الستارة الضوئية 1# مسدودة, لا يمكن اتمام عملية المسح حتى يتم اخلاء مسار الستارة الضوئية.</value>
+  </data>
+  <data name="INTERLOCK_LC2_1" xml:space="preserve">
+    <value>الستارة الضوئية 1# غير مسدودة</value>
+  </data>
+  <data name="INTERLOCK_LC2_2" xml:space="preserve">
+    <value>الستارة الضوئية 2# مسدودة, يجب الضغط على "مفتاح ازاله اخطاء الامان" قبل بدء عملية المسح.</value>
+  </data>
+  <data name="INTERLOCK_LC2_TITLE" xml:space="preserve">
+    <value>الستارة الضوئية (LC2)</value>
+  </data>
+  <data name="INTERLOCK_LC_SAFETY_STATE_0" xml:space="preserve">
+    <value>مسار الستائر الضوئية مسدود</value>
+  </data>
+  <data name="INTERLOCK_LC_SAFETY_STATE_1" xml:space="preserve">
+    <value>خالى من الاخطاء</value>
+  </data>
+  <data name="INTERLOCK_LC_SAFETY_STATE_2" xml:space="preserve">
+    <value>يجب ازاله الاخطاء</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_1_1" xml:space="preserve">
+    <value>تم استشعار شخص بحساس استشعار الاشخاص 1#. لا يمكن اتمام عملية المسح حتى يتم اخلاء المسار.</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_1_2" xml:space="preserve">
+    <value>تم استشعار شخص بحساس استشعار الاشخاص 1#. يجب الضغط على "مفتاح ازاله اخطاء الامان" قبل بدء عملية المسح.</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_1_TITLE" xml:space="preserve">
+    <value>حساس استشعار الاشخاص (MDS1-P)</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_2_1" xml:space="preserve">
+    <value>تم استشعار شخص بحساس استشعار الاشخاص 2#. لا يمكن اتمام عملية المسح حتى يتم اخلاء المسار.</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_2_2" xml:space="preserve">
+    <value>تم استشعار شخص بحساس استشعار الاشخاص 2#. يجب الضغط على "مفتاح ازاله اخطاء الامان" قبل بدء عملية المسح.</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_2_TITLE" xml:space="preserve">
+    <value>حساس استشعار الاشخاص (MDS2-P)</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_STATE_0" xml:space="preserve">
+    <value>خالى من الاخطاء</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_STATE_1" xml:space="preserve">
+    <value>تم استشعار اشخاص</value>
+  </data>
+  <data name="INTERLOCK_MDS_PERSONNEL_SAFETY_STATE_2" xml:space="preserve">
+    <value>يجب ازاله الاخطاء</value>
+  </data>
+  <data name="INTERLOCK_STATE_0" xml:space="preserve">
+    <value>لا يوجد مشكلة</value>
+  </data>
+  <data name="INTERLOCK_STATE_1" xml:space="preserve">
+    <value>يوجد مشلكة</value>
+  </data>
+  <data name="INTERLOCK_STATE_2" xml:space="preserve">
+    <value>يجب ازاله الاخطاء</value>
+  </data>
+  <data name="INTERLOCK_STATE_TITLE" xml:space="preserve">
+    <value>حساسات الامان</value>
+  </data>
+  <data name="IN_MDS3_VEHICLE_MOTION_DET_1" xml:space="preserve">
+    <value>حساس الحركة #3 استشعر بوجود سيارة ويلزم الضغط علي زر اعاده الشغيل </value>
+  </data>
+  <data name="IN_MDS3_VEHICLE_MOTION_DET_TITLE" xml:space="preserve">
+    <value>حساس الحركة (MDS3-P)</value>
+  </data>
+  <data name="IN_MDS4_VEHICLE_MOTION_DET_1" xml:space="preserve">
+    <value>حساس الحركة #4 استشعر بوجود سيارة ولا يمكن اتمام عملية المسح حتي يتم اخلاء المنطقة</value>
+  </data>
+  <data name="IN_MDS4_VEHICLE_MOTION_DET_TITLE" xml:space="preserve">
+    <value>حساس الحركة (MDS4-P)</value>
+  </data>
+  <data name="IN_MDS_VEHICLE_MOTION_DET_SAFETY_STATE_0" xml:space="preserve">
+    <value>لا يوجد مشكلة</value>
+  </data>
+  <data name="IN_MDS_VEHICLE_MOTION_DET_SAFETY_STATE_1" xml:space="preserve">
+    <value>يوجد سيارة</value>
+  </data>
+  <data name="KSW_INTERLOCK_BYPASS_0" xml:space="preserve">
+    <value>حساسات الامان معطلة.</value>
+  </data>
+  <data name="KSW_INTERLOCK_BYPASS_1" xml:space="preserve">
+    <value>حساسات الامان مفعلة.</value>
+  </data>
+  <data name="KSW_INTERLOCK_BYPASS_TITLE" xml:space="preserve">
+    <value>زر تعطيل حساسات الامان. (KSW2)</value>
+  </data>
+  <data name="LOCATION" xml:space="preserve">
+    <value>اماكن</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_1" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 2 </value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_10" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 3 - 4 و 1 - 4  </value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_11" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 2 و 2 - 3 و3 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_12" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 2 و 2 - 3 و 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_13" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 2 و 3 - 4 و 1 - 4 </value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_14" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 2 - 3 و 3 - 4 و 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_15" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 2 و 2 - 3 و 3 - 4 و 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_2" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 2 - 3</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_3" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 3 - 4 </value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_4" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_5" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 2 و 2 - 3</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_6" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 2 و 3 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_7" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 2 و 1 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_8" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 2 - 3 و 3 - 4</value>
+  </data>
+  <data name="PERIMETER_INTRUSIONS_STATE_9" xml:space="preserve">
+    <value>هناك شخص دخل المنطقة التخيلية للاشعة ما بين نقطة 1 - 4 و 2 - 3</value>
+  </data>
+  <data name="PERIMETER_MODE_0" xml:space="preserve">
+    <value>تعطيل متابعة المنطقة التخيلية للاشعة.</value>
+  </data>
+  <data name="PERIMETER_MODE_1" xml:space="preserve">
+    <value>تفعيل متابعة المنطقة التخيلية للاشعة.</value>
+  </data>
+  <data name="PERIMETER_MODE_TITLE" xml:space="preserve">
+    <value>تحديد متابعة المنطقة التخيلية للاشعة.</value>
+  </data>
+  <data name="RADIATION_MONITOR_1" xml:space="preserve">
+    <value>الاشعة تعدت الحد المسموح به داخل الكابينة. اضغط على مفتاح اعادة تشغيل نظام الامان.</value>
+  </data>
+  <data name="RADIATION_MONITOR_2" xml:space="preserve">
+    <value>الاشعة على وشك تخطى الحد المسموح به داخل الكابينة.</value>
+  </data>
+  <data name="RADIATION_MONITOR_STATE_0" xml:space="preserve">
+    <value>لا يوجد مشكلة</value>
+  </data>
+  <data name="RADIATION_MONITOR_STATE_1" xml:space="preserve">
+    <value>يجب ازاله الاخطاء</value>
+  </data>
+  <data name="RADIATION_MONITOR_STATE_2" xml:space="preserve">
+    <value>لا يوجد مشكلة</value>
+  </data>
+  <data name="RADIATION_MONITOR_TITLE" xml:space="preserve">
+    <value>مراقبة الاشعة</value>
+  </data>
+  <data name="SAFETY_RESET_FAULTS_BUTTON" xml:space="preserve">
+    <value>مسح اخطاء نظام الامان</value>
+  </data>
+  <data name="SAFETY_RESET_TITLE" xml:space="preserve">
+    <value>اخطاء نظام الامان</value>
+  </data>
+  <data name="SAFETY_STATES_TITLE" xml:space="preserve">
+    <value>انظمة الامان</value>
+  </data>
+  <data name="STATE" xml:space="preserve">
+    <value>حالة</value>
+  </data>
+  <data name="STATUSBAR_TITLE" xml:space="preserve">
+    <value>حالة نظام الامان</value>
+  </data>
+  <data name="SUMMARY_STATUS_TITLE" xml:space="preserve">
+    <value>حالة التشغيل</value>
+  </data>
+  <data name="UNKNOWN_RESOURCE" xml:space="preserve">
+    <value>خطأ غير معروف</value>
+  </data>
+  <data name="VEHICLE_NOT_DETECTED_0" xml:space="preserve">
+    <value>لا يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_NOT_DETECTED_1" xml:space="preserve">
+    <value>يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_LEFT_1" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (بعد الاشعة الجانب الايسر) لا يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_LEFT_2" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (بعد الاشعة الجانب الايسر) يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_LEFT_TITLE" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (بعد الاشعة الجانب الايسر)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_RIGHT_1" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (بعد الاشعة الجانب الايمن) لا يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_RIGHT_2" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (بعد الاشعة الجانب الايمن) يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AFTER_XRAY_RIGHT_TITLE" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (بعد الاشعة الجانب الايمن)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_LEFT_1" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (عند البوابة الجنب الايسر) لا يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_LEFT_2" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (عند البوابة الجنب الايسر) يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_LEFT_TITLE" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (عند البوابة الجنب الايسر)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_RIGHT_1" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (عند البوابة الجنب الايمن) لا يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_RIGHT_2" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (عند البوابة الجنب الايمن) يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_AT_GATE_RIGHT_TITLE" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (عند البوابة الجنب الايمن)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_LEFT_1" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (قبل الاشعة الجانب الايسر) لا يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_LEFT_2" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (قبل الاشعة الجانب الايسر) يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_LEFT_TITLE" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (قبل الاشعة الجانب الايسر)</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_RIGHT_1" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (قبل الاشعة الجانب الايمن) لا يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_RIGHT_2" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (قبل الاشعة الجانب الايمن) يوجد سيارة</value>
+  </data>
+  <data name="VEHICLE_SENSOR_BEFORE_XRAY_RIGHT_TITLE" xml:space="preserve">
+    <value>حالة حساس استشعار السيارات (قبل الاشعة الجانب الايمن)</value>
+  </data>
+  <data name="VEHICLE_TYPE" xml:space="preserve">
+    <value>نوع السيارة</value>
+  </data>
+  <data name="VEHICLE_TYPE_STATE_0" xml:space="preserve">
+    <value>لم يتم تحديد نوع السيارة</value>
+  </data>
+  <data name="VEHICLE_TYPE_STATE_1" xml:space="preserve">
+    <value>سيارة صغيرة الحجم</value>
+  </data>
+  <data name="VEHICLE_TYPE_STATE_2" xml:space="preserve">
+    <value>سيارة متوسطة الحجم</value>
+  </data>
+  <data name="VEHICLE_TYPE_STATE_3" xml:space="preserve">
+    <value>سيارة كبيرة الحجم</value>
+  </data>
+  <data name="VEHICLE_TYPE_TITLE" xml:space="preserve">
+    <value>حساس تحديد نوع السيارة</value>
+  </data>
+  <data name="WARNING_MESSAGES_TITLE" xml:space="preserve">
+    <value>تحذيرات نظام الامان</value>
+  </data>
+  <data name="WARNING_STATE_0" xml:space="preserve">
+    <value>معطل </value>
+  </data>
+  <data name="WARNING_STATE_1" xml:space="preserve">
+    <value>مفعل</value>
+  </data>
+  <data name="WARNING_STATE_2" xml:space="preserve">
+    <value>فشل التفعيل </value>
+  </data>
+  <data name="WARNING_STATE_TITLE" xml:space="preserve">
+    <value>نظام التحذير </value>
+  </data>
+  <data name="WARNING_STATUS_TITLE" xml:space="preserve">
+    <value>نظام التحذير </value>
+  </data>
+</root>

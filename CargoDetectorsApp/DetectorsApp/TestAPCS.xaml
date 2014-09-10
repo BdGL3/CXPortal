@@ -1,0 +1,234 @@
+﻿<UserControl x:Class="DetectorsApp.TestAPCS"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="600" Width="1100" Loaded="OnLoad">
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="140"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Name="ScanModePNL" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Name="ScanModeGetBTN" Content="Get" Height="30" Click="ScanModeGetBTN_Click" Margin="0,0,10,0"/>
+            <Button Name="ScanModeSetBTN" Content="Set" Height="30" Click="ScanModeSetBTN_Click" />
+            <Label Content="Scan Mode" />
+        </StackPanel>
+
+        <StackPanel Name="OperatingModePNL" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Name="OperatingModeGetBTN" Content="Get" Height="30" Click="OperatingModeGetBTN_Click" Margin="0,0,10,0"/>
+            <Button Name="OperatingModeSetBTN" Content="Set" Height="30" Click="OperatingModeSetBTN_Click" />
+            <Label Content="Operating Mode" />
+        </StackPanel>
+
+        <StackPanel Name="PulseFrequencyPNL" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Name="PulseFrequencyGetBTN" Content="Get" Height="30" Click="PulseFrequencyGetBTN_Click" Margin="0,0,10,0"/>
+            <Button Name="PulseFrequencySetBTN" Content="Set" Height="30" Click="PulseFrequencySetBTN_Click" />
+            <Label Content="Static Pulse Frequency" />
+        </StackPanel>
+
+        <StackPanel Name="TriggerRatioPNL" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Name="TriggerRatioGetBTN" Content="Get" Height="30" Click="TriggerRatioGetBTN_Click" Margin="0,0,10,0"/>
+            <Button Name="TriggerRatioSetBTN" Content="Set" Height="30" Click="TriggerRatioSetBTN_Click"/>
+            <Label Content="Adaptive Mode Trigger Ratio" />
+        </StackPanel>
+
+        <StackPanel Name="SpeedFeedbackPNL" Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Name="SpeedFeedbackGetBTN" Content="Get" Height="30" Click="SpeedFeedbackGetBTN_Click" Margin="0,0,10,0"/>
+            <Button Name="SpeedFeedbackSetBTN" Content="Set" Height="30" Click="SpeedFeedbackSetBTN_Click"/>
+            <Label Content="Adaptive Speed Feedback" />
+        </StackPanel>
+
+        <StackPanel Name="PulseWidthConfiguredPNL" Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Name="PulseWidthConfiguredGetBTN" Content="Get" Height="30" Click="PulseWidthConfiguredGetBTN_Click" Margin="0,0,10,0"/>
+            <Button Name="PulseWidthConfiguredSetBTN" Content="Set" Height="30" Click="PulseWidthConfigureSetBTN_Click" />
+            <Label Content="Pulse Width Configuration" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Name="PulseWidthGetBTN" Content="Get" Height="30" Click="PulseWidthGetBTN_Click" Margin="0,0,10,0"/>
+            <Button Name="PulseWidthSetBTN" Content="Set" Height="30" Click="PulseWidthSetBTN_Click" />
+            <Label Content="Pulse Width" />
+        </StackPanel>
+
+        <Button Name="ResetLineIdentityBTN" Grid.Row="7" Content="Reset Line Identities" Height="Auto" HorizontalAlignment="Center" Margin="3" VerticalAlignment="Center" Width="Auto" Click="ResetLineIdentityBTN_Click" />
+        <Button Name="ResetBoardBTN" Grid.Row="7" Grid.Column="1" Content="Reset Board"  Height="Auto" Width="100" HorizontalAlignment="Center" Click="ResetBoardBTN_Click" Margin="0,13,0,12" VerticalAlignment="Center" />
+        <Button Name="QueryStateBTN" Grid.Row="7" Grid.Column="2" Content="Query State"  Height="Auto" Width="100" HorizontalAlignment="Center" Margin="0,13,0,12" VerticalAlignment="Center" Click="QueryStateBTN_Click"/>
+
+        <GroupBox Grid.Row="8" Grid.ColumnSpan="4" Header="CAN Message" HorizontalAlignment="Left">
+            <TextBlock Name="CANMessageTBK" Width="500" />
+        </GroupBox>
+
+        <Label Grid.Row="9" Content="Adaptive Mode Speed"  VerticalAlignment="Center"/>
+        <Label Grid.Row="10" Content="Sign Of Life Sequence:"  VerticalAlignment="Center" HorizontalContentAlignment="Right" />
+
+        <StackPanel Name="ScanModeHighEnergyPNL" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="ScanModeHighEnergyRDO" GroupName="ScanModeGRP" VerticalAlignment="Center" />
+            <Label Content="High Energy"/>
+        </StackPanel>
+
+        <StackPanel Name="ScanModeLowEnergyPNL" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="ScanModeLowEnergyRDO" GroupName="ScanModeGRP"  VerticalAlignment="Center"/>
+            <Label Content="Low Energy"/>
+        </StackPanel>
+
+        <StackPanel Name="ScanModeLowDosePNL" Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="ScanModeLowDoseRDO" GroupName="ScanModeGRP"  VerticalAlignment="Center"/>
+            <Label Content="Low Dose"/>
+        </StackPanel>
+
+        <StackPanel Name="ScanModeDualEnergyPNL" Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="ScanModeDualEnergyRDO" GroupName="ScanModeGRP"  VerticalAlignment="Center"/>
+            <Label Content="Dual Energy"/>
+        </StackPanel>
+
+        <StackPanel Name="OperatingModeMobileAdaptivePNL" Grid.Column="1" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="OperatingModeMobileAdaptiveRDO" GroupName="OperatingModeGRP"  VerticalAlignment="Center" />
+            <Label Content="Mobile Adaptive"/>
+        </StackPanel>
+
+        <StackPanel Name="OperatingModePortalAdaptivePNL" Grid.Column="2" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="OperatingModePortalAdaptiveRDO" GroupName="OperatingModeGRP"  VerticalAlignment="Center" />
+            <Label Content="Portal Adaptive"/>
+        </StackPanel>
+
+        <StackPanel Name="OperatingModeMobileNonAdaptivePNL" Grid.Column="3" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="OperatingModeMobileNonAdaptiveRDO" GroupName="OperatingModeGRP"  VerticalAlignment="Center" />
+            <Label Content="Mobile Non-Adaptive"/>
+        </StackPanel>
+
+        <StackPanel Name="OperatingModePortalNonAdaptivePNL" Grid.Column="4" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="OperatingModePortalNonAdaptiveRDO" GroupName="OperatingModeGRP"  VerticalAlignment="Center" />
+            <Label Content="Portal Non-Adaptive"/>
+        </StackPanel>
+
+        <GroupBox Grid.Column="5" Grid.Row="1" Header="Min Freq" HorizontalAlignment="Left">
+            <TextBox Name="OperatingModeMinimumTBX"  Width="115" TextAlignment="Center" FontSize="11" FontFamily="Courier New" HorizontalContentAlignment="Center" />
+        </GroupBox>
+
+        <GroupBox Grid.Column="6" Grid.Row="1" Header="Max Freq" HorizontalAlignment="Left">
+            <TextBox Name="OperatingModeMaximumTBX"  Width="115" FontFamily="Courier New" FontSize="11" HorizontalContentAlignment="Center" />
+        </GroupBox>
+
+        <StackPanel Name="PulseFrequencyMobileNonAdaptivePNL" Grid.Column="1" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseFrequencyMobileNonAdaptiveRDO" GroupName="PulseFrequencyGRP"  VerticalAlignment="Center" />
+            <Label Content="Mobile Non-Adaptive"/>
+        </StackPanel>
+
+        <StackPanel Name="PulseFrequencyPortalNonAdaptivePNL" Grid.Column="2" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseFrequencyPortalNonAdaptiveRDO" GroupName="PulseFrequencyGRP"  VerticalAlignment="Center" />
+            <Label Content="Portal Non-Adaptive"/>
+        </StackPanel>
+
+        <GroupBox Grid.Column="3" Grid.Row="2" Header="Freq" HorizontalAlignment="Left">
+            <TextBox Name="PulseFrequencyFrequencyTBX"  Width="115"/>
+        </GroupBox>
+
+        <StackPanel Name="TriggerRatioMobileAdaptivePNL" Grid.Column="1" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="TriggerRatioMobileAdaptiveRDO" GroupName="TriggerRatioGRP"  VerticalAlignment="Center" />
+            <Label Content="Mobile Adaptive"/>
+        </StackPanel>
+
+        <StackPanel Name="TriggerRatioPortalAdaptivePNL" Grid.Column="2" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="TriggerRatioPortalAdaptiveRDO" GroupName="TriggerRatioGRP"   VerticalAlignment="Center" />
+            <Label Content="Portal Adaptive"/>
+        </StackPanel>
+
+        <GroupBox Grid.Column="3" Grid.Row="3" Header="Ratio" HorizontalAlignment="Left">
+            <TextBox Name="TriggerRatioTBX"  Width="115"/>
+        </GroupBox>
+
+        <StackPanel Name="SpeedFeedbackDisabledPNL" Grid.Column="1" Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="SpeedFeedbackDisabledRDO" VerticalAlignment="Center" />
+            <Label Content="Disabled"/>
+        </StackPanel>
+
+        <StackPanel Name="SpeedFeedbackEnabledPNL" Grid.Column="2" Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="SpeedFeedbackEnabledRDO"  VerticalAlignment="Center" />
+            <Label Content="Enabled With Frequecy"/>
+        </StackPanel>
+
+        <GroupBox Grid.Column="3" Grid.Row="4" Header="Freq" HorizontalAlignment="Left">
+            <TextBox Name="SpeedFeedbackFrequencyTBX"  Width="115"/>
+        </GroupBox>
+
+        <StackPanel Name="PulseWidthConfigured1PNL" Grid.Column="1" Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseWidthConfigured1RDO" GroupName="PulseWidthConfiguredGRP"  VerticalAlignment="Center" />
+            <Label Content="1"/>
+        </StackPanel>
+
+        <StackPanel Name="PulseWidthConfigured2PNL" Grid.Column="2" Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseWidthConfigured2RDO" GroupName="PulseWidthConfiguredGRP"  VerticalAlignment="Center" />
+            <Label Content="2"/>
+        </StackPanel>
+
+        <StackPanel Name="PulseWidthConfigured3PNL" Grid.Column="3" Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseWidthConfigured3RDO" GroupName="PulseWidthConfiguredGRP"  VerticalAlignment="Center" />
+            <Label Content="3"/>
+        </StackPanel>
+
+        <StackPanel Name="PulseWidthConfigured4PNL" Grid.Column="4" Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseWidthConfigured4RDO" GroupName="PulseWidthConfiguredGRP"  VerticalAlignment="Center" />
+            <Label Content="4"/>
+        </StackPanel>
+
+        <GroupBox Grid.Column="5" Grid.Row="5" Header="Time(usec)" HorizontalAlignment="Left">
+            <TextBox Name="PulseWidthConfiguredTimeTBX"  Width="115" HorizontalContentAlignment="Center" FontFamily="Courier New" FontSize="11" />
+        </GroupBox>
+
+        <StackPanel Name="PulseWidth1PNL" Grid.Column="1" Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseWidth1RDO" GroupName="PulseWidthGRP"  VerticalAlignment="Center"/>
+            <Label Content="1"/>
+        </StackPanel>
+
+        <StackPanel Name="PulseWidth2PNL" Grid.Column="2" Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseWidth2RDO" GroupName="PulseWidthGRP"  VerticalAlignment="Center"/>
+            <Label Content="2"/>
+        </StackPanel>
+
+        <StackPanel Name="PulseWidth3PNL" Grid.Column="3" Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseWidth3RDO" GroupName="PulseWidthGRP"  VerticalAlignment="Center"/>
+            <Label Content="3"/>
+        </StackPanel>
+
+        <StackPanel Name="PulseWidth4PNL" Grid.Column="4" Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center">
+            <RadioButton Name="PulseWidth4RDO" GroupName="PulseWidthGRP"  VerticalAlignment="Center"/>
+            <Label Content="4"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="9" Orientation="Horizontal" VerticalAlignment="Center">
+            <Label Content="Mobile Adaptive"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="9" Orientation="Horizontal" VerticalAlignment="Center">
+            <Label Content="Portal Adaptive"/>
+        </StackPanel>
+
+        <GroupBox Grid.Column="3" Grid.Row="9" Header="Speed" HorizontalAlignment="Left">
+            <TextBlock Name="PulseWidthConfiguredTimeTBK"  Width="115"/>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Grid.Row="10" Header="Sequence" HorizontalAlignment="Left">
+            <TextBlock Name="SignOfLifeSequenceTBK"  Width="115" Text="{Binding Mode=TwoWay, Path=SignOfLifeSequence}" TextAlignment="Center" />
+        </GroupBox>
+        <Label Name="ResetDetectedLBL" Content="APCS Board Reset Detected!" Grid.Column="2" Grid.Row="10" Grid.RowSpan="2" Height="Auto" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" FontStyle="Normal" FontWeight="Normal" Foreground="Yellow" HorizontalContentAlignment="Center" Grid.ColumnSpan="1" Background="DarkRed" FontSize="8" Visibility="Hidden" />
+    </Grid>
+</UserControl>

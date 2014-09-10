@@ -1,0 +1,39 @@
+﻿<Window x:Class="OcrTestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="OCR Test Surrogate"
+        Height="546" Width="525" SizeToContent="WidthAndHeight"
+        Closed="Window_Closed"
+        Loaded="Window_Loaded">
+    <Grid>
+        <TabControl Name="OCRTestTabControl">
+            <TabItem Name="OCRSystemTestClient" Header="OCR System Simulator">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="106"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="OCR Service Mode" Height="52" HorizontalAlignment="Left" Margin="5" Name="groupBox1" VerticalAlignment="Top">
+                        <Grid Height="32">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="75" />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <RadioButton Content="Client" Height="16" HorizontalAlignment="Left" Margin="19,7,0,0" Name="ClientModeRBtn" VerticalAlignment="Top" Checked="ClientModeRBtn_Checked" IsChecked="False" />
+                            <RadioButton Content="Listener" Height="16" HorizontalAlignment="Left" Margin="9,7,0,0" Name="ListenerModeRBtn" VerticalAlignment="Top" Checked="ListenerModeRBtn_Checked" Grid.Column="1" IsChecked="True" />
+                        </Grid>
+                    </GroupBox>
+                    <Button Content="Start Service" Height="23" HorizontalAlignment="Left" Margin="213,25,0,0" Name="StartTestBtn" VerticalAlignment="Top" Width="75" Click="StartTestBtn_Click" />
+                    <Button Content="Unregister" Height="23" HorizontalAlignment="Right" Margin="0,25,85,0" Name="UnregisterBtn" VerticalAlignment="Top" Width="75" Click="UnregisterBtn_Click" />
+                    <GroupBox Header="Message received:" Height="54" HorizontalAlignment="Left" Margin="6,52,0,0" Name="MessageReceived" VerticalAlignment="Top" Width="265">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Name="ReceivedMessageTextBlock" HorizontalAlignment="Left" Width="250" Text="{Binding Path=ReceivedMessage}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <CheckBox Content="Connected" Height="22" HorizontalAlignment="Right" Margin="0,69,98,0" Name="ConnectedCkBox" VerticalAlignment="Top" IsHitTestVisible="False" DataContext="{Binding Path=IsConnected}" Width="84" />
+                    <ListBox Name="LogArea" ItemsSource="{Binding Logger}" IsEnabled="False" Margin="5,3,5,6" Height="360" Grid.Row="1" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

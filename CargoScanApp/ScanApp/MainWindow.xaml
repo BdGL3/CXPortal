@@ -1,0 +1,9 @@
+﻿<Window x:Class="ScanApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowState="Minimized" Title="Scan Application"
+        Height="65" Width="150" Icon="/ScanApp;component/ScanIcon.ico" Closing="Window_Closing">
+    <Grid>
+        <TextBlock Text="Scan Running" />
+    </Grid>
+</Window>

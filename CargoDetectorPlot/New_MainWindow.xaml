@@ -1,0 +1,515 @@
+﻿<Window x:Class="L3.Cargo.DetectorPlot.DetectorPlot"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:MSChart="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+        Title="MainWindow" Height="500" Width="1250" >   <!--MinHeight="440" MinWidth="1000">-->
+    <ScrollViewer Name="MainScrollViewer" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+    <Grid>
+        <TabControl Name="tabControl1" SelectionChanged="tabControl1_SelectionChanged" BorderBrush="Black" BorderThickness="1" >
+            <TabItem Header="General">
+                <Grid ShowGridLines="False" Background="LightCyan">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions> 
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <!-- all elements -->
+                        <GroupBox Grid.Column="7" Grid.ColumnSpan="22" Grid.Row="8" Grid.RowSpan="11" BorderBrush="Black" BorderThickness="1" Name="TimeModeSettingsGB">
+                        <GroupBox.Header>
+                            <Label Foreground="Black">Time Mode Settings</Label>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions> 
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Text="Number of readings"></TextBlock>
+                            <TextBlock Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Text="Detectors to Display"></TextBlock>
+                                <ListBox Grid.Column="1" Grid.Row="2" Grid.RowSpan="5" Grid.ColumnSpan="2" Name="nofreadtbox" SelectionChanged="nofreadtbox_SelectionChanged"></ListBox> 
+                            <WindowsFormsHost Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Name="SelDetHost"></WindowsFormsHost> 
+                            <ListBox Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="4" Name="MainSeldetLBox" SelectionChanged="MainSeldetLBox_SelectionChanged"></ListBox>
+                                <Button Grid.Column="6" Grid.Row ="3" Content="Add" Name="MainAddDetBtn" Grid.ColumnSpan="2" Margin="8,0,41,0" Height="25" Width="55" Click="MainAddDetBtn_Click"></Button>
+                                <Button Grid.Column="6" Grid.Row ="4" Content="Remove" Name="MainRemoveDetBtn" Margin="10,13,39,13" Grid.RowSpan="2" Grid.ColumnSpan="2" Height="25" Width="55" Click="MainRemoveDetBtn_Click"></Button>
+                                <Button Grid.Column="6" Grid.Row ="6" Content="Clear" Name="MainClearDetSelBtn" Grid.ColumnSpan="2" Margin="12,0,37,0" Height="25" Width="55" Click="MainClearDetSelBtn_Click"></Button>
+                            <GroupBox Grid.Column="8" Grid.Row="1" Grid.RowSpan="6" Grid.ColumnSpan="9">
+                                <GroupBox.Header>
+                                    <Label Foreground="Black">Selected Detector Info</Label>
+                                </GroupBox.Header>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="5* "/>
+                                        <RowDefinition Height="10* "/>
+                                        <RowDefinition Height="5* "/>
+                                        <RowDefinition Height="10* "/>
+                                        <RowDefinition Height="5* "/>
+                                        <RowDefinition Height="10* "/>
+                                        <RowDefinition Height="5* "/>
+                                        <RowDefinition Height="10* "/>
+                                        <RowDefinition Height="5* "/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="10*"/>
+                                        <ColumnDefinition Width="90*" />
+                                        <ColumnDefinition Width="30*" />
+                                        <ColumnDefinition Width="10*" />
+                                        <ColumnDefinition Width="90*" />
+                                        <ColumnDefinition Width="30*" />
+                                        <ColumnDefinition Width="10*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="1" Grid.Row="1" Text="Mean" VerticalAlignment="Center" ></TextBlock>
+                                    <TextBlock Grid.Column="1" Grid.Row="3" Text="Median" VerticalAlignment="Center" ></TextBlock>
+                                    <TextBlock Grid.Column="1" Grid.Row="5" Text="Variance" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Grid.Column="1" Grid.Row="7" Text="Standard Deviation" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Grid.Column="4" Grid.Row="1" Text="Maximum" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Grid.Column="4" Grid.Row="3" Text="90 %" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Grid.Column="4" Grid.Row="5" Text="10 %" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Grid.Column="4" Grid.Row="7" Text="Minimum" VerticalAlignment="Center"></TextBlock>
+                                    <Label Grid.Column="2" Content="Lablel1" Name="MeanLbl" Height="21" Margin="0,8,0,0" Grid.RowSpan="2"></Label>
+                                    <Label Grid.Column="2" Grid.Row="3" Content="Lablel2" Name="MedianLbl" Height="21"></Label>
+                                    <Label Grid.Column="2" Grid.Row="4" Content="Lablel3" Name="Variancelbl" Height="21" Margin="0,9" Grid.RowSpan="3"></Label>
+                                    <Label Grid.Column="2" Grid.Row="6" Content="Lablel4" Name="StDevlbl" Height="21" Margin="0,8,0,0" Grid.RowSpan="2"></Label>
+                                    <Label Grid.Column="5" Content="Lablel5" Name="MaxLbl" Height="21" Margin="0,8,0,0" Grid.RowSpan="2"></Label>
+                                    <Label Grid.Column="5" Grid.Row="3" Content="Lablel6" Name="lbl90p" Height="21"></Label>
+                                    <Label Grid.Column="5" Grid.Row="4" Content="Lablel7" Name="lbl10p" Height="21" Margin="0,9" Grid.RowSpan="3"></Label>
+                                    <Label Grid.Column="5" Grid.Row="6" Content="Lablel8" Name="MinLbl" Height="21" Margin="0,8,0,0" Grid.RowSpan="2"></Label>
+                                </Grid> 
+                            </GroupBox> 
+                            
+                        </Grid>
+                    </GroupBox> 
+                    <Expander Header="Pipes info" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="22" Grid.RowSpan="5" Name="expander1" BorderBrush="Black" BorderThickness="1" IsExpanded="True" Collapsed="expander1_Collapsed"  Expanded="expander1_Expanded">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10*"></RowDefinition>
+                                <RowDefinition Height="80*"></RowDefinition>
+                                <RowDefinition Height="10*"></RowDefinition>
+                            </Grid.RowDefinitions> 
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"></ColumnDefinition>
+                                <ColumnDefinition Width="100*"></ColumnDefinition>
+                                <ColumnDefinition Width="5*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions> 
+                            <TextBox Grid.Column="1" Grid.Row="1" Name="MessagePipeInfoTxt" TextWrapping="Wrap" 
+                                    Text="Hello" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"></TextBox>
+                        </Grid>
+                    </Expander>
+                    <GroupBox Grid.Row="12" Grid.RowSpan="7" Grid.Column="4" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1" Name="EmulatorGrBox">
+                        <GroupBox.Header>
+                            <Label Foreground="Black">Emulator</Label>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions> 
+                            <TextBlock Grid.Row="0" Grid.ColumnSpan="9" Text="No of boards" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="3,0" Grid.RowSpan="2"></TextBlock>
+                            <WindowsFormsHost Name="Numofboardshost" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="2"></WindowsFormsHost>
+                            <CheckBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="7" Content="Enable" Name="EmulatorEnabledChk" Checked="EmulatorEnabledChk_Checked" Unchecked="EmulatorEnabledChk_Unchecked"></CheckBox>
+                                <CheckBox Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="8" Content="PXE Data" Name="EmulatorDataTypeChk" Margin="0,0,3,0" Checked="EmulatorDataTypeChk_Checked" Unchecked="EmulatorDataTypeChk_Unchecked"></CheckBox>
+                                <Button Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="7" Grid.RowSpan="2" Content="PXE" Name="EmulatorLoadPXE" Height="25" Width="55 " Click="EmulatorLoadPXE_Click"></Button>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Grid.RowSpan="6" Grid.Column="1" Grid.ColumnSpan="5" BorderBrush="Black" BorderThickness="1">
+                        <GroupBox.Header>
+                            <Label Foreground="Black">General Info</Label>
+                        </GroupBox.Header>
+                        <Grid ShowGridLines="False">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions> 
+                            <!-- now content-->
+                            <TextBlock Grid.Column="0" Grid.ColumnSpan="4"  Grid.Row="1" Text="Number of Detectors" VerticalAlignment="Center"></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.ColumnSpan="4"  Grid.Row="3" Text="Line Header Size" VerticalAlignment="Center" ></TextBlock>
+                            <TextBlock Grid.Column="0" Grid.ColumnSpan="4"  Grid.Row="5" Text="Block ID" VerticalAlignment="Center"></TextBlock>
+                            <Label Grid.Column="4" Grid.ColumnSpan="3" Content="Label1" Name="NumDetLbl" VerticalAlignment="Center"  Grid.RowSpan="3" Height="21" Margin="4,13,0,16"></Label>
+                            <Label Grid.Column="4" Grid.ColumnSpan="3"  Grid.Row="2" Content="Label1" Name="HeaderSizeLbl" VerticalAlignment="Center" Height="21" Margin="4,13,0,16" Grid.RowSpan="3"></Label>
+                            <Label Grid.Column="4" Grid.ColumnSpan="3"  Grid.Row="4" Content="Label1" Name="BlockIDLbl" VerticalAlignment="Center" Height="21" Margin="4,13,0,0" Grid.RowSpan="2"></Label>
+                        </Grid>
+                    </GroupBox> 
+                    <ComboBox Grid.Row="8" Grid.Column="4"  Grid.ColumnSpan="2" Name="RunModeCmb" SelectionChanged="RunModeCmb_SelectionChanged"></ComboBox>
+                    <TextBlock Grid.Row="8" Grid.Column="1"  Grid.ColumnSpan="2" Text="Run Mode" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                        <ComboBox Grid.Row="10" Grid.Column="4"  Grid.ColumnSpan="2" Name="MainBitsSowModeCmb" SelectionChanged="MainBitsSowModeCmb_SelectionChanged"></ComboBox>
+                    <TextBlock Grid.Row="10" Grid.Column="1"  Grid.ColumnSpan="2" Text="Bits Show mode" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Grid.Row="12" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Text="Select Series Marker Size" 
+                               TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                    <ComboBox Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="2" Name="MarkerSizeCmb" SelectionChanged="MarkerSizeCmb_SelectionChanged"></ComboBox>
+                    <Button Grid.Row="16"  Grid.Column="1" Grid.ColumnSpan="2" Content="Start" Name="StartBtn" Height="25 " Click="StartBtn_Click" ></Button>
+                    <Button Grid.Row="18"  Grid.Column="1" Grid.ColumnSpan="2" Content="Close" Name="CloseBtn"  Height="25 " Click="CloseBtn_Click" Margin="0,1,0,4"></Button>
+                </Grid> 
+            </TabItem>
+            <TabItem Header="Chart">
+                    <Grid Background="Linen" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--<StackPanel  Grid.Column="1" Grid.ColumnSpan="18" Grid.Row="1" Grid.RowSpan="12">
+                            <WindowsFormsHost Name="DataChartHost" Width="Auto" Height="Auto" ></WindowsFormsHost>  
+                        </StackPanel-->
+                        <WindowsFormsHost  Name="DataChartHost" Grid.Column="1" Grid.ColumnSpan="18" Grid.Row="1" Grid.RowSpan="12">
+                            <MSChart:Chart x:Name="MyChart"></MSChart:Chart> 
+                        </WindowsFormsHost>
+                        <TextBlock Text="Bits Sow Mode" Grid.Column="1" Grid.Row="14" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="Saved File Type" Grid.Column="1" Grid.Row="16" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                        <ComboBox Name="ChartBitsShowModeCmb" Grid.Column="2" Grid.Row="14" Grid.ColumnSpan="2" SelectionChanged="MainBitsSowModeCmb_SelectionChanged"></ComboBox>
+                        <ComboBox Name="ChartFileSaveTypeCmb" Grid.Column="2" Grid.Row="16" Grid.ColumnSpan="2" SelectionChanged="ChartFileSaveTypeCmb_SelectionChanged"></ComboBox>
+                        <Button Name="ChartRestoreScaleBtn" Grid.Column="4" Grid.Row="14" Content="Restore Scale" Width="95 " Grid.ColumnSpan="2" Margin="51,0,5,0" Click="ChartRestoreScaleBtn_Click"></Button>
+                        <CheckBox Name="ChartShowToolTipChk" Grid.Column="5" Grid.Row="16" VerticalAlignment="Center" Checked="ChartShowToolTipChk_Checked" Unchecked="ChartShowToolTipChk_Unchecked">Show Tooltips</CheckBox>  
+                        <Button Grid.Column="7" Grid.Row="14" Name="ChartSaveDataBtn" Width="95" Click="ChartSaveDataBtn_Click">Save Data</Button>
+                        <Button Grid.Column="7" Grid.Row="16" Name="ChartAddCommentsBtn" Width="95" Click="ChartAddCommentsBtn_Click">Add Comment</Button>
+                        <Button Grid.Column="7" Grid.Row="18" Name="ChartStopContinueBtn" Background="Yellow" Width="95" Click="ChartStopContinueBtn_Click">Stop Getting Data</Button>
+                        <Button Grid.Column="9" Grid.Row="14" Name="ChartSaveImageBtn" Width="95" Click="ChartSaveImageBtn_Click">Save Image</Button>
+                        <TextBox  Grid.Column="11" Grid.ColumnSpan="8" Grid.Row="14"  Name="ChartSavedFileNameTxt" 
+                               BorderBrush="Black" BorderThickness="1" VerticalAlignment="Center" HorizontalAlignment="Left" >File Saved</TextBox>
+                        <GroupBox Name="ChDatapointInfoGB" Grid.Column="9" Grid.ColumnSpan="10" Grid.RowSpan="4" Grid.Row="15">
+                            <GroupBox.Header>
+                                <Label Foreground="Black">Current Data Point</Label>
+                            </GroupBox.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions> 
+                                <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" >Point No</TextBlock> 
+                                <Label Name="CurPtX" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" >12345</Label>
+                                <TextBlock Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" >Y Value</TextBlock>
+                                <Label Name="CurPtY" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" >12345</Label>
+                                <ScrollBar Orientation="Horizontal" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="3" Name="ChartTooltipScroll" 
+                                          SmallChange="1" Minimum="1" Value="1" VerticalAlignment="Center" ValueChanged="ChartTooltipScroll_ValueChanged"></ScrollBar>
+                                <TextBlock Grid.Row="1" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center">Detector</TextBlock>
+                                <ComboBox Name="ChartTooltipSelDetCmb" Grid.Row="1" Grid.Column ="8" Grid.ColumnSpan="2" VerticalAlignment="Center" SelectionChanged="ChartTooltipSelDetCmb_SelectionChanged"></ComboBox>  
+                            </Grid> 
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+            <TabItem Header="Analysis">
+                    <Grid Background="Bisque">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="17*"></ColumnDefinition>
+                            <ColumnDefinition Width="98*"></ColumnDefinition>
+                            <ColumnDefinition Width="82*"></ColumnDefinition>
+                            <ColumnDefinition Width="77*"></ColumnDefinition>
+                            <ColumnDefinition Width="53*"></ColumnDefinition>
+                            <ColumnDefinition Width="47*"></ColumnDefinition>
+                            <ColumnDefinition Width="47*"></ColumnDefinition>
+                            <ColumnDefinition Width="47*"></ColumnDefinition>
+                            <ColumnDefinition Width="47*"></ColumnDefinition>
+                            <ColumnDefinition Width="47*"></ColumnDefinition>
+                            <ColumnDefinition Width="47*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                            <ColumnDefinition Width="55*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions> 
+                        <Button Name="AnOpenFileBtn" Grid.Column="1" Grid.Row="1" Click="AnOpenFileBtn_Click">Open File</Button>
+                        <Button Name="AnSaveFileBtn" Grid.Column="2" Grid.Row="1" Click="AnSaveFileBtn_Click">Save Results</Button>
+                        <Button Name="AnAddCommentBtn" Grid.Column="3" Grid.Row="1" Click="AnAddCommentBtn_Click">Add Comment</Button>
+                        <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">Bits Show Mode</TextBlock>   
+                        <ComboBox Name="AnBitsShowModeCmb" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" SelectionChanged="MainBitsSowModeCmb_SelectionChanged"></ComboBox>
+                        <GroupBox Name="DetectorDisplayGB" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Grid.RowSpan="7" BorderBrush="Black" BorderThickness="1" >
+                            <GroupBox.Header>
+                                <Label Foreground="Black">Detectors to display</Label>
+                            </GroupBox.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                 </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions> 
+                                <ListBox Name="AnDetSelList" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="8" SelectionChanged="AnDetSelList_SelectionChanged"></ListBox> 
+                                <Button Name="AnAddDetBtn" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="3" Click="AnAddDetBtn_Click">Add</Button>
+                                <Button Name="AnRemoveDetBtn" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="5" Click="AnRemoveDetBtn_Click">Remove</Button>
+                                <Button Name="AnClearDetBtn" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="7" Click="AnClearDetBtn_Click">Clear</Button>
+                                <WindowsFormsHost Name="AnDetNumHost" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Height="20" VerticalAlignment="Top"></WindowsFormsHost> 
+                            </Grid> 
+                        </GroupBox> 
+                        <GroupBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="11" Grid.RowSpan="6" BorderBrush="Black" BorderThickness="1" Name="AnDetInfoGB">
+                            <GroupBox.Header>
+                                <Label Foreground="Black">Selected Detector Info</Label>
+                            </GroupBox.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions> 
+                                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" >Mean</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center">Median</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center">Variance</TextBlock>
+                                <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Center">Standard Deviation</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="4" VerticalAlignment="Center">Maximum</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="4" VerticalAlignment="Center">90%</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="4" VerticalAlignment="Center">10%</TextBlock>
+                                <TextBlock Grid.Row="7" Grid.Column="4" VerticalAlignment="Center">Minimum</TextBlock>
+                                <Label Name="AnMeadLbl" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center">12345</Label>
+                                <Label Name="AnMedianLbl" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center">12345</Label>
+                                <Label Name="AnVariancelbl" Grid.Column="2" Grid.Row="5" VerticalAlignment="Center">12345</Label>
+                                <Label Name="AnStdLbl" Grid.Column="2" Grid.Row="7" VerticalAlignment="Center">12345</Label>
+                                <Label Name="AnMaxLbl" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center">12345</Label>
+                                <Label Name="AnNinetyLbl" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center">12345</Label>
+                                <Label Name="AnTenLbl" Grid.Column="5" Grid.Row="5" VerticalAlignment="Center">12345</Label>
+                                <Label Name="AnMinLbl" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center">12345</Label>
+                            </Grid>
+                        </GroupBox>  
+                        <WindowsFormsHost Name="AnChartHost" Grid.Column="5" Grid.ColumnSpan ="16" Grid.Row="1" Grid.RowSpan ="11" ></WindowsFormsHost>
+                        <TextBox Name="AnSaveFileTxt" Grid.Column="5" Grid.Row="12" Grid.ColumnSpan="16" VerticalAlignment="Center">Hello</TextBox> 
+                        <Button Name="AnRestoreScaleBtn" Grid.Column="5" Grid.Row="13" Click="AnRestoreScaleBtn_Click">Restore scale</Button>
+                        <CheckBox Name="AnShowToolTipChk" Grid.Column="5" Grid.Row="15" VerticalAlignment="Center" Checked="ChartShowToolTipChk_Checked" Unchecked="ChartShowToolTipChk_Unchecked" >Show Tooltips</CheckBox> 
+                        <GroupBox Name="AnTooltipGB" Grid.Column="7" Grid.ColumnSpan="14" Grid.Row="13" Grid.RowSpan="4">
+                            <GroupBox.Header>
+                                <Label Foreground="Black">Current Data Point</Label>
+                            </GroupBox.Header>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions> 
+                                <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Point No</TextBlock> 
+                                <Label Name="AnPtXPos" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">1234</Label>
+                                <TextBlock Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Y Value</TextBlock>
+                                <Label Name="AnPtYpos" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">1234</Label>
+                                <ScrollBar Name="AnShowToolScroll" Orientation="Horizontal" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="3"
+                                           Minimum="1" SmallChange="1" Value="1" VerticalAlignment="Center" ValueChanged="AnShowToolScroll_ValueChanged"></ScrollBar>
+                                <TextBlock Grid.Column="7" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Detectors</TextBlock>
+                                <ComboBox Name="AnDetSelCmb" Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="2" SelectionChanged="AnDetSelCmb_SelectionChanged"></ComboBox> 
+                            </Grid> 
+                        </GroupBox> 
+                    </Grid>
+                </TabItem>
+
+        </TabControl>
+    </Grid>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message name="OCRS_MASTER" sentDateTime="2013-12-09T06:56:24-07:00">
+  <addressInfo>
+    <sender>
+      <name>OCRS</name>
+    </sender>
+  </addressInfo>
+  <body guid="guid1" ackRequired="true" messageType="messageType1">
+    <payload base64Encoded="base64Encoded1">
+      <RevNumber>1</RevNumber>
+      <EventID>1</EventID>
+      <LaneID>1</LaneID>
+      <ContEventType>1</ContEventType>
+      <EventTime>EventTime1</EventTime>
+      <CaseNumber>3141592654</CaseNumber>
+      <Vehicle>
+        <Code>Code1</Code>
+        <FileName>FileName1</FileName>
+        <Confidence>1</Confidence>
+      </Vehicle>
+      <Cont id="1">
+        <Code>Code1</Code>
+        <FileName>FileName1</FileName>
+        <Confidence>1</Confidence>
+        <SizeType>SizeType1</SizeType>
+        <SizeTypeConfidence>1</SizeTypeConfidence>
+        <ResultCode>1</ResultCode>
+        <ResultText>ResultText1</ResultText>
+      </Cont>
+      <Cont id="-2147483647">
+        <Code>Code2</Code>
+        <FileName>FileName2</FileName>
+        <Confidence>-2147483647</Confidence>
+        <SizeType>SizeType2</SizeType>
+        <SizeTypeConfidence>-2147483647</SizeTypeConfidence>
+        <ResultCode>-2147483647</ResultCode>
+        <ResultText>ResultText2</ResultText>
+      </Cont>
+      <Cont id="2147483647">
+        <Code>Code3</Code>
+        <FileName>FileName3</FileName>
+        <Confidence>2147483647</Confidence>
+        <SizeType>SizeType3</SizeType>
+        <SizeTypeConfidence>2147483647</SizeTypeConfidence>
+        <ResultCode>2147483647</ResultCode>
+        <ResultText>ResultText3</ResultText>
+      </Cont>
+      <Trailer id="1">
+        <Code>Code1</Code>
+        <FileName>FileName1</FileName>
+        <Confidence>1</Confidence>
+        <ResultCode>1</ResultCode>
+        <ResultText>ResultText1</ResultText>
+      </Trailer>
+      <Trailer id="-2147483647">
+        <Code>Code2</Code>
+        <FileName>FileName2</FileName>
+        <Confidence>-2147483647</Confidence>
+        <ResultCode>-2147483647</ResultCode>
+        <ResultText>ResultText2</ResultText>
+      </Trailer>
+      <Trailer id="2147483647">
+        <Code>Code3</Code>
+        <FileName>FileName3</FileName>
+        <Confidence>2147483647</Confidence>
+        <ResultCode>2147483647</ResultCode>
+        <ResultText>ResultText3</ResultText>
+      </Trailer>
+      <Video>
+        <Left>Left1</Left>
+        <Right>Right1</Right>
+        <Top>Top1</Top>
+        <Rear>Rear1</Rear>
+      </Video>
+    </payload>
+  </body>
+</message>

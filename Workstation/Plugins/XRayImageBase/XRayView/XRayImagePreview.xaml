@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.XRayImageBase.XRayImagePreview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:L3.Cargo.Workstation.Plugins.XRayImageBase"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel Name="OuterDock" MaxHeight="480" MaxWidth="800" Height="480" Width="800" DockPanel.Dock="Top" MouseEnter="OptionsOverlay_MouseEnter" MouseLeave="OptionsOverlay_MouseLeave">
+        <Canvas DockPanel.Dock="Top">
+            <Canvas Name="ImageCanvas">
+                <DockPanel x:Name="BaseEffectDockpanel" Visibility="Visible" />
+                <local:VisualLayers x:Name="AnnotationsLayer" Visibility="Visible" />
+                <local:VisualLayers x:Name="MeasurementsLayer" Visibility="Visible" />
+            </Canvas>
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical" Name="OptionsOverlay" Height="480" Width="800"  >
+                <Border HorizontalAlignment="Left" Margin="15" BorderBrush="Black" Padding="10" BorderThickness="1" Background="White" CornerRadius="8,8,8,8">
+                    <StackPanel Name="OptionsStackPanel" HorizontalAlignment="Left" >
+                        <CheckBox Name="AnnotationCheckBox" Content="{Binding Path=ShowAnnotation, Source={StaticResource Resources}}" Unchecked="Checkbox_Checked" Checked="Checkbox_Checked"></CheckBox>
+                        <CheckBox Name="MeasurementCheckBox" Content="{Binding Path=ShowMeasurements, Source={StaticResource Resources}}" Checked="Checkbox_Checked" Unchecked="Checkbox_Checked" ></CheckBox>
+                    </StackPanel>
+                </Border>
+                <StackPanel.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#66000000" Offset="0.0" />
+                        <GradientStop Color="#22000000" Offset="1.0" />
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+            </StackPanel>
+        </Canvas>
+    </DockPanel>
+</UserControl>

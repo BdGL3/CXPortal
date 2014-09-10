@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6D1F3455-2B1A-4D23-A1AF-6E43B66698AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L3.Cargo.Workstation.PresentationCore</RootNamespace>
+    <AssemblyName>L3.Cargo.Workstation.PresentationCore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EglinAFB|x86'">
+    <OutputPath>bin\x86\EglinAFB\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EglinAFB|AnyCPU'">
+    <OutputPath>bin\EglinAFB\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Schiphol|x86'">
+    <OutputPath>bin\x86\Schiphol\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Schiphol|AnyCPU'">
+    <OutputPath>bin\Schiphol\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CloseTabItemButton.cs" />
+    <Compile Include="Common\DisplayedCase.cs" />
+    <Compile Include="Common\DisplayedCases.cs" />
+    <Compile Include="UserInterface\DualViewWindow.xaml.cs">
+      <DependentUpon>DualViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\PanelLayout.cs" />
+    <Page Include="UserInterface\Framework.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="LayoutManager\LayoutManager.cs" />
+    <Compile Include="UserInterface\Framework.xaml.cs">
+      <DependentUpon>Framework.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserInterface\Resources\FrameworkResource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserInterface\Resources\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserInterface\DualViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Presentation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CargoCommon\L3.Cargo.Common.csproj">
+      <Project>{2F2B7DA0-A43B-430D-B43F-D6F8F63F2991}</Project>
+      <Name>L3.Cargo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\L3.Cargo.Communications.csproj">
+      <Project>{55E328C4-917D-463D-AD38-6C94DAB202D8}</Project>
+      <Name>L3.Cargo.Communications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Common\L3.Cargo.Workstation.Plugins.Common.csproj">
+      <Project>{A40B6F48-84CD-4A81-A3C2-78BFBE923B04}</Project>
+      <Name>L3.Cargo.Workstation.Plugins.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Manager\L3.Cargo.Workstation.Plugins.Manager.csproj">
+      <Project>{7F231580-36F2-4D95-ACE3-4806A1C08A16}</Project>
+      <Name>L3.Cargo.Workstation.Plugins.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemConfigurationCore\L3.Cargo.Workstation.SystemConfigurationCore.csproj">
+      <Project>{5E01FEE7-D88E-4606-88F7-DF3AA11F441C}</Project>
+      <Name>L3.Cargo.Workstation.SystemConfigurationCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemManagerCore\L3.Cargo.Workstation.SystemManagerCore.csproj">
+      <Project>{5BA6DC40-18BC-43D5-8130-B617A9AD44CA}</Project>
+      <Name>L3.Cargo.Workstation.SystemManagerCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Resources\Icons\Todo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Resources\Icons\FileOpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Resources\Icons\ClearViewLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Resources\Icons\accept.png" />
+    <Resource Include="UserInterface\Resources\Icons\delete.png" />
+    <Resource Include="UserInterface\Resources\Icons\Graphite Globe.png" />
+    <Resource Include="UserInterface\Resources\Icons\help.png" />
+    <Resource Include="UserInterface\Resources\Icons\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Resources\Icons\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserInterface\Resources\Icons\Workstation.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

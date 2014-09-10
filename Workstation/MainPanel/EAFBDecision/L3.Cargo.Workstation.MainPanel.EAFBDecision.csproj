@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BE4F6EE-FD47-40ED-A677-1D281BFC1166}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L3.Cargo.Workstation.MainPanel.EAFBDecision</RootNamespace>
+    <AssemblyName>L3MainPanel-EAFBDecision</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EglinAFB|AnyCPU'">
+    <OutputPath>bin\EglinAFB\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'EglinAFB|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\Workstation\bin\x86\EglinAFB\MainPanel\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="BoolToVisibilityConverter.cs" />
+    <Compile Include="MainPanel.cs" />
+    <Compile Include="UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\accept.png" />
+    <Resource Include="Resources\Icons\delete.png" />
+    <Resource Include="Resources\Icons\exclamation.png" />
+    <Resource Include="Resources\Icons\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CargoCommon\L3.Cargo.Common.csproj">
+      <Project>{2F2B7DA0-A43B-430D-B43F-D6F8F63F2991}</Project>
+      <Name>L3.Cargo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CargoCommunications\L3.Cargo.Communications.csproj">
+      <Project>{55E328C4-917D-463D-AD38-6C94DAB202D8}</Project>
+      <Name>L3.Cargo.Communications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\Common\L3.Cargo.Workstation.Plugins.Common.csproj">
+      <Project>{A40B6F48-84CD-4A81-A3C2-78BFBE923B04}</Project>
+      <Name>L3.Cargo.Workstation.Plugins.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ProfileManagerCore\L3.Cargo.Workstation.ProfileManagerCore.csproj">
+      <Project>{D6C08560-F5D9-4BF5-BBD0-0EE39B5FBAEC}</Project>
+      <Name>L3.Cargo.Workstation.ProfileManagerCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemConfigurationCore\L3.Cargo.Workstation.SystemConfigurationCore.csproj">
+      <Project>{5E01FEE7-D88E-4606-88F7-DF3AA11F441C}</Project>
+      <Name>L3.Cargo.Workstation.SystemConfigurationCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemManagerCore\L3.Cargo.Workstation.SystemManagerCore.csproj">
+      <Project>{5BA6DC40-18BC-43D5-8130-B617A9AD44CA}</Project>
+      <Name>L3.Cargo.Workstation.SystemManagerCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

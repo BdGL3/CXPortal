@@ -1,0 +1,106 @@
+﻿<Window x:Class="AWSCommClient.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="346" d:DesignWidth="906" SizeToContent="WidthAndHeight" Loaded="Window_Loaded">
+    <Grid>
+        <TabControl Height="307" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top" Width="884">
+            <TabItem Header="Connection 1" Name="tabItem1" Visibility="Collapsed" IsSelected="False">
+                <Grid Name="Tab1Grid" Visibility="Collapsed">
+                    <Button Content="Login" Height="23" HorizontalAlignment="Right" Margin="0,30,521,0" Name="Tab1LoginButton" VerticalAlignment="Top" Width="90" Click="Tab1Login_Click" />
+                    <Button Content="Get Case List" Height="23" HorizontalAlignment="Left" Margin="195,75,0,0" Name="Tab1GetCaseListButton" VerticalAlignment="Top" Width="90" Click="Tab1GetCaseListButton_Click" />
+                    <Button Content="Give Decision" Height="23" HorizontalAlignment="Left" Margin="262,203,0,0" Name="Tab1DecisionButton" VerticalAlignment="Top" Width="90" Click="Tab1DecisionButton_Click" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,30,0,0" Name="Tab1UsernameTextBox" VerticalAlignment="Top" Width="120" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="136,30,0,0" Name="Tab1PasswordTextBox" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Height="14" HorizontalAlignment="Left" Margin="10,10,0,0" Name="Tab1UsernameTextBlock" Text="Username" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Height="14" HorizontalAlignment="Left" Margin="136,10,0,0" Name="Tab1PasswordTextBlock" Text="Password" VerticalAlignment="Top" Width="120" />
+                    <ListBox Height="100" HorizontalAlignment="Left" Margin="10,75,0,0" Name="Tab1CaseListBox" VerticalAlignment="Top" Width="179" />
+                    <TextBlock Height="16" HorizontalAlignment="Left" Margin="10,59,0,0" Name="Tab1TextBlock3" Text="Case List" VerticalAlignment="Top" Width="120" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="10,204,0,0" Name="Tab1DecisionComboBox" VerticalAlignment="Top" Width="120" IsTextSearchCaseSensitive="True" ItemsSource="{Binding}" IsReadOnly="True">
+                        <ComboBoxItem Content="Unknown" IsSelected="False" />
+                        <ComboBoxItem Content="Clear" IsSelected="False" />
+                        <ComboBoxItem Content="Reject" IsSelected="False" />
+                        <ComboBoxItem Content="Caution" IsSelected="False" />
+                    </ComboBox>
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,204,618,0" Name="Tab1ReasonComboBox" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem Content="Not Applicable" IsSelected="False" />
+                        <ComboBoxItem Content="Too Complex" IsSelected="False" />
+                        <ComboBoxItem Content="Too Dense" IsSelected="False" />
+                        <ComboBoxItem Content="Anomaly Identified" IsSelected="False" />
+                    </ComboBox>
+                    <TextBox Height="25" HorizontalAlignment="Left" Margin="10,233,0,0" Name="Tab1CommentTextBox" VerticalAlignment="Top" Width="246" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,184,0,0" Name="Tab1DecisionTextBlock" Text="AWS Decision" VerticalAlignment="Top" Width="97" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="136,184,0,0" Name="Tab1ReasonTextBlock" Text="AWS Reason" VerticalAlignment="Top" />
+                    <ListBox Height="226" HorizontalAlignment="Left" Margin="458,30,0,0" Name="Tab1LogListBox" VerticalAlignment="Top" Width="406">
+                        <ListBoxItem />
+                    </ListBox>
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="458,10,0,0" Name="Tab1LogTextBlock" Text="Log" VerticalAlignment="Top" Width="406" />
+                    <Button Content="RequestCase" Height="23" HorizontalAlignment="Right" Margin="0,104,589,0" Name="Tab1RequestCaseButton" VerticalAlignment="Top" Width="90" Click="Tab1RequestCaseButton_Click" />
+                    <Button Content="Logout" Height="23" HorizontalAlignment="Right" Margin="0,29,422,0" Name="button2" VerticalAlignment="Top" Width="90" Click="button2_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Connection 2" Name="tabItem2" Visibility="Collapsed">
+                <Grid Name="Tab2Grid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="52*" />
+                        <ColumnDefinition Width="822*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Login" Grid.Column="1" Height="23" HorizontalAlignment="Right" Margin="0,30,521,0" Name="button4" VerticalAlignment="Top" Width="90" />
+                    <Button Content="Get Case List" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="84,75,0,0" Name="button5" VerticalAlignment="Top" Width="90" />
+                    <Button Content="Button" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="210,203,0,0" Name="button6" VerticalAlignment="Top" Width="90                             " />
+                    <TextBox Grid.ColumnSpan="2" Height="23" HorizontalAlignment="Left" Margin="10,30,0,0" Name="textBox4" VerticalAlignment="Top" Width="120" />
+                    <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="84,30,0,0" Name="textBox5" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.ColumnSpan="2" Height="14" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlock6" Text="Username" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.Column="1" Height="14" HorizontalAlignment="Left" Margin="84,10,0,0" Name="textBlock7" Text="Password" VerticalAlignment="Top" Width="120" />
+                    <ListBox Grid.ColumnSpan="2" Height="100" HorizontalAlignment="Left" Margin="10,75,0,0" Name="listBox2" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Grid.ColumnSpan="2" Height="16" HorizontalAlignment="Left" Margin="10,59,0,0" Name="textBlock8" Text="Case List" VerticalAlignment="Top" Width="120" />
+                    <ComboBox Grid.ColumnSpan="2" Height="23" HorizontalAlignment="Left" Margin="10,204,0,0" Name="comboBox3" VerticalAlignment="Top" Width="120" />
+                    <ComboBox Grid.Column="1" Height="23" HorizontalAlignment="Right" Margin="0,204,618,0" Name="comboBox4" VerticalAlignment="Top" Width="120" />
+                    <TextBox Grid.ColumnSpan="2" Height="25" HorizontalAlignment="Left" Margin="10,233,0,0" Name="textBox6" VerticalAlignment="Top" Width="246" />
+                    <TextBlock Grid.ColumnSpan="2" Height="23" HorizontalAlignment="Left" Margin="10,184,0,0" Name="textBlock9" Text="AWS Decision" VerticalAlignment="Top" Width="97" />
+                    <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="84,184,0,0" Name="textBlock10" Text="AWS Reason" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Connection 3" Name="tabItem3" Visibility="Collapsed">
+                <Grid Name="Tab3Grid" Visibility="Collapsed">
+                    <Button Content="Login" Height="23" HorizontalAlignment="Right" Margin="0,30,521,0" Name="button7" VerticalAlignment="Top" Width="90" />
+                    <Button Content="Get Case List" Height="23" HorizontalAlignment="Left" Margin="136,75,0,0" Name="button8" VerticalAlignment="Top" Width="90" />
+                    <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="262,203,0,0" Name="button9" VerticalAlignment="Top" Width="90                             " />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,30,0,0" Name="textBox7" VerticalAlignment="Top" Width="120" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="136,30,0,0" Name="textBox8" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Height="14" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlock11" Text="Username" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Height="14" HorizontalAlignment="Left" Margin="136,10,0,0" Name="textBlock12" Text="Password" VerticalAlignment="Top" Width="120" />
+                    <ListBox Height="100" HorizontalAlignment="Left" Margin="10,75,0,0" Name="listBox3" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Height="16" HorizontalAlignment="Left" Margin="10,59,0,0" Name="textBlock13" Text="Case List" VerticalAlignment="Top" Width="120" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="10,204,0,0" Name="comboBox5" VerticalAlignment="Top" Width="120" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,204,618,0" Name="comboBox6" VerticalAlignment="Top" Width="120" />
+                    <TextBox Height="25" HorizontalAlignment="Left" Margin="10,233,0,0" Name="textBox9" VerticalAlignment="Top" Width="246" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,184,0,0" Name="textBlock14" Text="AWS Decision" VerticalAlignment="Top" Width="97" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="136,184,0,0" Name="textBlock15" Text="AWS Reason" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Connection 4" Name="tabItem4" Visibility="Collapsed">
+                <Grid Name="Tab4Grid" Visibility="Collapsed">
+                    <Button Content="Login" Height="23" HorizontalAlignment="Right" Margin="0,30,521,0" Name="button10" VerticalAlignment="Top" Width="90" />
+                    <Button Content="Get Case List" Height="23" HorizontalAlignment="Left" Margin="136,75,0,0" Name="button11" VerticalAlignment="Top" Width="90" />
+                    <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="262,203,0,0" Name="button12" VerticalAlignment="Top" Width="90                             " />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="10,30,0,0" Name="textBox10" VerticalAlignment="Top" Width="120" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="136,30,0,0" Name="textBox11" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Height="14" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlock16" Text="Username" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Height="14" HorizontalAlignment="Left" Margin="136,10,0,0" Name="textBlock17" Text="Password" VerticalAlignment="Top" Width="120" />
+                    <ListBox Height="100" HorizontalAlignment="Left" Margin="10,75,0,0" Name="listBox4" VerticalAlignment="Top" Width="120" />
+                    <TextBlock Height="16" HorizontalAlignment="Left" Margin="10,59,0,0" Name="textBlock18" Text="Case List" VerticalAlignment="Top" Width="120" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="10,204,0,0" Name="comboBox7" VerticalAlignment="Top" Width="120" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,204,618,0" Name="comboBox8" VerticalAlignment="Top" Width="120" />
+                    <TextBox Height="25" HorizontalAlignment="Left" Margin="10,233,0,0" Name="textBox12" VerticalAlignment="Top" Width="246" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,184,0,0" Name="textBlock19" Text="AWS Decision" VerticalAlignment="Top" Width="97" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="136,184,0,0" Name="textBlock20" Text="AWS Reason" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Connections" Name="tabItem5" IsSelected="True">
+                <Grid>
+                    <Button Content="Find Connections" Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="button1" VerticalAlignment="Top" Width="121" Click="button1_Click" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

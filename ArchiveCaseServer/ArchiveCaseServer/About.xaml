@@ -1,0 +1,22 @@
+﻿<Window x:Class="L3.Cargo.ArchiveCaseServer.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About" Height="200" Width="404" Icon="/ArchiveCaseServer;component/ACS.ico">
+    <DockPanel>
+        <Image Margin="12,12,6,12" Height="98" Name="image1" Stretch="Uniform" Width="98" Source="L3_Logo.png" />
+        <StackPanel>
+            <Label Content="L-3 Communications," VerticalContentAlignment="Top" Height="25" Name="label1" />
+            <Label Content="Security and Detection Systems" VerticalContentAlignment="Top" Height="25" Name="label4" />
+            <Label Content="AWSCommunications" VerticalContentAlignment="Top" Height="25" Name="label2" />
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Version" VerticalContentAlignment="Top" Height="25" Name="label3" />
+                <Label VerticalContentAlignment="Top" Height="25" Name="VerionNumber" />
+            </StackPanel>
+            <Label Content="Copyright (C) 2010" VerticalContentAlignment="Top" Height="27" Name="label5" />
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Build Date" VerticalContentAlignment="Top" Height="25" Name="label6" />
+                <Label VerticalContentAlignment="Top" Height="25" Name="BuildDate" />
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

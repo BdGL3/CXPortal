@@ -1,0 +1,1018 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnalysisTime_Colon" xml:space="preserve">
+    <value>وقت التحليل</value>
+  </data>
+  <data name="AnomalyIdentified" xml:space="preserve">
+    <value>تحديد الشذوذ</value>
+  </data>
+  <data name="BaseLocation_Colon" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="BatchNumber_Colon" xml:space="preserve">
+    <value>رقم الدفعة</value>
+  </data>
+  <data name="Bundle_Colon" xml:space="preserve">
+    <value>الحزمة</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="CaseAttachments" xml:space="preserve">
+    <value>مرفقات الحاله</value>
+  </data>
+  <data name="CaseId_Colon" xml:space="preserve">
+    <value>رقم الحالة</value>
+  </data>
+  <data name="CaseInformation" xml:space="preserve">
+    <value>معلومات الحاله</value>
+  </data>
+  <data name="CaseInformationPrintOptions" xml:space="preserve">
+    <value>خيارات طباعة معلومات الحاله</value>
+  </data>
+  <data name="Caution" xml:space="preserve">
+    <value>تحذير</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>وضوح</value>
+  </data>
+  <data name="ClearScreen" xml:space="preserve">
+    <value>تفريغ الشاشة</value>
+  </data>
+  <data name="Code_Colon" xml:space="preserve">
+    <value>رمز</value>
+  </data>
+  <data name="Comment_Colon" xml:space="preserve">
+    <value>تعليق</value>
+  </data>
+  <data name="ContainerInformation" xml:space="preserve">
+    <value>معلومات الحاوية</value>
+  </data>
+  <data name="ConveyanceInformation" xml:space="preserve">
+    <value>نقل المعلومات</value>
+  </data>
+  <data name="CreateReport" xml:space="preserve">
+    <value>تقرير الإنشاء</value>
+  </data>
+  <data name="CreateTime" xml:space="preserve">
+    <value>وقت الإنشاء</value>
+  </data>
+  <data name="CreateTime_Colon" xml:space="preserve">
+    <value>وقت الإنشاء</value>
+  </data>
+  <data name="DamagedBundle" xml:space="preserve">
+    <value>الحزمة تالفة</value>
+  </data>
+  <data name="Decision" xml:space="preserve">
+    <value>قرار</value>
+  </data>
+  <data name="Decision_Colon" xml:space="preserve">
+    <value>قرار</value>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>إلغاء الكل</value>
+  </data>
+  <data name="FlightNumber" xml:space="preserve">
+    <value>رقم الطائرة</value>
+  </data>
+  <data name="FragmentAnalysis" xml:space="preserve">
+    <value>تحليل شظية</value>
+  </data>
+  <data name="Frag_Num" xml:space="preserve">
+    <value>شظية</value>
+  </data>
+  <data name="GiveDecision" xml:space="preserve">
+    <value>إعطاء القرار</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="Id_Colon" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="Inconclusive" xml:space="preserve">
+    <value>غير حاسم</value>
+  </data>
+  <data name="Latitude_Colon" xml:space="preserve">
+    <value>خط العرض</value>
+  </data>
+  <data name="LocationInformation" xml:space="preserve">
+    <value>معلومات الموقع</value>
+  </data>
+  <data name="Longitude_Colon" xml:space="preserve">
+    <value>الطول</value>
+  </data>
+  <data name="ManualInspection" xml:space="preserve">
+    <value>دليل التفتيش</value>
+  </data>
+  <data name="Maximum_Colon" xml:space="preserve">
+    <value>الحد الأقصى</value>
+  </data>
+  <data name="MeanValue_Colon" xml:space="preserve">
+    <value>القيمة الفعلية</value>
+  </data>
+  <data name="Minimum_Colon" xml:space="preserve">
+    <value>الحد الأدنى</value>
+  </data>
+  <data name="Mission_Colon" xml:space="preserve">
+    <value>المهمة</value>
+  </data>
+  <data name="NeedsRescan" xml:space="preserve">
+    <value>يحتاج إعادة الفحص</value>
+  </data>
+  <data name="NoImage" xml:space="preserve">
+    <value>لا توجد صورة</value>
+  </data>
+  <data name="NoOptionsAvailable" xml:space="preserve">
+    <value>الخيارات غير متاحة</value>
+  </data>
+  <data name="NotApplicable" xml:space="preserve">
+    <value>لا ينطبق</value>
+  </data>
+  <data name="Notes_Colon" xml:space="preserve">
+    <value>ملاحظات</value>
+  </data>
+  <data name="OCRImagesPrintOptions" xml:space="preserve">
+    <value>خيارات طباعة صور OCR</value>
+  </data>
+  <data name="PhysicalDeviation" xml:space="preserve">
+    <value>الإنحراف البدني</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>طباعة</value>
+  </data>
+  <data name="Project_Colon" xml:space="preserve">
+    <value>المشروع</value>
+  </data>
+  <data name="Reason_Colon" xml:space="preserve">
+    <value>السبب</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="ReportGeneration" xml:space="preserve">
+    <value>تقرير الجيل</value>
+  </data>
+  <data name="ResetUniformity" xml:space="preserve">
+    <value>إعادة التوحيد</value>
+  </data>
+  <data name="Reusable" xml:space="preserve">
+    <value>قابلة لإعادة الاستخدام</value>
+  </data>
+  <data name="ScanTypeInformation" xml:space="preserve">
+    <value>معلومات نوع المسح</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>تحديد الكل</value>
+  </data>
+  <data name="SequenceNumber_Colon" xml:space="preserve">
+    <value>رقم التسلسل</value>
+  </data>
+  <data name="Shape" xml:space="preserve">
+    <value>تشكيل</value>
+  </data>
+  <data name="SiteId_Colon" xml:space="preserve">
+    <value>رقم الموقع</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>الحجم</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>المصدر</value>
+  </data>
+  <data name="Source_Colon" xml:space="preserve">
+    <value>المصدر</value>
+  </data>
+  <data name="StationType_Colon" xml:space="preserve">
+    <value>نوع المحطة</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحاله</value>
+  </data>
+  <data name="STD_Colon" xml:space="preserve">
+    <value>STD:</value>
+  </data>
+  <data name="STD_Percent" xml:space="preserve">
+    <value>STD%</value>
+  </data>
+  <data name="SystemInformation" xml:space="preserve">
+    <value>معلومات النظام</value>
+  </data>
+  <data name="Tentative" xml:space="preserve">
+    <value>متردد</value>
+  </data>
+  <data name="TestName_Colon" xml:space="preserve">
+    <value>اسم الاختبار</value>
+  </data>
+  <data name="TooComplex" xml:space="preserve">
+    <value>معقد جدا</value>
+  </data>
+  <data name="TooDense" xml:space="preserve">
+    <value>كثيفة جدا</value>
+  </data>
+  <data name="TotalWeight_Colon" xml:space="preserve">
+    <value>مجموع الوزن</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="Type_Colon" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="ULDNumber" xml:space="preserve">
+    <value>رقم ULD</value>
+  </data>
+  <data name="ULDNumber_Colon" xml:space="preserve">
+    <value>رقم ULD</value>
+  </data>
+  <data name="UniformityAnalysisGraph" xml:space="preserve">
+    <value>تحليل الرسم البياني التوحيد</value>
+  </data>
+  <data name="UniformityResults" xml:space="preserve">
+    <value>التوحيد النتائج</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="User_Colon" xml:space="preserve">
+    <value>المستخدم</value>
+  </data>
+  <data name="Weight_Colon" xml:space="preserve">
+    <value>الوزن</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="FitToScreen" xml:space="preserve">
+    <value>ملاءمة الشاشة</value>
+  </data>
+  <data name="FragmentMarks" xml:space="preserve">
+    <value>علامة الشظية</value>
+  </data>
+  <data name="HideMarks" xml:space="preserve">
+    <value>إخفاء العلامات</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>حسنا</value>
+  </data>
+  <data name="PanAndZoom" xml:space="preserve">
+    <value>والتكبير</value>
+  </data>
+  <data name="PrintTime_Colon" xml:space="preserve">
+    <value>وقت الطباعة</value>
+  </data>
+  <data name="RadiationDetectionPrintOptions" xml:space="preserve">
+    <value>خيارات طباعة كشف الإشعاع</value>
+  </data>
+  <data name="RegisterView" xml:space="preserve">
+    <value>سجل العرض</value>
+  </data>
+  <data name="ScanTime_Colon" xml:space="preserve">
+    <value>وقت المسح</value>
+  </data>
+  <data name="ShowMarks" xml:space="preserve">
+    <value>إظهار العلامات</value>
+  </data>
+  <data name="Uniformity" xml:space="preserve">
+    <value>انتظام</value>
+  </data>
+  <data name="Annotation" xml:space="preserve">
+    <value>ملاحظة</value>
+  </data>
+  <data name="AreaOfInterest" xml:space="preserve">
+    <value>مناطق الأهتمام</value>
+  </data>
+  <data name="ColorBackground" xml:space="preserve">
+    <value>لون الخلفية</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>استمر</value>
+  </data>
+  <data name="Ellipse" xml:space="preserve">
+    <value>قطع الناقص</value>
+  </data>
+  <data name="GrayBackground" xml:space="preserve">
+    <value>خلفية رمادية</value>
+  </data>
+  <data name="HideAnnotation" xml:space="preserve">
+    <value>إخفاء الشرح</value>
+  </data>
+  <data name="HideMeasurements" xml:space="preserve">
+    <value>إخفاء القياسات</value>
+  </data>
+  <data name="Magnifier" xml:space="preserve">
+    <value>كبر</value>
+  </data>
+  <data name="Measurements" xml:space="preserve">
+    <value>قياسات</value>
+  </data>
+  <data name="PositionA" xml:space="preserve">
+    <value>موقف A</value>
+  </data>
+  <data name="PositionB" xml:space="preserve">
+    <value>موقف B</value>
+  </data>
+  <data name="Rectangle" xml:space="preserve">
+    <value>المستطيل</value>
+  </data>
+  <data name="RemoveBackground" xml:space="preserve">
+    <value>إزالة الخلفية</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>إعادة تعيين</value>
+  </data>
+  <data name="Set" xml:space="preserve">
+    <value>إضبط</value>
+  </data>
+  <data name="ShowAnnotation" xml:space="preserve">
+    <value>عرض توضيحي</value>
+  </data>
+  <data name="ShowMeasurements" xml:space="preserve">
+    <value>إظهار القياسات</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>بدء</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>توقف</value>
+  </data>
+  <data name="XrayImagePrintOptions" xml:space="preserve">
+    <value>خيارات طباعة صور الأشعة السينية</value>
+  </data>
+  <data name="BuildDate_Colon" xml:space="preserve">
+    <value>تاريخ الإنشاء</value>
+  </data>
+  <data name="BuildNumber_Colon" xml:space="preserve">
+    <value>رقم الإنشاء</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>خيارات</value>
+  </data>
+  <data name="Version_Colon" xml:space="preserve">
+    <value>الاصدار</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>تعليقات</value>
+  </data>
+  <data name="Error_CaseCurrentlyInUse" xml:space="preserve">
+    <value>الحالة قيد الاسستخدام حاليا</value>
+  </data>
+  <data name="Error_CaseDoesNotExist" xml:space="preserve">
+    <value>الحالة المحددة غير موجودة في قائمة الحالات</value>
+  </data>
+  <data name="Error_CaseIdInvalid" xml:space="preserve">
+    <value>رقم الحالة فارغ او غير صالح</value>
+  </data>
+  <data name="Error_CaseListNotAvailable" xml:space="preserve">
+    <value>قائمة الحالات المتوفرة غير متوفرة حاليا.</value>
+  </data>
+  <data name="Error_CaseNotAccessible" xml:space="preserve">
+    <value>محطة العمل لا تملك الصلاحية الدخول لهذه الحالة</value>
+  </data>
+  <data name="Error_CaseNotListed" xml:space="preserve">
+    <value>الحاله غير متوفرة في قائمة الحالات</value>
+  </data>
+  <data name="Error_CaseVersionMismatch" xml:space="preserve">
+    <value>إصدار الملف (XML) لا يطابق المخطط.</value>
+  </data>
+  <data name="Error_FilenameEmpty" xml:space="preserve">
+    <value>طول اسم الملف هو 0، يرجى تقديم اسم ملف صالح</value>
+  </data>
+  <data name="Error_InvalidFunction" xml:space="preserve">
+    <value>الوظيفة التي تم إستدعائها غير صالحه أو لم يتم تنفيذها</value>
+  </data>
+  <data name="Error_InvalidLogin" xml:space="preserve">
+    <value>اسم المستخدم أو كلمة المرور غير صحيحة. الرجاء الاتصال بـ مسؤول النظام.</value>
+  </data>
+  <data name="Error_LoadBalanceDelayCaseRequirements" xml:space="preserve">
+    <value>الحالة المطلوبة لم تتم معالجتها لأسباب التوازن التحميل</value>
+  </data>
+  <data name="Error_NoArchiveSources" xml:space="preserve">
+    <value>لا توجد اي حالة متاحة حاليا في مصادر الارشيف</value>
+  </data>
+  <data name="Error_NoLiveCase" xml:space="preserve">
+    <value>لا توجد اي حالة معلقة حاليا</value>
+  </data>
+  <data name="Error_NoLiveSources" xml:space="preserve">
+    <value>لا توجد حاليا اي مصادر متاحة للحالة المعلقة</value>
+  </data>
+  <data name="Error_NoUserProfile" xml:space="preserve">
+    <value>لم يعثر على اي مستخدم، الرجاء الاتصال بـ مسؤول النظام</value>
+  </data>
+  <data name="Error_OnePendingCaseOnly" xml:space="preserve">
+    <value>يرجى إتخاذ القرار لهذا الحالة قبل اختيار واحدة جديدة.</value>
+  </data>
+  <data name="Error_SourceNotAvailable" xml:space="preserve">
+    <value>مصدر الحالة لم يعد متاحا</value>
+  </data>
+  <data name="Error_SourceTypeUnknown" xml:space="preserve">
+    <value>مصدر الحاله المحدد غير معروف</value>
+  </data>
+  <data name="Error_ThumbnailCreateFail" xml:space="preserve">
+    <value>د ل ل غير قادر على انشاء صورة مصغرة من PXE لتمرير الملف</value>
+  </data>
+  <data name="MaxNumberOfMacrosHaveBeenMetPleaseReplaceOneOfTheMacros" xml:space="preserve">
+    <value>بلغ الحد الاقصى للميكرو، الرجاء حذف واحدة لإنشاء جديد</value>
+  </data>
+  <data name="PleaseEnterANameForTheMacro" xml:space="preserve">
+    <value>يرجى ادخال اسم للميكرو</value>
+  </data>
+  <data name="BD_Colon" xml:space="preserve">
+    <value>BD:</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>تعليق</value>
+  </data>
+  <data name="D_Colon" xml:space="preserve">
+    <value>D:</value>
+  </data>
+  <data name="Height_Colon" xml:space="preserve">
+    <value>الطول</value>
+  </data>
+  <data name="HighEnergy" xml:space="preserve">
+    <value>عالية الطاقة</value>
+  </data>
+  <data name="LowEnergy" xml:space="preserve">
+    <value>طاقة منخفضة</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>إزالة</value>
+  </data>
+  <data name="ValueForMinRangeCannotBeLessThan0" xml:space="preserve">
+    <value>لايمكن للـحد الادنى ان يكون اقل من 0</value>
+  </data>
+  <data name="Value_Colon" xml:space="preserve">
+    <value>القيمة</value>
+  </data>
+  <data name="Width_Colon" xml:space="preserve">
+    <value>العرض</value>
+  </data>
+  <data name="X_Colon" xml:space="preserve">
+    <value>X:</value>
+  </data>
+  <data name="Y_Colon" xml:space="preserve">
+    <value>Y:</value>
+  </data>
+  <data name="Zoom_Colon" xml:space="preserve">
+    <value>تكبير</value>
+  </data>
+  <data name="AddCriteria" xml:space="preserve">
+    <value>إضافة معايير</value>
+  </data>
+  <data name="Analyst" xml:space="preserve">
+    <value>المحلل</value>
+  </data>
+  <data name="AnalystComment" xml:space="preserve">
+    <value>تعليق المحلل</value>
+  </data>
+  <data name="ArchiveCases" xml:space="preserve">
+    <value>أرشيف الحالات</value>
+  </data>
+  <data name="AutoSelect" xml:space="preserve">
+    <value>تحديد تلقائي</value>
+  </data>
+  <data name="CaseId" xml:space="preserve">
+    <value>رقم الحاله</value>
+  </data>
+  <data name="DeleteCriteria" xml:space="preserve">
+    <value>حذف المعايرة</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>تسجيل دخول</value>
+  </data>
+  <data name="NoSourceSelected" xml:space="preserve">
+    <value>لا يوجد مصدر محدد</value>
+  </data>
+  <data name="OpenAsComparison_Question" xml:space="preserve">
+    <value>فتح ومقارنة</value>
+  </data>
+  <data name="Password_Colon" xml:space="preserve">
+    <value>كلمة السر</value>
+  </data>
+  <data name="PendingCases" xml:space="preserve">
+    <value>حالات قيد الانتظار</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>النتيجة</value>
+  </data>
+  <data name="UpdateTime" xml:space="preserve">
+    <value>تحديث الوقت</value>
+  </data>
+  <data name="Username_Colon" xml:space="preserve">
+    <value>إسم المستخدم</value>
+  </data>
+  <data name="Cases" xml:space="preserve">
+    <value>الحالات</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>مرشحات</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>صورة</value>
+  </data>
+  <data name="ObjectId" xml:space="preserve">
+    <value>تعريف الكائن</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>النتائج</value>
+  </data>
+  <data name="EditContainerId" xml:space="preserve">
+    <value>تحرير رقم الحاوية</value>
+  </data>
+  <data name="ScanContainerId" xml:space="preserve">
+    <value>مسح رقم الحاوية</value>
+  </data>
+  <data name="ScanContainerInformation" xml:space="preserve">
+    <value>مسح معلومات الحاوية</value>
+  </data>
+  <data name="ScanConveyanceInformation" xml:space="preserve">
+    <value>مسح معلومات وسيلة النقل</value>
+  </data>
+  <data name="ScanLocationInformation" xml:space="preserve">
+    <value>مسح معلومات الموقع</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>فئة</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>وصف</value>
+  </data>
+  <data name="EditSnapshots" xml:space="preserve">
+    <value>تحرير لقطات</value>
+  </data>
+  <data name="ExistingMacros" xml:space="preserve">
+    <value>قائمة ميكرو الموجودة</value>
+  </data>
+  <data name="ImageHistory" xml:space="preserve">
+    <value>صورة التاريخ</value>
+  </data>
+  <data name="InorganicStrip" xml:space="preserve">
+    <value>مواد غير عضوية</value>
+  </data>
+  <data name="MacroName" xml:space="preserve">
+    <value>اسم الماكرو</value>
+  </data>
+  <data name="MetalStrip" xml:space="preserve">
+    <value>قطاع المعدن</value>
+  </data>
+  <data name="Minus_Sign" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>لا شيء</value>
+  </data>
+  <data name="One_Colon_One" xml:space="preserve">
+    <value>1:1</value>
+  </data>
+  <data name="OrganicStrip" xml:space="preserve">
+    <value>قطاع المواد العضوية</value>
+  </data>
+  <data name="Plus_Sign" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="Presets" xml:space="preserve">
+    <value>المسبقة</value>
+  </data>
+  <data name="PseudoColorMappings" xml:space="preserve">
+    <value>تعيينات الالوان الزائفة</value>
+  </data>
+  <data name="Quadmat" xml:space="preserve">
+    <value>Quadmat</value>
+    <comment>No Arabic translation</comment>
+  </data>
+  <data name="SaveImageAs_Ellipsis" xml:space="preserve">
+    <value>حفظ الصورة باسم ...</value>
+  </data>
+  <data name="Scans" xml:space="preserve">
+    <value>فحص</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>مرحلة</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>وصف</value>
+  </data>
+  <data name="Trimat" xml:space="preserve">
+    <value>Trimat</value>
+    <comment>No Arabic translation</comment>
+  </data>
+  <data name="UserMacros" xml:space="preserve">
+    <value>مستخدم الماكرو</value>
+  </data>
+  <data name="View1" xml:space="preserve">
+    <value>منظر 1</value>
+  </data>
+  <data name="ViewHistory" xml:space="preserve">
+    <value>عرض السجل</value>
+  </data>
+  <data name="AttachmentFile" xml:space="preserve">
+    <value>ملف مرفق</value>
+  </data>
+  <data name="AttachmentType" xml:space="preserve">
+    <value>نوع المرفق</value>
+  </data>
+  <data name="AvailableImages" xml:space="preserve">
+    <value>الصور المتاحة</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>تصفح</value>
+  </data>
+  <data name="CaseInfo" xml:space="preserve">
+    <value>معلومات الحاله</value>
+  </data>
+  <data name="CaseSourceName" xml:space="preserve">
+    <value>مصدر اسم الحالة</value>
+  </data>
+  <data name="Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>العودة</value>
+  </data>
+  <data name="Shift" xml:space="preserve">
+    <value>نقل</value>
+  </data>
+  <data name="SiteId" xml:space="preserve">
+    <value>رقم الموقع</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>منظر</value>
+  </data>
+  <data name="CloseTab" xml:space="preserve">
+    <value>إغلاق تبويب</value>
+  </data>
+  <data name="RemoveMarkings" xml:space="preserve">
+    <value>إزالة العلامات</value>
+  </data>
+  <data name="UpdateContainerId" xml:space="preserve">
+    <value>تحديث هوية الحاوية</value>
+  </data>
+  <data name="HighDensityCargo" xml:space="preserve">
+    <value>عالية الكثافة</value>
+  </data>
+  <data name="LowDensityCargo" xml:space="preserve">
+    <value>منخفض الكثافة</value>
+  </data>
+  <data name="NormalDensityCargo" xml:space="preserve">
+    <value>الكثافة العادية للمسح</value>
+  </data>
+  <data name="BlurEffect" xml:space="preserve">
+    <value>اخفاء التأثير</value>
+  </data>
+  <data name="EdgeEnhancement" xml:space="preserve">
+    <value>تعزيز الحافة</value>
+  </data>
+  <data name="Invert" xml:space="preserve">
+    <value>عكس</value>
+  </data>
+  <data name="Sharpen" xml:space="preserve">
+    <value>جعله حادا</value>
+  </data>
+  <data name="GammaNeutronProfile" xml:space="preserve">
+    <value>جاما / تعريف النيترون</value>
+  </data>
+  <data name="NuclearIsotopeAnalysis" xml:space="preserve">
+    <value>تحليل النظائر النووية</value>
+  </data>
+  <data name="OCRImage" xml:space="preserve">
+    <value>صورة OCR</value>
+  </data>
+  <data name="Others" xml:space="preserve">
+    <value>آخرون</value>
+  </data>
+  <data name="PageOfPage" xml:space="preserve">
+    <value>الصفحة 1 من 2</value>
+  </data>
+  <data name="AnalysisHistory" xml:space="preserve">
+    <value>سجل التحليل</value>
+  </data>
+  <data name="ClearCase" xml:space="preserve">
+    <value>الحالة واضحة</value>
+  </data>
+  <data name="DFCStatus" xml:space="preserve">
+    <value>حالة DFC</value>
+  </data>
+  <data name="Manifests" xml:space="preserve">
+    <value>يظهر</value>
+  </data>
+  <data name="XRayImage" xml:space="preserve">
+    <value>صورة الاشعة السينية</value>
+  </data>
+  <data name="FragmentData" xml:space="preserve">
+    <value>تجزئت البيانات</value>
+  </data>
+  <data name="Histogram" xml:space="preserve">
+    <value>الرسم البياني</value>
+  </data>
+  <data name="OCRImages" xml:space="preserve">
+    <value>صورة OCR</value>
+  </data>
+  <data name="RadiationDetectorData" xml:space="preserve">
+    <value>بيانات الكشف عن الاشعاع</value>
+  </data>
+  <data name="XRayPlugin" xml:space="preserve">
+    <value>مساعد الاشعة السينية</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>مناطق</value>
+  </data>
+  <data name="SelectedCaseIsAlreadyBeingDisplayed" xml:space="preserve">
+    <value>الحاله المطلوبة مستخدمة حاليا، او يتم عرضها</value>
+  </data>
+  <data name="Chrome" xml:space="preserve">
+    <value>الكروم</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="chromey" xml:space="preserve">
+    <value>كروم 2</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="MapX" xml:space="preserve">
+    <value>خريطة X</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="newchrome" xml:space="preserve">
+    <value>الكروم 3</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="Parrot" xml:space="preserve">
+    <value>ببغاء</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="rainbow" xml:space="preserve">
+    <value>قزح</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="rainbow2" xml:space="preserve">
+    <value>قزح 2</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test1" xml:space="preserve">
+    <value>الاختبار 1</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test2" xml:space="preserve">
+    <value>الاختبار 2</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test3" xml:space="preserve">
+    <value>الاختبار 3</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test4" xml:space="preserve">
+    <value>الاختبار 4</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test5" xml:space="preserve">
+    <value>الاختبار 5</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test6" xml:space="preserve">
+    <value>الاختبار 6</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test7" xml:space="preserve">
+    <value>الاختبار 7</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test8" xml:space="preserve">
+    <value>الاختبار 8</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="test9" xml:space="preserve">
+    <value>الاختبار 9</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="untitled2" xml:space="preserve">
+    <value>بدون عنوان 2</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="xchrome" xml:space="preserve">
+    <value>الكروم 4</value>
+    <comment>Pseudo color name</comment>
+  </data>
+  <data name="Buffer" xml:space="preserve">
+    <value>عزل</value>
+  </data>
+  <data name="DualEnergy" xml:space="preserve">
+    <value>ثنائي الطاقة</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>مرشح</value>
+  </data>
+  <data name="Original" xml:space="preserve">
+    <value>أصلي</value>
+  </data>
+  <data name="PseudoColor" xml:space="preserve">
+    <value>الالوان الزائفة</value>
+  </data>
+  <data name="Setup" xml:space="preserve">
+    <value>نظام</value>
+  </data>
+  <data name="Reapply" xml:space="preserve">
+    <value>إعادة تطبيق</value>
+  </data>
+  <data name="Alarms" xml:space="preserve">
+    <value>الانذارات</value>
+  </data>
+  <data name="NORMAlarms" xml:space="preserve">
+    <value>إنذار NORM</value>
+  </data>
+  <data name="Warnings" xml:space="preserve">
+    <value>تحذيرات</value>
+  </data>
+  <data name="Range_Colon" xml:space="preserve">
+    <value>نطاق</value>
+  </data>
+  <data name="MaxAnnotationErrorMessage" xml:space="preserve">
+    <value>تم الوصول إلى الحد الأقصى لعدد الشروح، الرجاء إزالة البعض لإضافة واحد آخر</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>مجهول</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تحرير</value>
+  </data>
+  <data name="SelectAnAttachmentToRemove" xml:space="preserve">
+    <value>حدد مرفق لإزالته من قائمة المرفقات المضافة حديثا</value>
+  </data>
+  <data name="Annotations" xml:space="preserve">
+    <value>الملاحظات</value>
+  </data>
+  <data name="FTIImage" xml:space="preserve">
+    <value>FTI صورة</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>تاريخ</value>
+  </data>
+  <data name="Manifest" xml:space="preserve">
+    <value>ظاهر</value>
+  </data>
+  <data name="TDSResultFile" xml:space="preserve">
+    <value>نتائج ملف TDS</value>
+  </data>
+  <data name="Copy_CtrlC" xml:space="preserve">
+    <value>نسخ (Ctrl+C)</value>
+    <comment>Print page tooltip</comment>
+  </data>
+  <data name="DecreaseTheSizeOfTheContent_CtrlMinus" xml:space="preserve">
+    <value>تصغير  (Ctrl -)</value>
+    <comment>Print page tooltip</comment>
+  </data>
+  <data name="IncreaseTheSizeOfTheContent_CtrlPlus" xml:space="preserve">
+    <value>تكبير (Ctrl +)</value>
+    <comment>Print page tooltip</comment>
+  </data>
+  <data name="OneHundredPercent_Ctrl1" xml:space="preserve">
+    <value>100% (Ctrl+1)</value>
+    <comment>Print page tooltip</comment>
+  </data>
+  <data name="PageWidth_Ctrl2" xml:space="preserve">
+    <value>عرض الصفحة  (Ctrl+2)</value>
+    <comment>Print page tooltip</comment>
+  </data>
+  <data name="Print_CtrlP" xml:space="preserve">
+    <value>طباعة  (Ctrl+P)</value>
+    <comment>Print page tooltip</comment>
+  </data>
+  <data name="TwoPages_Ctrl4" xml:space="preserve">
+    <value>صفحتين  (Ctrl+4)</value>
+    <comment>Print page tooltip</comment>
+  </data>
+  <data name="WholePage_Ctrl3" xml:space="preserve">
+    <value>صفحة كاملة (Ctrl+3)</value>
+    <comment>Print page tooltip</comment>
+  </data>
+  <data name="DensityAlarm" xml:space="preserve">
+    <value>انذار الكثافة العالية</value>
+  </data>
+  <data name="ResetDefaults" xml:space="preserve">
+    <value>إعادة تعيين افتراضي</value>
+  </data>
+  <data name="XRayPluginView0" xml:space="preserve">
+    <value>مساعد الاشعة السينية المنظر 0</value>
+  </data>
+  <data name="XRayPluginView1" xml:space="preserve">
+    <value>مساعد الاشعة السينية المنظر 1</value>
+  </data>
+</root>

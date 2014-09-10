@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="message">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="addressInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sender">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="body">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="payload">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="EventID" type="xs:unsignedShort" />
+                    <xs:element name="LaneID" type="xs:unsignedByte" />
+                    <xs:element name="EventType" type="xs:unsignedByte" />
+                    <xs:element name="EventTime" type="xs:string" />
+                    <xs:element name="ULD">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CaseNumber" type="xs:unsignedLong" />
+                          <xs:element name="Code" type="xs:string" />
+                          <xs:element name="Confidence" type="xs:unsignedByte" />
+                          <xs:element name="ResultCode" type="xs:unsignedByte" />
+                          <xs:element name="ResultText" type="xs:string" />
+                          <xs:element name="FileName" type="xs:string" />
+                          <xs:element name="ImageCount" type="xs:unsignedByte" />
+                          <xs:element name="Image1" type="xs:string" />
+                          <xs:element name="Image2" type="xs:string" />
+                          <xs:element name="Image3" type="xs:string" />
+                          <xs:element name="Image4" type="xs:string" />
+                          <xs:element name="Image5" type="xs:string" />
+                          <xs:element name="Image6" type="xs:string" />
+                          <xs:element name="Image7" type="xs:string" />
+                          <xs:element name="Image8" type="xs:string" />
+                        </xs:sequence>
+                        <xs:attribute name="Id" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="base64Encoded" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="guid" type="xs:string" use="required" />
+            <xs:attribute name="ackRequired" type="xs:boolean" use="required" />
+            <xs:attribute name="messageType" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required" />
+      <xs:attribute name="sentDateTime" type="xs:dateTime" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

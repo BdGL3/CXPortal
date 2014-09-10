@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<message name="ACK" sentDateTime="2005-10-17T08:26:00.0000000-07:00">
+<addressInfo>
+<sender>
+<name>PCS</name>
+</sender>
+</addressInfo>
+<body guid="2A72D63B-92CA-4311-A074-54674D5D3E33" ackRequired="false" messageType="protocol">
+<payload>
+</payload>
+</body>
+</message>

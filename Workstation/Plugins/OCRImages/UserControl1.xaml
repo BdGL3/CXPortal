@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.OCRImages.UserControl1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Loaded="UserControl_Loaded" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:L3.Cargo.Common;assembly=L3.Cargo.Common"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Width="Auto" Height="Auto" mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="439">
+    <UserControl.Resources>
+        <ResourceDictionary>
+        <local:CaseObject x:Key="CaseObj"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1.0" StartPoint="0.5,0.03">
+                <GradientStop Color="WhiteSmoke" Offset="0"/>
+                <GradientStop Color="White" Offset="0.7"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <DockPanel>
+            <Grid Name="ContainerInfoArea" DockPanel.Dock="Top" DataContext="{StaticResource CaseObj}" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <Border Grid.Column="0" BorderThickness="5">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1.0" StartPoint="0.5,0.03">
+                            <GradientStop Color="#FF9F2D2D" Offset="0"/>
+                            <GradientStop Color="Maroon" Offset="0.6"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <DockPanel>
+                        <ToolBarOverflowPanel DockPanel.Dock="Right" Name="XRayImage_ToolBarTray">
+                            <ToolBarOverflowPanel.Resources>
+                                <Style TargetType="{x:Type ToolBar}">
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="8" />
+                                    <Setter Property="OverridesDefaultStyle" Value="True" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ToolBar}">
+                                                <ToolBarPanel IsItemsHost="True" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ToolBarOverflowPanel.Resources>
+                            <ToolBar>
+                                <Button Margin="1" ToolTip="{Binding Path=UpdateContainerId, Source={StaticResource Resources}}" Click="ContainerIDUpdateBtn_Click" Name="ContainerIDUpdateBtn">
+                                    <Button.Style>
+                                        <Style TargetType="Button" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=IsCaseEditable}" Value="False">
+                                                    <Setter Property="Visibility" Value="Hidden"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <!-- Use a canvas to display the button image with the text on top. -->
+                                    <Canvas Height="24" Width="45">
+                                        <Image Height="23" Stretch="Uniform" Name="Update_ContainerIDNum" Source="./EmptyWideButton.png" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <Label  Width="45" Canvas.Left="2" Canvas.Top="0" FontSize="9" FontWeight="DemiBold" Content="{Binding Path=Update, Source={StaticResource Resources}}"></Label>
+                                    </Canvas>
+                                </Button>
+                            </ToolBar>
+                        </ToolBarOverflowPanel>
+                        <Popup Name="UpdateContainerIDPopup" StaysOpen="False" Placement="Bottom" Closed="UpdateContainerIDPopup_Closed" PlacementTarget="{Binding ElementName=ContainerIDUpdateBtn}">
+                            <Border BorderBrush="Black" BorderThickness="1" Background="White">
+                                <StackPanel Background="White" Orientation="Vertical" Margin="5" Width="200">
+                                    <TextBox Name="ContainerIDTextBox" MaxLength="16"></TextBox>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Button Content="{Binding Path=OK, Source={StaticResource Resources}}" Height="23" Name="UpdateContainerIDOKBtn" Width="75" Click="UpdateContainerIDOKBtn_Click"/>
+                                        <Button  Margin="5" Content="{Binding Path=Cancel, Source={StaticResource Resources}}" Height="23" Name="UpdateContainerIDCancelBtn" Width="75" Click="UpdateContainerIDCancelBtn_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                        <TextBlock Name="ContainerIDNumber" FontSize="33" HorizontalAlignment="Center" TextAlignment="Center" Text="{Binding Path=scanInfo.container.Id}"/>
+                    </DockPanel>
+                </Border>
+                <Border Grid.Column="1" BorderThickness="0,5,5,5">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1.0" StartPoint="0.5,0.03">
+                            <GradientStop Color="#FF9F2D2D" Offset="0"/>
+                            <GradientStop Color="Maroon" Offset="0.6"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <TextBlock Name="BatchNumber" FontSize="33" HorizontalAlignment="Center" TextAlignment="Center" Text="{Binding Path=scanInfo.conveyance.BatchNum}"/>
+                </Border>
+                <Border Grid.Column="2" BorderThickness="0,5,5,5">
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1.0" StartPoint="0.5,0.03">
+                            <GradientStop Color="#FF9F2D2D" Offset="0"/>
+                            <GradientStop Color="Maroon" Offset="0.6"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <TextBlock Name="SequenceNumber" FontSize="33" HorizontalAlignment="Center" TextAlignment="Center" Text="{Binding Path=scanInfo.container.SequenceNum}"/>
+                </Border>
+            </Grid>
+            <DockPanel Width="Auto" Height="Auto" Name="grid1" >
+                <ListBox DockPanel.Dock="Left" Width="150" Height="Auto" HorizontalAlignment="Left"  Margin="5,5,5,5" Name="listBox1" VerticalAlignment="Stretch" SelectionChanged="listBox1_SelectionChanged">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+                <Image Name="ViewImage" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" />
+            </DockPanel>
+        </DockPanel>
+    </Border>
+</UserControl>

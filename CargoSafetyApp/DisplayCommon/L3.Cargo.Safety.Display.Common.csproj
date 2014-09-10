@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{96CB431C-B128-4E9B-BD33-E7C3C2803B11}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L3.Cargo.Safety.Display.Common</RootNamespace>
+    <AssemblyName>L3.Cargo.Safety.Display.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoomSiren.xaml.cs">
+      <DependentUpon>BoomSiren.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CollisionDetection.xaml.cs">
+      <DependentUpon>CollisionDetection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cultures\CultureResources.cs" />
+    <Compile Include="Cultures\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FadedGradientBorder.xaml.cs">
+      <DependentUpon>FadedGradientBorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DelegateCommand.cs" />
+    <Compile Include="Helpers\NotificationObject.cs" />
+    <Compile Include="Helpers\RandomHelper.cs" />
+    <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="ObjectDrawing\Cylinder.cs" />
+    <Compile Include="ObjectDrawing\ObjectCircle.cs" />
+    <Compile Include="ObjectDrawing\ObjectCube.cs" />
+    <Compile Include="ObjectDrawing\ObjectRectangle.cs" />
+    <Compile Include="ObjectDrawing\ObjectScene.cs" />
+    <Compile Include="ObjectDrawing\ObjectTriangle.cs" />
+    <Compile Include="ObjectDrawing\ObjectUtils.cs" />
+    <Compile Include="PerimeterMode.xaml.cs">
+      <DependentUpon>PerimeterMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeploymentAnimation.cs" />
+    <Compile Include="DisplayBase.cs" />
+    <Compile Include="PortalModel.xaml.cs">
+      <DependentUpon>PortalModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PortalObjects\objects\EStopSensor.cs" />
+    <Compile Include="PortalObjects\objects\LightCurtainInterlock.cs" />
+    <Compile Include="PortalObjects\objects\MotionDetector.cs" />
+    <Compile Include="PortalObjects\ObjectBehavior.cs" />
+    <Compile Include="PortalObjects\PortalModelFactory.cs" />
+    <Compile Include="PortalObjects\PortalObject.cs" />
+    <Compile Include="PortalObjects\PortalObjectFactory.cs" />
+    <Compile Include="PortalObjects\objects\TrafficLight.cs" />
+    <Compile Include="PortalObjects\objects\VehicleSensor.cs" />
+    <Compile Include="SummaryStatus.xaml.cs">
+      <DependentUpon>SummaryStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TagCollection.cs" />
+    <Compile Include="EStopStatus.xaml.cs">
+      <DependentUpon>EStopStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InterlockBypass.xaml.cs">
+      <DependentUpon>InterlockBypass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Indicator.xaml.cs">
+      <DependentUpon>Indicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InfoButton.xaml.cs">
+      <DependentUpon>InfoButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InfoDisplay.xaml.cs">
+      <DependentUpon>InfoDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InterlockStatus.xaml.cs">
+      <DependentUpon>InterlockStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OpcTags.cs" />
+    <Compile Include="TruckModel.xaml.cs">
+      <DependentUpon>TruckModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SafetyReset.xaml.cs">
+      <DependentUpon>SafetyReset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TagUpdate.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\PortalViewModel.cs" />
+    <Compile Include="WarningMessages.xaml.cs">
+      <DependentUpon>WarningMessages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WarningStatus.xaml.cs">
+      <DependentUpon>WarningStatus.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CollisionDetection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BoomSiren.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FadedGradientBorder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PerimeterMode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EStopStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InterlockBypass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ErrorMessages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="ErrorMessages.xaml.cs">
+      <DependentUpon>ErrorMessages.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Indicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InfoDisplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InterlockStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="ResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="PortalModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SummaryStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TruckModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SafetyReset.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WarningMessages.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WarningStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CargoCommon\Configurations\L3.Cargo.Common.Configurations.csproj">
+      <Project>{8EF32935-363D-4AE4-AE8B-ACAF0D7F9130}</Project>
+      <Name>L3.Cargo.Common.Configurations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommon\Dashboard\Displays\L3.Cargo.Common.Dashboard.Display.csproj">
+      <Project>{471112EB-1360-4A09-8536-BFF9C0420159}</Project>
+      <Name>L3.Cargo.Common.Dashboard.Display</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommon\Dashboard\L3.Cargo.Common.Dashboard.csproj">
+      <Project>{1ACE42E0-98FD-4695-B0A0-1054270FEB31}</Project>
+      <Name>L3.Cargo.Common.Dashboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\Common\L3.Cargo.Communications.Common.csproj">
+      <Project>{90399276-EC47-4658-9B88-C535BDBAC702}</Project>
+      <Name>L3.Cargo.Communications.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CargoCommunications\Dashboard\Display\L3.Cargo.Communications.Dashboard.Display.csproj">
+      <Project>{B86E1B72-378A-487C-BF3B-84378B7460B2}</Project>
+      <Name>L3.Cargo.Communications.Dashboard.Display</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SafetyIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Settings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FrontLeft.png" />
+    <Resource Include="Resources\FrontRight.png" />
+    <Resource Include="Resources\RearLeft.png" />
+    <Resource Include="Resources\RearRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DisableInterlocks.ico" />
+    <Resource Include="Resources\EnableInterlocks.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CollisionDisable.ico" />
+    <Resource Include="Resources\CollisionEnable.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SirenDisable.ico" />
+    <Resource Include="Resources\SirenEnable.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cultures\Resources.ar.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cultures\Resources.en.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cultures\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>L3.Cargo.Safety.Display.Common</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\top_portal_view.png" />
+    <Resource Include="Resources\view_1.png" />
+    <Resource Include="Resources\view_2.png" />
+    <Resource Include="Resources\view_3.png" />
+    <Resource Include="Resources\view_4.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

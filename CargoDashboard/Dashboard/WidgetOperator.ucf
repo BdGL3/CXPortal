@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<operatorWidgetArea>
+  <widgetPage rows="580" columns="1340" page="1">
+    <widgetDisplay name="DetectorRealTimeViewer"
+                    row="0"
+                    column="0"
+                    rowspan="375"
+                    columnspan="740" />
+    <widgetDisplay name="SafetyPortalDisplay"
+                    row="0"
+                    column="740"
+                    rowspan="375"
+                    columnspan="600" />
+    
+    <widgetDisplay name="LinacState"
+                    row="375"
+                    column="0"
+                    rowspan="405"
+                    columnspan="447" />
+    <widgetDisplay name="ScanState"
+                    row="375"
+                    column="447"
+                    rowspan="405"
+                    columnspan="446" />
+    <widgetDisplay name="ScanAreaControls"
+                    row="375"
+                    column="893"
+                    rowspan="405"
+                    columnspan="447" />
+  </widgetPage>
+  <widgetPage rows="580" columns="1340" page="2">
+    <widgetDisplay name="LinacEnergySelection"
+                    row="25"
+                    column="375"
+                    rowspan="175"
+                    columnspan="940" />
+    <widgetDisplay name="StartCalibrationControls"
+                row="25"
+                column="25"
+                rowspan="175"
+                columnspan="400" />
+  </widgetPage>
+</operatorWidgetArea>

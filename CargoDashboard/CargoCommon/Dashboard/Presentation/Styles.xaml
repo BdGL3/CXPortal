@@ -1,0 +1,468 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="WidgetTabControl" TargetType="{x:Type TabControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid ClipToBounds="True" SnapsToDevicePixels="True" KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Border BorderThickness="0" BorderBrush="Transparent" Background="Transparent" Name="ContentPanel" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="0">
+                            <ContentPresenter Content="{TemplateBinding TabControl.SelectedContent}" ContentTemplate="{TemplateBinding TabControl.SelectedContentTemplate}" ContentStringFormat="{TemplateBinding TabControl.SelectedContentStringFormat}" ContentSource="SelectedContent" Margin="{TemplateBinding Control.Padding}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </Border>
+                        <TabPanel IsItemsHost="True" Name="HeaderPanel" HorizontalAlignment="Center" Margin="5,0,5,5" Focusable="False" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1" Grid.Row="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DashboardText">
+        <Setter Property="TextElement.FontFamily" Value="Calibri" />
+        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+    </Style>
+
+    <Style x:Key="DashboardHeaderText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="20" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="DashboardDescriptionText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="10" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.Foreground" Value="Gray" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="StatusErrorWarningHeaderText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="18" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.Foreground" Value="White" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="StatusErrorWarningText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="16" />
+        <Setter Property="TextBlock.HorizontalAlignment" Value="Center" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+        <Setter Property="TextBlock.Foreground" Value="Black" />
+        <Setter Property="TextBlock.Margin" Value="5,0,0,0" />
+    </Style>
+
+    <Style x:Key="StatusMessageHeaderText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="20" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Setter Property="TextElement.FontStyle" Value="Italic" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="StatusBarHeaderText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="16" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+        <Setter Property="TextBlock.Foreground" Value="White" />
+        <Setter Property="TextBlock.Margin" Value="10,0,0,0" />
+    </Style>
+
+    <Style x:Key="InfoDisplayHeaderText" BasedOn="{StaticResource DashboardHeaderText}">
+        <Setter Property="TextElement.FontSize" Value="26" />
+    </Style>
+
+    <Style x:Key="InfoWidgetHeaderText" BasedOn="{StaticResource DashboardHeaderText}">
+        <Setter Property="TextElement.FontSize" Value="20" />
+        <Setter Property="TextBlock.Margin" Value="20,10,10,0" />
+    </Style>
+
+    <Style x:Key="InfoWidgetStatusHeaderText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="14" />
+        <Setter Property="TextBlock.Margin" Value="40,5,2,5" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="InfoWidgetStatusText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="14" />
+        <Setter Property="TextBlock.Margin" Value="5" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="InfoWidgetConfigHeaderBorder" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="#DDDDDD" />
+        <Setter Property="BorderThickness" Value="1,1,0,0" />
+    </Style>
+
+    <Style x:Key="InfoWidgetConfigHeaderText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="14" />
+        <Setter Property="TextBlock.Margin" Value="5" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="InfoWidgetConfigText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="14" />
+        <Setter Property="TextBlock.Margin" Value="5" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="WidgetBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="DarkGray" />
+        <Setter Property="BorderThickness" Value="1.5" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="Margin" Value="10" />
+    </Style>
+
+    <Style x:Key="WidgetLine" TargetType="{x:Type DockPanel}">
+        <Setter Property="Background" Value="Maroon" />
+        <Setter Property="Margin" Value="5,0,5,5" />
+    </Style>
+
+    <Style x:Key="WidgetButtonText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="14" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.Margin" Value="10,0" />
+    </Style>
+
+    <Style x:Key="WidgetStateBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="DarkGray" />
+        <Setter Property="BorderThickness" Value="1.5" />
+        <Setter Property="Margin" Value="10,0,10,5" />
+    </Style>
+
+    <Style x:Key="WidgetStateLine" TargetType="{x:Type DockPanel}">
+        <Setter Property="Background" Value="Gray" />
+        <Setter Property="Margin" Value="5,0" />
+        <Setter Property="Height" Value="1" />
+    </Style>
+
+    <Style x:Key="WidgetStateHeaderText">
+        <Setter Property="TextBlock.Margin" Value="5,0" />
+        <Setter Property="TextElement.FontFamily" Value="Calibri" />
+        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+        <Setter Property="TextElement.FontSize" Value="16" />
+        <Setter Property="TextElement.FontWeight" Value="Bold" />
+        <Setter Property="TextElement.FontStretch" Value="Condensed" />
+    </Style>
+
+    <Style x:Key="WidgetStateText" BasedOn="{StaticResource DashboardText}">
+        <Setter Property="TextElement.FontSize" Value="14" />
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="DashboardButton" TargetType="{x:Type Button}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Margin" Value="10,3,10,13" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="ButtonBorder">
+                        <Border x:Name="BorderShadow"
+                                Margin="0.5"
+                                BorderBrush="DarkGray"
+                                BorderThickness="0"
+                                CornerRadius="5">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black"
+                                                  Direction="320"
+                                                  Opacity="0.7"
+                                                  ShadowDepth="3"
+                                                  BlurRadius="10" />
+                            </Border.Effect>
+                            <Border.Background>
+                                <RadialGradientBrush GradientOrigin="1.0,0.0" Center="1.0,0.0" RadiusX="1.0" RadiusY="1.5">
+                                    <RadialGradientBrush.GradientStops>
+                                        <GradientStop x:Name="GradientColor1" Color="#FFFFFFFF" Offset="0.0" />
+                                        <GradientStop x:Name="GradientColor2" Color="#FFd0d0d0" Offset="1.5" />
+                                    </RadialGradientBrush.GradientStops>
+                                </RadialGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="ButtonBackground"
+                                BorderBrush="DarkGray"
+                                BorderThickness="1"
+                                CornerRadius="5">
+                            <ContentPresenter x:Name="ButtonContentPresenter"
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Button.TouchDown">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard x:Name="TouchDownBeginStoryboard">
+                                    <Storyboard>
+                                        <ThicknessAnimation Storyboard.TargetName="BorderShadow" Storyboard.TargetProperty="BorderThickness" To="2,2,1,1" Duration="0:0:0:0.25" FillBehavior="Stop" />
+                                        <ColorAnimation Storyboard.TargetName="GradientColor1" Storyboard.TargetProperty="Color" To="#FFFFFFFF" Duration="0:0:0:0.25" FillBehavior="Stop" />
+                                        <ColorAnimation Storyboard.TargetName="GradientColor2" Storyboard.TargetProperty="Color" To="#FFB8B8B8" Duration="0:0:0:0.25" FillBehavior="Stop" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="ButtonBackground">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop x:Name="Gradient1" Color="#08FFFFFF" Offset="1"/>
+                                        <GradientStop Color="#88AAAAAA" Offset="0"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Border.BorderThickness" TargetName="BorderShadow" Value="2,2,1,1" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DashboardToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Margin" Value="10,3,10,13" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid x:Name="ButtonBorder">
+                        <Border x:Name="BorderShadow"
+                                Margin="0.5"
+                                BorderBrush="DarkGray"
+                                BorderThickness="0"
+                                CornerRadius="5">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black"
+                                                  Direction="320"
+                                                  Opacity="0.7"
+                                                  ShadowDepth="3"
+                                                  BlurRadius="10" />
+                            </Border.Effect>
+                            <Border.Background>
+                                <RadialGradientBrush GradientOrigin="1.0,0.0" Center="1.0,0.0" RadiusX="1.0" RadiusY="1.5">
+                                    <RadialGradientBrush.GradientStops>
+                                        <GradientStop Color="White" Offset="0.0" />
+                                        <GradientStop Color="#d0d0d0" Offset="1.5" />
+                                    </RadialGradientBrush.GradientStops>
+                                </RadialGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="ButtonBackground"
+                                BorderBrush="DarkGray"
+                                BorderThickness="1"
+                                CornerRadius="5">
+                            <ContentPresenter x:Name="ButtonContentPresenter"
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center"/>
+                        </Border>
+                        <Grid x:Name="Mask" Background="Transparent" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="ButtonBackground">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#08555555" Offset="1"/>
+                                        <GradientStop Color="#88555555" Offset="0"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Border.BorderThickness" TargetName="BorderShadow" Value="2,2,1,1" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" TargetName="Mask">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#8FFFFFFF" Offset="1"/>
+                                        <GradientStop Color="#8FFFFFFF" Offset="0"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Effect" TargetName="BorderShadow" Value="{x:Null}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="DashboardGroupButton" TargetType="{x:Type RadioButton}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid x:Name="ButtonBorder">
+                        <Border x:Name="BorderShadow"
+                                Margin="0.5"
+                                BorderBrush="DarkGray"
+                                BorderThickness="0"
+                                CornerRadius="5">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black"
+                                                  Direction="320"
+                                                  Opacity="0.7"
+                                                  ShadowDepth="3"
+                                                  BlurRadius="10" />
+                            </Border.Effect>
+                            <Border.Background>
+                                <RadialGradientBrush GradientOrigin="1.0,0.0" Center="1.0,0.0" RadiusX="1.0" RadiusY="1.5">
+                                    <RadialGradientBrush.GradientStops>
+                                        <GradientStop Color="White" Offset="0.0" />
+                                        <GradientStop Color="#d0d0d0" Offset="1.5" />
+                                    </RadialGradientBrush.GradientStops>
+                                </RadialGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Border x:Name="ButtonBackground"
+                                BorderBrush="DarkGray"
+                                BorderThickness="1"
+                                CornerRadius="5">
+                            <ContentPresenter x:Name="ButtonContentPresenter"
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="ButtonBackground">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#08555555" Offset="1"/>
+                                        <GradientStop Color="#88555555" Offset="0"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Border.BorderThickness" TargetName="BorderShadow" Value="2,2,1,1" />
+                            <Setter Property="Border.BorderBrush" TargetName="BorderShadow" Value="#80444444" />
+                            <Setter Property="Border.BorderBrush" TargetName="ButtonBackground" Value="#80444444" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TagStatusListView" TargetType="{x:Type ListView}">
+        <Setter Property="Background" Value="White"/>
+        <Style.Triggers>
+            <Trigger Property="ListBox.AlternationIndex" Value="1">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Color="#E8E8E8" Offset="0"></GradientStop>
+                                <GradientStop Color="#FFFFFF" Offset="0.5"></GradientStop>
+                                <GradientStop Color="#E8E8E8" Offset="1"></GradientStop>
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="ListBox.IsSelected" Value="true">
+                <Setter Property="Background" Value="Maroon" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="BorderBrush" Value="Maroon" />
+            </Trigger>            
+        </Style.Triggers>
+    </Style>
+
+    <DataTemplate x:Key="StatusErrorItem">
+        <Grid Margin="0,0,0,3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="{Binding Header}" FontFamily="Calibri" FontWeight="Bold" FontSize="16" />
+                <TextBlock Text="{Binding ErrorNum}" FontFamily="Calibri" FontWeight="Bold" FontSize="16" />
+                <TextBlock Text=": " FontFamily="Calibri" FontWeight="Bold" FontSize="16" />
+            </StackPanel>
+            <TextBlock Grid.Column="1" Text="{Binding Content}" TextWrapping="Wrap" FontFamily="Calibri" FontSize="16" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="StatusWarningItem">
+        <Grid Margin="0,0,0,3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="{Binding Header}" FontFamily="Calibri" FontWeight="Bold" FontSize="16" />
+                <TextBlock Text="{Binding ErrorNum}" FontFamily="Calibri" FontWeight="Bold" FontSize="16" />
+                <TextBlock Text=": " FontFamily="Calibri" FontWeight="Bold" FontSize="16" />
+            </StackPanel>
+            <TextBlock Grid.Column="1" Text="{Binding Content}" FontFamily="Calibri" FontSize="16" />
+        </Grid>
+    </DataTemplate>
+
+    <DropShadowEffect x:Key="InfoButtonDropShadow" Color="Black" Direction="315" Opacity="0.5" ShadowDepth="15" BlurRadius="10" />
+
+    <DropShadowEffect x:Key="GeneralDropShadow" Color="Black" Direction="320" Opacity="0.5" ShadowDepth="3" BlurRadius="7" />
+
+    <DropShadowEffect x:Key="BorderDropShadow" Color="Black" Direction="320" Opacity="0.35" ShadowDepth="0" BlurRadius="7" />
+
+    <LinearGradientBrush x:Key="InfoButtonBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#EEEEEE" Offset="0.0" />
+        <GradientStop Color="#CCCCCC" Offset="01.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="InfoDisplayBackground" StartPoint="0.5, 0" EndPoint="0.5, 1">
+        <GradientStop Color="#DDDDDD" Offset="0.0" />
+        <GradientStop Color="#DDDDDD" Offset="0.7" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="InfoDisplayWidgetBackground" StartPoint="0.5, 0" EndPoint="0.5, 1">
+        <GradientStop Color="#DDDDDD" Offset="0.0" />
+        <GradientStop Color="White" Offset="0.3" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="WidgetBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#DDDDDD" Offset="0.0" />
+        <GradientStop Color="White" Offset="0.5" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="StatusBarBackground" StartPoint="0.5, 0" EndPoint="0.5, 1">
+        <GradientStop Color="#b3b3b3" Offset="0.0" />
+        <GradientStop Color="#676767" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="StatusBarMessageAreaBackground" StartPoint="0.5, 0" EndPoint="0.5, 1">
+        <GradientStop Color="#adabac" Offset="0.0" />
+        <GradientStop Color="#d0cecf" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="DashboardBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#DDDDDD" Offset="0.0" />
+        <GradientStop Color="White" Offset="0.5" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="SystemMenuBarBackground" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#400000" Offset="0.0" />
+        <GradientStop Color="Maroon" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <Style x:Key="AboutBoxButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource {x:Static ToolBar.ToggleButtonStyleKey}}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

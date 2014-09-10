@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CALIBRATION_SCAN_0" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="CALIBRATION_SCAN_1" xml:space="preserve">
+    <value>Calibration</value>
+  </data>
+  <data name="CALIBRATION_SCAN_DISABLED" xml:space="preserve">
+    <value>Set to Calibration Mode</value>
+  </data>
+  <data name="CALIBRATION_SCAN_ENABLED" xml:space="preserve">
+    <value>Set to Scan Mode</value>
+  </data>
+  <data name="CALIBRATION_SCAN_TITLE" xml:space="preserve">
+    <value>Scan Type</value>
+  </data>
+  <data name="CALIBRATION_STATE_0" xml:space="preserve">
+    <value>Ready to perform calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_1" xml:space="preserve">
+    <value>Not ready to perform calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_10" xml:space="preserve">
+    <value>Performing dark data calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_11" xml:space="preserve">
+    <value>Completed dark data calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_12" xml:space="preserve">
+    <value>Performing low dose calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_13" xml:space="preserve">
+    <value>Completed low dose calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_2" xml:space="preserve">
+    <value>Calibration has failed.</value>
+  </data>
+  <data name="CALIBRATION_STATE_3" xml:space="preserve">
+    <value>Performing high energy calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_4" xml:space="preserve">
+    <value>Completed high energy calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_5" xml:space="preserve">
+    <value>Performing low energy calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_6" xml:space="preserve">
+    <value>Completed low energy calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_7" xml:space="preserve">
+    <value>Performing dual energy calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_8" xml:space="preserve">
+    <value>Completed dual energy calibration</value>
+  </data>
+  <data name="CALIBRATION_STATE_9" xml:space="preserve">
+    <value>Calibrations has successfully completed</value>
+  </data>
+  <data name="CALIBRATION_STATE_TITLE" xml:space="preserve">
+    <value>Calibration State</value>
+  </data>
+  <data name="CLICKER_DISABLE" xml:space="preserve">
+    <value>Disable Remote</value>
+  </data>
+  <data name="CLICKER_ENABLE" xml:space="preserve">
+    <value>Enable Remote</value>
+  </data>
+  <data name="CLICKER_ENABLE_TITLE" xml:space="preserve">
+    <value>Site Marshall Remote</value>
+  </data>
+  <data name="ERROR_MESSAGES_TITLE" xml:space="preserve">
+    <value>Scan System Errors</value>
+  </data>
+  <data name="INFO_BUTTON_DESCRIPTION" xml:space="preserve">
+    <value>Display all information about the Scan system</value>
+  </data>
+  <data name="INFO_BUTTON_TITLE" xml:space="preserve">
+    <value>Scan System</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_0" xml:space="preserve">
+    <value>Prevent Scanning</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_1" xml:space="preserve">
+    <value>Allow Scanning</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_DISABLED" xml:space="preserve">
+    <value>Allow Scanning</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_ENABLED" xml:space="preserve">
+    <value>Prevent Scanning</value>
+  </data>
+  <data name="SCAN_AREA_CLEAR_TITLE" xml:space="preserve">
+    <value>Scan Area</value>
+  </data>
+  <data name="SCAN_COMPLETE_INFO_TITLE" xml:space="preserve">
+    <value>Scanning System Information</value>
+  </data>
+  <data name="SCAN_CONFIGURATION_TITLE" xml:space="preserve">
+    <value>Configured Settings</value>
+  </data>
+  <data name="SCAN_DRIVE_DIRECTION_0" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="SCAN_DRIVE_DIRECTION_1" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="SCAN_DRIVE_DIRECTION_2" xml:space="preserve">
+    <value>Reverse</value>
+  </data>
+  <data name="SCAN_DRIVE_DIRECTION_TITLE" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="SCAN_DRIVE_HAND_BRAKE_1" xml:space="preserve">
+    <value>Hand brake is enabled</value>
+  </data>
+  <data name="SCAN_DRIVE_HAND_BRAKE_DISABLED" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="SCAN_DRIVE_HAND_BRAKE_ENABLED" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="SCAN_DRIVE_HAND_BRAKE_TITLE" xml:space="preserve">
+    <value>Hand Brake</value>
+  </data>
+  <data name="SCAN_DRIVE_HYDRAULIC_OIL_LEVEL_MEASUREMENT" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="SCAN_DRIVE_HYDRAULIC_OIL_LEVEL_TITLE" xml:space="preserve">
+    <value>Scan Drive Oil Level</value>
+  </data>
+  <data name="SCAN_DRIVE_HYDRAULIC_OIL_TEMPERATURE_MEASUREMENT" xml:space="preserve">
+    <value>°C</value>
+  </data>
+  <data name="SCAN_DRIVE_HYDRAULIC_OIL_TEMPERATURE_TITLE" xml:space="preserve">
+    <value>Scan Drive Temperature</value>
+  </data>
+  <data name="SCAN_DRIVE_POWER_STATUS_0" xml:space="preserve">
+    <value>The scan drive system is in a powered off state</value>
+  </data>
+  <data name="SCAN_DRIVE_REALTIME_SPEED_MEASUREMENT" xml:space="preserve">
+    <value> m/s</value>
+  </data>
+  <data name="SCAN_DRIVE_REALTIME_SPEED_TITLE" xml:space="preserve">
+    <value>Actual Speed</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_0" xml:space="preserve">
+    <value>Custom Speed</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_1" xml:space="preserve">
+    <value>Low Scan Speed</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_2" xml:space="preserve">
+    <value>Medium Scan Speed</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_3" xml:space="preserve">
+    <value>High Scan Speed</value>
+  </data>
+  <data name="SCAN_DRIVE_SELECTED_SPEED_TITLE" xml:space="preserve">
+    <value>Selected Speed</value>
+  </data>
+  <data name="SCAN_DRIVE_SIGN_OF_LIFE_0" xml:space="preserve">
+    <value>The scan drive has become unresponsive.</value>
+  </data>
+  <data name="SCAN_DRIVE_SPEED_FAILURE_1" xml:space="preserve">
+    <value>The scan drive is unable to achieve the minimal speed threshold for the selected scan speed.</value>
+  </data>
+  <data name="SCAN_DRIVE_SPEED_FAILURE_2" xml:space="preserve">
+    <value>The scan drive is unable to remain below the maximum speed threshold for the selected scan speed.</value>
+  </data>
+  <data name="SCAN_DRIVE_STATE_0" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="SCAN_DRIVE_STATE_1" xml:space="preserve">
+    <value>Accelerating</value>
+  </data>
+  <data name="SCAN_DRIVE_STATE_2" xml:space="preserve">
+    <value>Decelerating</value>
+  </data>
+  <data name="SCAN_DRIVE_STATE_3" xml:space="preserve">
+    <value>Running</value>
+  </data>
+  <data name="SCAN_DRIVE_STATUS_TITLE" xml:space="preserve">
+    <value>Scan Step</value>
+  </data>
+  <data name="SCAN_DRIVE_TITLE" xml:space="preserve">
+    <value>Scan Drive Subsystem</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_0" xml:space="preserve">
+    <value>Single Scan</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_1" xml:space="preserve">
+    <value>Multiscan</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_DISABLED" xml:space="preserve">
+    <value>Set to Multiscan</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_ENABLED" xml:space="preserve">
+    <value>Set to Single Scan</value>
+  </data>
+  <data name="SCAN_MULTIPLE_OBJECTS_TITLE" xml:space="preserve">
+    <value>Scanning Mode</value>
+  </data>
+  <data name="SCAN_SETTINGS_TITLE" xml:space="preserve">
+    <value>Scan Settings</value>
+  </data>
+  <data name="SCAN_STATE_0" xml:space="preserve">
+    <value>Ready to perform scan</value>
+  </data>
+  <data name="SCAN_STATE_1" xml:space="preserve">
+    <value>Not ready to perform scan</value>
+  </data>
+  <data name="SCAN_STATE_2" xml:space="preserve">
+    <value>Currently running scan</value>
+  </data>
+  <data name="SCAN_STATE_TITLE" xml:space="preserve">
+    <value>Current State</value>
+  </data>
+  <data name="SCAN_STATUS_TITLE" xml:space="preserve">
+    <value>Scanning Status</value>
+  </data>
+  <data name="SCAN_STEP_LAST_TITLE" xml:space="preserve">
+    <value>Last Scan Step</value>
+  </data>
+  <data name="SCAN_STEP_TITLE" xml:space="preserve">
+    <value>Scan Step</value>
+  </data>
+  <data name="STATUSBAR_TITLE" xml:space="preserve">
+    <value>Scan Status</value>
+  </data>
+  <data name="UNKNOWN_RESOURCE" xml:space="preserve">
+    <value>UNKNOWN ERROR</value>
+  </data>
+  <data name="WARNING_MESSAGES_TITLE" xml:space="preserve">
+    <value>Scan System Warnings</value>
+  </data>
+</root>

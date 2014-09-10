@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L3.Cargo.Communications.Dashboard", "CargoCommunications\Dashboard\L3.Cargo.Communications.Dashboard.csproj", "{F0534F61-01CA-4F23-99F6-462D794EFC38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L3.Cargo.Communications.EventsLogger", "CargoCommunications\EventsLogger\L3.Cargo.Communications.EventsLogger.csproj", "{12318AE9-DC80-450A-911D-798393BA0A55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsStatsLogger", "EventsStatsLogger\EventsStatsLogger.csproj", "{EB17E03F-2D2B-44E9-A5FA-18AB78E29731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L3.Cargo.Communications.Common", "CargoCommunications\Common\L3.Cargo.Communications.Common.csproj", "{90399276-EC47-4658-9B88-C535BDBAC702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L3.Cargo.Communications.Database", "CargoCommunications\Database\L3.Cargo.Communications.Database.csproj", "{CAB8CCB1-0B79-4D36-A135-559592F0A5B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0534F61-01CA-4F23-99F6-462D794EFC38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0534F61-01CA-4F23-99F6-462D794EFC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0534F61-01CA-4F23-99F6-462D794EFC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0534F61-01CA-4F23-99F6-462D794EFC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12318AE9-DC80-450A-911D-798393BA0A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12318AE9-DC80-450A-911D-798393BA0A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12318AE9-DC80-450A-911D-798393BA0A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12318AE9-DC80-450A-911D-798393BA0A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB17E03F-2D2B-44E9-A5FA-18AB78E29731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB17E03F-2D2B-44E9-A5FA-18AB78E29731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB17E03F-2D2B-44E9-A5FA-18AB78E29731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB17E03F-2D2B-44E9-A5FA-18AB78E29731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90399276-EC47-4658-9B88-C535BDBAC702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90399276-EC47-4658-9B88-C535BDBAC702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90399276-EC47-4658-9B88-C535BDBAC702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90399276-EC47-4658-9B88-C535BDBAC702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB8CCB1-0B79-4D36-A135-559592F0A5B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB8CCB1-0B79-4D36-A135-559592F0A5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB8CCB1-0B79-4D36-A135-559592F0A5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB8CCB1-0B79-4D36-A135-559592F0A5B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

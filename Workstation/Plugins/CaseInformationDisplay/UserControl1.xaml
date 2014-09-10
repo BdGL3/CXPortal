@@ -1,0 +1,591 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.CaseInformationDisplay.UserControl1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="1200"
+    xmlns:local="clr-namespace:L3.Cargo.Common;assembly=L3.Cargo.Common"
+    xmlns:case="clr-namespace:L3.Cargo.Workstation.Plugins.CaseInformationDisplay"
+    xmlns:diagnostics="clr-namespace:System.Diagnostics;assembly=WindowsBase">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <local:CaseObject x:Key="CaseObj"/>
+            <case:AttachmentTypeConverter x:Key="AttachmentTypeConverter" />
+            <Style x:Key="BorderSectionTitleTemplate" TargetType="{x:Type Border}">
+                <Setter Property="BorderBrush" Value="#FFBDBDBD" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Margin" Value="0,5,0,0" />
+                <Setter Property="Background" >
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1.0" StartPoint="0.5,0.03">
+                            <GradientStop Color="#FF9F2D2D" Offset="0"/>
+                            <GradientStop Color="Maroon" Offset="0.6"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel Name="InfoDisplayArea" DataContext="{StaticResource CaseObj}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+            <StackPanel Orientation="Vertical">
+                <Border Style="{StaticResource BorderSectionTitleTemplate}" >                    
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Info.png" Height="19" Margin="5,0,5,0" />
+                        <Label Foreground="White" FontSize="12" Content="{Binding Path=CaseInformation, Source={StaticResource Resources}}" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+                <Border Background="#D7D7D7">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=CaseId_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=CaseId, Mode=OneTime}" />
+                    </Grid>
+                </Border>
+                <StackPanel Background="#D7D7D7">
+                    <Rectangle StrokeDashArray="3 5" Stroke="Black" StrokeThickness="1" Opacity="0.3" Margin="15,0,15,0"/>
+                </StackPanel>
+                <Border Background="#D7D7D7">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=CreateTime_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2" Name="CaseInfo_CreateTime" FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=createTime, Mode=OneTime}" />
+                    </Grid>
+                </Border>
+                <StackPanel Background="#D7D7D7" >
+                    <Rectangle StrokeDashArray="3 5" Stroke="Black" StrokeThickness="1" Opacity="0.3" Margin="15,0,15,0"/>
+                </StackPanel>
+                <Border Background="#D7D7D7" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=Source_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=SourceAlias, Mode=OneTime}" />
+                    </Grid>
+                </Border>               
+
+                <Border>
+                    <Border.Style>
+                        <Style TargetType="Border" BasedOn="{StaticResource BorderSectionTitleTemplate}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding systemInfo}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Info.png" Height="19" Margin="5,0,5,0" />
+                        <Label Foreground="White" FontSize="12" Content="{Binding Path=SystemInformation, Source={StaticResource Resources}}" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+                                    
+                <Border Background="#D7D7D7">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=Type_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=systemInfo.SystemType, Mode=OneTime}" />
+                    </Grid>
+                </Border>
+                <StackPanel Background="#D7D7D7">
+                    <Rectangle StrokeDashArray="3 5" Stroke="Black" StrokeThickness="1" Opacity="0.3" Margin="15,0,15,0"/>
+                </StackPanel>
+                <Border Background="#D7D7D7">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=BaseLocation_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=systemInfo.BaseLocation, Mode=OneTime}" />
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource BorderSectionTitleTemplate}">
+                    <!--Border.Style>
+                        <Style TargetType="Border" BasedOn="{StaticResource BorderSectionTitleTemplate}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.container}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style-->
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Info.png" Height="19" Margin="5,0,5,0" />
+                        <Label Foreground="White" FontSize="12" Content="{Binding Path=ScanContainerInformation, Source={StaticResource Resources}}" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#D7D7D7" >
+                    <!--Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.container.Id}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition Width="173" />                            
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                            <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=Id_Colon, Source={StaticResource Resources}}"/>                           
+                        </StackPanel>
+                        <DockPanel Grid.Column="2" >
+                            <Button DockPanel.Dock="Right"  Height="25" Margin="2,0,15,2" Padding="0" ToolTip="{Binding Path=EditContainerId, Source={StaticResource Resources}}" Click="ContainerIdEditBtn_Click" Name="ContainerIdEditBtn">
+                                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=IsCaseEditable}" Value="False">
+                                                <Setter Property="Visibility" Value="Hidden"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <!-- Use a canvas to display the button image with the text on top. -->
+                                <Canvas Height="24" Width="45">
+                                    <Image Height="23" Stretch="Uniform" Name="Edit_ContainerId" Source="./EmptyWideButton.png" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <Label  Width="45" Canvas.Left="2" Canvas.Top="0" FontSize="9" FontWeight="DemiBold" Content="{Binding Path=Update, Source={StaticResource Resources}}"></Label>
+                                </Canvas>
+                            </Button>
+                            <Label FontSize="12" FontWeight="Normal" Height="26" Name="ContainerIdLabel" Content="{Binding Path=scanInfo.container.Id}"/>
+                            <Popup Name="EditContainerIdPopup" StaysOpen="False" Placement="Bottom" Closed="EditContainerIdPopup_Closed">
+                                <Border BorderBrush="Black" BorderThickness="1" Background="White">
+                                    <StackPanel Background="White" Orientation="Vertical" Margin="5" Width="200">
+                                        <Label Content="{Binding Path=ScanContainerId, Source={StaticResource Resources}}" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                        <TextBox Name="ContainerIdTextBox" MaxLength="40"></TextBox>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <Button Content="{Binding Path=OK, Source={StaticResource Resources}}" Height="23" Name="EditContainerIdOKBtn" Width="75" Click="EditContainerIdOKBtn_Click"/>
+                                            <Button  Margin="5" Content="{Binding Path=Cancel, Source={StaticResource Resources}}" Height="23" Name="EditContainerIdCancelBtn" Width="75" Click="EditContainerIdCancelBtn_Click"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </Popup>
+                        </DockPanel>
+                    </Grid>
+                </Border>
+                <StackPanel Background="#D7D7D7" >
+                    <!--StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.container.Code}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style-->
+                    <Rectangle StrokeDashArray="3 5" Stroke="Black" StrokeThickness="1" Opacity="0.3" Margin="15,0,15,0"/>
+                </StackPanel>
+                <Border Background="#D7D7D7" >
+                    <!--Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.container.Code}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition Width="173" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=Code_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=scanInfo.container.Code}" />
+                    </Grid>
+                </Border>
+                <StackPanel Background="#D7D7D7" >
+                    <!--StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.container.Weight}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style-->
+                    <Rectangle StrokeDashArray="3 5" Stroke="Black" StrokeThickness="1" Opacity="0.3" Margin="15,0,15,0"/>
+                </StackPanel>
+                <Border Background="#D7D7D7" >
+                    <!--Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.container.Weight}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=Weight_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=scanInfo.container.Weight, Mode=OneTime}" />
+                    </Grid>
+                </Border>
+
+                <StackPanel Background="#D7D7D7" >
+                    <!--StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.container.SequenceNum}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style-->
+                    <Rectangle StrokeDashArray="3 5" Stroke="Black" StrokeThickness="1" Opacity="0.3" Margin="15,0,15,0"/>
+                </StackPanel>
+                <Border Background="#D7D7D7" >
+                    <!--Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.container.SequenceNum}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=SequenceNumber_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=scanInfo.container.SequenceNum}" />
+                    </Grid>
+                </Border>
+
+                <Border>
+                    <Border.Style>
+                        <Style TargetType="Border" BasedOn="{StaticResource BorderSectionTitleTemplate}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.conveyance}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>                        
+                    </Border.Style>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Info.png" Height="19" Margin="5,0,5,0" />
+                        <Label Foreground="White" FontSize="12" Content="{Binding Path=ScanConveyanceInformation, Source={StaticResource Resources}}" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#D7D7D7" >
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.conveyance.Id}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=Id_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=scanInfo.conveyance.Id, Mode=OneTime}" />
+                    </Grid>
+                </Border>
+                <StackPanel Background="#D7D7D7" >
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.conveyance.TotalWeight}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+                    <Rectangle StrokeDashArray="3 5" Stroke="Black" StrokeThickness="1" Opacity="0.3" Margin="15,0,15,0"/>
+                </StackPanel>
+                <Border Background="#D7D7D7" >
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.conveyance.TotalWeight}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=TotalWeight_Colon, Source={StaticResource Resources}}"/>
+                        <Label Name="ConveyanceTotalWeight" Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=scanInfo.conveyance.TotalWeight, Mode=OneTime}" />                        
+                    </Grid>
+                </Border>
+                <StackPanel Background="#D7D7D7" >
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.conveyance.BatchNum}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+                    <Rectangle StrokeDashArray="3 5" Stroke="Black" StrokeThickness="1" Opacity="0.3" Margin="15,0,15,0"/>
+                </StackPanel>
+                <Border Background="#D7D7D7" >
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.conveyance.BatchNum}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=BatchNumber_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=scanInfo.conveyance.BatchNum}" />
+                    </Grid>
+                </Border>
+
+                <Border >
+                    <Border.Style>
+                        <Style TargetType="Border" BasedOn="{StaticResource BorderSectionTitleTemplate}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.location}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Info.png" Height="19" Margin="5,0,5,0" />
+                        <Label Foreground="White" FontSize="12" Content="{Binding Path=ScanLocationInformation, Source={StaticResource Resources}}" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#D7D7D7" >
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.location.Longitude}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=Longitude_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=scanInfo.location.Longitude, Mode=OneTime}" />
+                    </Grid>
+                </Border>
+                <StackPanel Background="#D7D7D7" >
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.location.Latitude}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+                    <Rectangle StrokeDashArray="3 5" Stroke="Black" StrokeThickness="1" Opacity="0.3" Margin="15,0,15,0"/>
+                </StackPanel>
+                <Border Background="#D7D7D7" >
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.location.Latitude}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=Latitude_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=scanInfo.location.Latitude, Mode=OneTime}" />
+                    </Grid>
+                </Border>
+
+                <Border >
+                    <Border.Style>
+                        <Style TargetType="Border" BasedOn="{StaticResource BorderSectionTitleTemplate}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.ScanType}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Info.png" Height="19" Margin="5,0,5,0" />
+                        <Label Foreground="White" FontSize="12" Content="{Binding Path=ScanTypeInformation, Source={StaticResource Resources}}" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#D7D7D7" >
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding scanInfo.ScanType}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="115" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1" FontSize="12" FontWeight="Normal" Content="{Binding Path=Type_Colon, Source={StaticResource Resources}}"/>
+                        <Label Grid.Column="2"  FontSize="12" FontWeight="Normal" Height="26" Content="{Binding Path=scanInfo.ScanType, Mode=OneTime}" />
+                    </Grid>
+                </Border>
+
+                <Border Style="{StaticResource BorderSectionTitleTemplate}" Name="ResultsSectionBorder">                    
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Info.png" Height="19" Margin="5,0,5,0" />
+                        <Label Foreground="White" FontSize="12" Content="{Binding Path=Results, Source={StaticResource Resources}}" FontWeight="Bold" />
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#D7D7D7">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" MaxHeight="300">
+                        <StackPanel Orientation="Vertical" Name="ResultsView" />
+                    </ScrollViewer>
+                </Border>
+
+                <Border BorderBrush="#FFBDBDBD" BorderThickness="1" Margin="0,5,0,0">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1.0" StartPoint="0.5,0.03">
+                            <GradientStop Color="#FF9F2D2D" Offset="0"/>
+                            <GradientStop Color="Maroon" Offset="0.6"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <DockPanel>
+                        <Image DockPanel.Dock="Left" Source="Info.png" Height="19" Margin="5,0,5,0" />
+                        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                            <Button Name="AddAttchBtn" Margin="5,0,5,0" Click="AddAttchBtn_Click" Background="Transparent" BorderThickness="0" >
+                                <Image Source="plus.png" Height="20" Width="20" />
+				                <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">                                        
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=IsCaseEditable}" Value="False">
+                                                <Setter Property="Visibility" Value="Hidden"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                            <Button Margin="0,0,10,0" Name="RemoveAttachBtn" Click="RemoveAttachBtn_Click" Background="Transparent" Visibility="Hidden" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                <Image Source="minus.png" Height="20" Width="20" />
+                            </Button>
+                        </StackPanel>
+                        <Popup Name="AddAttachmentPopup" PlacementTarget="{Binding ElementName=AddAttchBtn, Mode=OneTime}" StaysOpen="False">
+                            <Border BorderBrush="Black" BorderThickness="1" Background="White">
+                                <StackPanel Background="White" Orientation="Vertical" Margin="5">
+                                    <Label Content="{Binding Path=AttachmentType, Source={StaticResource Resources}}" Height="28" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" />
+                                    <ComboBox Height="23" HorizontalAlignment="Left" Name="comboBox1" VerticalAlignment="Top" Width="250">
+                                        <ComboBoxItem IsSelected="True" Content="{Binding Path=NuclearIsotopeAnalysis, Source={StaticResource Resources}}"></ComboBoxItem>
+                                        <ComboBoxItem Content="{Binding Path=GammaNeutronProfile, Source={StaticResource Resources}}"></ComboBoxItem>
+                                        <ComboBoxItem Content="{Binding Path=OCRImage, Source={StaticResource Resources}}"></ComboBoxItem>
+                                        <ComboBoxItem Content="{Binding Path=Others, Source={StaticResource Resources}}"></ComboBoxItem>
+                                    </ComboBox>
+                                    <Label Content="{Binding Path=AttachmentFile, Source={StaticResource Resources}}" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                    <StackPanel Orientation="Horizontal" >
+                                        <TextBox Height="22" Name="TextBox1" Width="163" IsReadOnly="True"/>
+                                        <Button  Margin="5" Content="{Binding Path=Browse, Source={StaticResource Resources}}" Height="23" Name="AddAttachmentBrowseBtn" Width="64" Click="AddAttachmentBrowseBtn_Click"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" >
+                                        <Button Content="{Binding Path=OK, Source={StaticResource Resources}}" Height="23" Name="AddAttachmentOKBtn" Width="75" Click="AddAttachmentOKBtn_Click"/>
+                                        <Button  Margin="5" Content="{Binding Path=Cancel, Source={StaticResource Resources}}" Height="23" Name="AddAttachmentCancelBtn" Width="75" Click="AddAttachmentCancelBtn_Click"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                        <Label Foreground="White" FontSize="12" Content="{Binding Path=CaseAttachments, Source={StaticResource Resources}}" FontWeight="Bold" />
+                    </DockPanel>
+                </Border>
+                <Border Background="#D7D7D7">
+                    <StackPanel Opacity="0.7" Orientation="Vertical">
+                        <ListView Name="listView1" ItemsSource="{Binding Path=attachments, Mode=OneTime}" Width="Auto" MouseDoubleClick="listView_MouseDoubleClick">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="{Binding Path=Id, Source={StaticResource Resources}}" HeaderStringFormat="Case" Width="160" DisplayMemberBinding="{Binding Path=attachmentId, Mode=OneTime}"/>
+                                    <GridViewColumn Header="{Binding Path=Type, Source={StaticResource Resources}}" HeaderStringFormat="AWS" Width="120" DisplayMemberBinding="{Binding Path=attachmentType, Mode=OneTime, Converter={StaticResource AttachmentTypeConverter}}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <Border BorderBrush="#FFBDBDBD" BorderThickness="1" Margin="0,5,0,0">
+                            <ListView Name="listView2" ItemsSource="{Binding}" Width="Auto" MouseDoubleClick="listView_MouseDoubleClick">
+                                <ListView.Resources>
+                                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                                        <Setter Property="Height" Value="5" />
+                                    </Style>
+                                </ListView.Resources>
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn HeaderStringFormat="Case" Width="160" DisplayMemberBinding="{Binding Path=attachmentId, Mode=OneTime}"/>
+                                        <GridViewColumn HeaderStringFormat="AWS" Width="120" DisplayMemberBinding="{Binding Path=attachmentType, Mode=OneTime, Converter={StaticResource AttachmentTypeConverter}}" />
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </Border>
+                    </StackPanel>
+                    <!--<TextBlock Text="{Binding Path=Caption, diagnostics:PresentationTraceSources.TraceLevel=High}" />-->
+                </Border>             
+                
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

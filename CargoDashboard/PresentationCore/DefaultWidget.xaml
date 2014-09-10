@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="L3.Cargo.Dashboard.PresentationCore.DefaultWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/L3.Cargo.Common.Dashboard;component/Presentation/Styles.xaml" />
+                <ResourceDictionary Source="/L3.Cargo.Common.Dashboard;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border Margin="10" BorderBrush="Maroon" CornerRadius="2" BorderThickness="1.5" Background="Transparent">
+        <Border.BitmapEffect>
+            <DropShadowBitmapEffect Color="Black" Direction="320" Opacity="0.5" ShadowDepth="0" Softness="0.3" />
+        </Border.BitmapEffect>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#DDDDDD" Offset="0.0" />
+                    <GradientStop Color="White" Offset="0.5" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Height="32" Width="32" Margin="10" Source="/L3.Cargo.Dashboard.PresentationCore;component/Resources/Icons/Subsystem_error.ico" />
+                <TextBlock Margin="0,0,10,0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource DashboardText}" FontWeight="Bold" FontSize="18" TextWrapping="Wrap" Text="{Binding Path=NOT_CONNECTED, Source={StaticResource Resources}}" />
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

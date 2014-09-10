@@ -1,0 +1,11 @@
+﻿<Window x:Class="L3.Cargo.DetectorPlot.Comment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Comment" Height="300" Width="300">
+    <Grid>
+        <TextBox Height="175" HorizontalAlignment="Left" Margin="24,22,0,0" Name="textBox1" VerticalAlignment="Top" Width="234" 
+                 HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" />
+        <Button Content="OK" Height="25" HorizontalAlignment="Left" Margin="39,218,0,0" Name="AnAddDetBtn" VerticalAlignment="Top" Width="73" Click="AnAddDetBtn_Click"/>
+        <Button Content="Cancel" Height="25" HorizontalAlignment="Left" Margin="172,218,0,0" Name="button2" VerticalAlignment="Top" Width="73" Click="button2_Click"/>
+    </Grid>
+</Window>

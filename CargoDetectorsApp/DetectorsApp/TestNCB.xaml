@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="DetectorsApp.TestNCB"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="660"
+             Height="650" Width="660">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Row="0" Grid.Column="0" Header="LineID" HorizontalAlignment="Center" Width="Auto" Margin="0" HorizontalContentAlignment="Center">
+            <TextBlock Name="CurrentLineIdTextBlk"  HorizontalAlignment="Center" Text="{Binding Path=CurrentLineId}" Margin="3" FontFamily="Courier New" Width="100" TextAlignment="Center" />
+        </GroupBox>
+        <GroupBox Grid.Row="0" Grid.Column="2" Header="Count" Width="Auto" HorizontalAlignment="Left">
+            <TextBox Name="DataCountTBX" Text="to be done" FontFamily="Courier New" FontSize="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        </GroupBox>
+        <GroupBox Grid.Row="0" Grid.Column="2" Header="Minimum" Width="Auto" HorizontalAlignment="Center">
+            <TextBox Name="DataMinimumTBX" Text="to be done" FontFamily="Courier New" FontSize="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        </GroupBox>
+        <GroupBox Grid.Row="0" Grid.Column="2" Header="Maximum" Width="Auto" HorizontalAlignment="Right">
+            <TextBox Name="DataMaximumTBX" Text="to be done" FontFamily="Courier New" FontSize="8" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        </GroupBox>
+
+        <Button Grid.Row="1" Content="Identify Query" Height="26" Name="IdentifyQueryBtn" Width="150" Click="IdentifyQueryBtn_Click"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="Device State Query" Height="26" Name="DeviceStateQueryBtn" Width="150" Click="DeviceStateQueryBtnOnClick"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="Process Trace" Height="26" Margin="3" Name="ProcessTraceBTN" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Click="ProcessTraceOnClick" />
+
+        <Button Grid.Row="2" Grid.Column="0" Content="Config Parameter Query" Height="26" Name="ConfigParameterQueryBtn" Width="150" Click="ConfigParameterQueryBtnOnClick" VerticalAlignment="Center" />
+        <GroupBox Grid.Row="2" Grid.Column="1" Header="Delay Period * 20ns" Width="100" HorizontalAlignment="Left" FontSize="10">
+            <TextBox Name="DelayPeriod" Text="2500" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextAlignment="Center" FontFamily="Courier New" FontSize="11" />
+        </GroupBox>
+        <GroupBox Grid.Row="2" Grid.Column="1" Header="Sign Of Life (cs)" Width="100" HorizontalAlignment="Right" FontSize="10">
+            <TextBox Name="SignOfLife" Text="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="11" FontFamily="Courier New" />
+        </GroupBox>
+        <Button Grid.Row="3" Content="XRay Data State Query" Height="26" Name="XRayDataStateQueryBtn" Width="150" Click="XRayDataStateQueryBtn_Click"/>
+        <RadioButton Grid.Row="3" Grid.Column="1" GroupName="XRayDataState" Name="XRayDataStateStartBtn" Content="X-ray Start" Margin="5" Checked="XRayDataStateStartBtn_Checked" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <RadioButton Grid.Row="3" Grid.Column="1" GroupName="XRayDataState" Name="XRayDataStateStopBtn" Content="X-ray Stop" Margin="5" Checked="XRayDataStateStopBtn_Checked" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+
+        <CheckBox Grid.Row="4" Grid.Column="0" Content="Use Fake XRay" Margin="3" Height="16" Name="FakeXRayCHK" Checked="FakeXrayOnChange" Unchecked="FakeXrayOnChange" IsChecked="False" HorizontalAlignment="Center" />
+        <Button Grid.Row="4" Grid.Column="1" Content="Fake X-Ray On" Margin="3"  Name="FakeXRayOnBTN" Width="90"  Click="FakeXrayOnClickOn" IsEnabled="false" HorizontalAlignment="Left" Height="26" />
+        <Button Grid.Row="4" Grid.Column="1" Content="Fake X-Ray Off" Margin="3" Name="FakeXRayOffBTN" Width="90" Click="FakeXrayOnClickOff" IsEnabled="false" HorizontalAlignment="Right" Height="26" />
+
+        <CheckBox Grid.Row="5" Grid.Column="0" Content="Use Fake Object Search" Height="16" HorizontalAlignment="Center" Margin="5" Name="FakeObjectCHK" VerticalAlignment="Center" Width="Auto" IsChecked="False" Checked="FakeObjectOnChange" Unchecked="FakeObjectOnChange" ToolTip="Overrides the normal object search algorithm and uses the toggle below to determine when there is or isn't an object in the beam." />
+        <RadioButton Grid.Row="5" Grid.Column="1" Content="No Object In Beam" Height="16" HorizontalAlignment="Left" Margin="5" GroupName="FakeObjectSearchGroup" Name="NoObjectRDO" VerticalAlignment="Top" Checked="FakeObjectOnChange" Unchecked="FakeObjectOnChange" IsChecked="True" />
+        <RadioButton Grid.Row="5" Grid.Column="1" Content="Object In Beam" Height="16" HorizontalAlignment="Left" Margin="5" GroupName="FakeObjectSearchGroup" Name="ObjectRDO" VerticalAlignment="Bottom" Checked="FakeObjectOnChange" Unchecked="FakeObjectOnChange" />
+
+        <RichTextBox Grid.Row="6" Grid.ColumnSpan="3" Name="NCBLogArea" IsReadOnly="True" Margin="10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="330" />
+    </Grid>
+
+</UserControl>

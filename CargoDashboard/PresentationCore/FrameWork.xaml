@@ -1,0 +1,74 @@
+﻿<Window x:Class="L3.Cargo.Dashboard.PresentationCore.FrameWork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:controls="clr-namespace:L3.Cargo.Controls;assembly=L3.Cargo.Controls"
+        xmlns:local="clr-namespace:L3.Cargo.Dashboard.PresentationCore"
+        mc:Ignorable="d" Height="768" Width="1366" 
+        Title="ClearView Dashboard" x:ClassModifier="internal" WindowStyle="None"
+        Icon="/L3.Cargo.Dashboard.PresentationCore;component/Resources/Icons/Dashboard.ico"
+        Closing="FrameWork_Closing" Loaded="FrameWork_Loaded" WindowState="Maximized"
+        ManipulationCompleted="FrameWork_FlickCompleted" IsManipulationEnabled="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/L3.Cargo.Common.Dashboard;component/Presentation/Styles.xaml" />
+                <ResourceDictionary Source="/L3.Cargo.Common.Dashboard;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <AdornerDecorator>
+        <Grid Name="DisplayArea">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#DDDDDD" Offset="0.0" />
+                    <GradientStop Color="White" Offset="0.5" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition />
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <DockPanel MouseLeftButtonDown="StatusTray_MouseOrTouchDown" TouchDown="StatusTray_MouseOrTouchDown">
+                <DockPanel.Background>
+                    <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                        <GradientStop Color="#b3b3b3" Offset="0.0" />
+                        <GradientStop Color="#676767" Offset="1.0" />
+                    </LinearGradientBrush>
+                </DockPanel.Background>
+                <StackPanel Name="StatusTray" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </DockPanel>
+            <Grid Margin="12,5,12,5" Grid.Row="1">
+                <TabControl Name="WidgetTabControl" Style="{StaticResource WidgetTabControl}" />
+                <ToggleButton Height="60" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="AboutButton_MouseOrTouchDown" TouchDown="AboutButton_MouseOrTouchDown" Style="{StaticResource AboutBoxButton}">
+                    <Image Source="/L3.Cargo.Dashboard.PresentationCore;component/Resources/Images/ClearViewLogo.png" />
+                </ToggleButton>
+            </Grid>
+            <DockPanel Grid.Row="2">
+                <DockPanel.Background>
+                    <VisualBrush AlignmentX="Center" AlignmentY="Bottom" Stretch="Fill">
+                        <VisualBrush.Visual>
+                            <StackPanel>
+                                <Path Data="M 0 0 L 1 0 1 60 0 60 Z" Stroke="Transparent" Fill="Transparent" />
+                                <Path Grid.Row="1" Data="M 30 0 L 1170 0 1200 60 0 60 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black" Stretch="Fill">
+                                    <Path.Fill>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="#400000" Offset="0.0" />
+                                            <GradientStop Color="Maroon" Offset="1.0" />
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                            </StackPanel>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </DockPanel.Background>
+                <StackPanel Name="CompleteInfoLinks" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5">
+                    <local:LogoutButton />
+                    <local:LanguageChangeControl />
+                </StackPanel>
+            </DockPanel>
+        </Grid>
+    </AdornerDecorator>
+</Window>

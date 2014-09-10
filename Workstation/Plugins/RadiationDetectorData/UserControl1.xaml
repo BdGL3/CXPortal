@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.RadiationDetectorData.UserControl1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Charting="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization">
+    <DockPanel Name="MainPanel">
+        <WindowsFormsHost Name="ChartHost" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0" Margin="0">
+            <WindowsFormsHost.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#DDDDDD" Offset="0.0" />
+                    <GradientStop Color="White" Offset="1.0" />
+                </LinearGradientBrush>
+            </WindowsFormsHost.Background>
+            <Charting:Chart x:Name="Radiation_Chart" BackColor="Transparent" AutoSize="True">
+                <Charting:Chart.Series>
+                    <Charting:Series Name="G_RSP1" x:Name="Chart_Series1" ChartType="Spline" Color="220, 65, 140, 240" BorderWidth="3" />
+                    <Charting:Series Name="G_RSP2" x:Name="Chart_Series2" ChartType="Spline" Color="220, 252, 180, 65" BorderWidth="3" />
+                    <Charting:Series Name="N_RSP1" x:Name="Chart_Series3" ChartType="Spline" Color="220, 2, 80, 65" BorderWidth="3" />
+                    <Charting:Series Name="N_RSP2" x:Name="Chart_Series4" ChartType="Spline" Color="#c42b2b" BorderWidth="3" />
+                    <Charting:Series Name="Warnings" x:Name="Chart_Series_Warnings" ChartType="Point" Color="Yellow" BorderWidth="1" />
+                    <Charting:Series Name="Alarms" x:Name="Chart_Series_Alarms" ChartType="Point" Color="Red" BorderWidth="1" />
+                    <Charting:Series Name="NORMAlarms" x:Name="Chart_Series_NORMAlarms" ChartType="Point" Color="Blue" BorderWidth="1" />
+                </Charting:Chart.Series>
+                <Charting:Chart.Legends>
+                    <Charting:Legend />
+                </Charting:Chart.Legends>
+                <Charting:Chart.ChartAreas>
+                    <Charting:ChartArea x:Name="Chart_ChartArea" BackColor="Transparent">
+                        <Charting:ChartArea.AxisX>
+                            <Charting:Axis Enabled="True" IsStartedFromZero="True" LineColor="64, 64, 64, 64"  IsMarginVisible="False" IntervalAutoMode="VariableCount" Interval="1" Minimum="0">
+                                <Charting:Axis.LabelStyle>
+                                    <Charting:LabelStyle Enabled="False" />
+                                </Charting:Axis.LabelStyle>
+                                <Charting:Axis.MajorTickMark>
+                                    <Charting:TickMark Enabled="False" />
+                                </Charting:Axis.MajorTickMark>
+                                <Charting:Axis.MajorGrid>
+                                    <Charting:Grid LineColor="64, 64, 64, 64" />
+                                </Charting:Axis.MajorGrid>
+                            </Charting:Axis>
+                        </Charting:ChartArea.AxisX>
+                        <Charting:ChartArea.AxisY>
+                            <Charting:Axis Enabled="True" IsStartedFromZero="True" LineColor="64, 64, 64, 64">
+                                <Charting:Axis.LabelStyle>
+                                    <Charting:LabelStyle Enabled="True" Interval="Auto" />
+                                </Charting:Axis.LabelStyle>
+                                <Charting:Axis.MajorTickMark>
+                                    <Charting:TickMark Enabled="False" />
+                                </Charting:Axis.MajorTickMark>
+                                <Charting:Axis.MajorGrid >
+                                    <Charting:Grid LineColor="64, 64, 64, 64" />
+                                </Charting:Axis.MajorGrid>
+                            </Charting:Axis>
+                        </Charting:ChartArea.AxisY>
+                    </Charting:ChartArea>
+                </Charting:Chart.ChartAreas>
+            </Charting:Chart>
+        </WindowsFormsHost>
+    </DockPanel>
+</UserControl>

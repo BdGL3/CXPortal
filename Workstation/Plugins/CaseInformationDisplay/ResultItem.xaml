@@ -1,0 +1,45 @@
+﻿<Border x:Class="L3.Cargo.Workstation.Plugins.CaseInformationDisplay.ResultItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d" 
+        d:DesignHeight="300" d:DesignWidth="300"
+        BorderBrush="Maroon" BorderThickness="2" Margin="5" Padding="10">
+    <Border.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Border.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Margin="3" Grid.Column="0" Grid.Row="0" FontSize="12" FontWeight="Normal" Text="{Binding Path=Decision_Colon, Source={StaticResource Resources}}"/>
+        <TextBlock Margin="3" Grid.Column="1" Grid.Row="0" FontSize="12" FontWeight="Normal" Name="Decision"/>
+        <TextBlock Margin="3" Grid.Column="0" Grid.Row="1" FontSize="12" FontWeight="Normal" Text="{Binding Path=Reason_Colon, Source={StaticResource Resources}}"/>
+        <TextBlock Margin="3" Grid.Column="1" Grid.Row="1" FontSize="12" FontWeight="Normal" Name="Reason"/>
+        <TextBlock Margin="3" Grid.Column="0" Grid.Row="2" FontSize="12" FontWeight="Normal" Text="{Binding Path=CreateTime_Colon, Source={StaticResource Resources}}"/>
+        <TextBlock Margin="3" Grid.Column="1" Grid.Row="2" FontSize="12" FontWeight="Normal" Name="CreateTime"/>
+        <TextBlock Margin="3" Grid.Column="0" Grid.Row="3" FontSize="12" FontWeight="Normal" Text="{Binding Path=User_Colon, Source={StaticResource Resources}}"/>
+        <TextBlock Margin="3" Grid.Column="1" Grid.Row="3" FontSize="12" FontWeight="Normal" Name="User"/>
+        <TextBlock Margin="3" Grid.Column="0" Grid.Row="4" FontSize="12" FontWeight="Normal" Text="{Binding Path=Comment_Colon, Source={StaticResource Resources}}" />
+        <TextBlock Margin="3" Grid.Column="1" Grid.Row="4" FontSize="12" FontWeight="Normal" Name="Comment" TextWrapping="WrapWithOverflow" />
+        <TextBlock Margin="3" Grid.Column="0" Grid.Row="5" FontSize="12" FontWeight="Normal" Text="{Binding Path=StationType_Colon, Source={StaticResource Resources}}"/>
+        <TextBlock Margin="3" Grid.Column="1" Grid.Row="5" FontSize="12" FontWeight="Normal" Name="StationType"/>
+        <TextBlock Margin="3" Grid.Column="0" Grid.Row="6" FontSize="12" FontWeight="Normal" Text="{Binding Path=AnalysisTime_Colon, Source={StaticResource Resources}}"/>
+        <TextBlock Margin="3" Grid.Column="1" Grid.Row="6" FontSize="12" FontWeight="Normal" Name="AnalysisTime"/>
+    </Grid>
+</Border>

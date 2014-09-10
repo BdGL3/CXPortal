@@ -1,0 +1,355 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.XRayImageBase.XRayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:common="clr-namespace:L3.Cargo.Workstation.Common;assembly=L3.Cargo.Workstation.Common"
+             xmlns:controls="clr-namespace:L3.Cargo.Controls;assembly=L3.Cargo.Controls"
+             mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:L3.Cargo.Workstation.Plugins.XRayImageBase"
+             d:DesignHeight="250" d:DesignWidth="600" Loaded="OnLoaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/Styles.xaml"/>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border BorderThickness="1" BorderBrush="Black" Background="{StaticResource RedMaroonRedGradient}">
+            <ToolBarOverflowPanel Name="XRayImage_ToolBarTray" HorizontalAlignment="Left">
+                <ToolBarOverflowPanel.Resources>
+                    <Style TargetType="{x:Type ToolBar}">
+                        <Setter Property="Margin" Value="3" />
+                        <Setter Property="OverridesDefaultStyle" Value="True" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ToolBar}">
+                                    <Border CornerRadius="3" Padding="1" BorderBrush="Black" BorderThickness="2">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                                                <GradientStop Color="#EFEFEF" Offset="0" />
+                                                <GradientStop Color="#CFCFCF" Offset="0.5" />
+                                                <GradientStop Color="#EFEFEF" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <ToolBarPanel IsItemsHost="True" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ToolBarOverflowPanel.Resources>
+                <ToolBar VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button Margin="1" Padding="0" ToolTip="{Binding Path=SaveImageAs_Ellipsis, Source={StaticResource Resources}}"  Click="SaveImage_Button_Click" >
+                        <Image Name="Save_Image" Height="32" Width="32" Source="../Resources/Icons/SaveOff.png" ></Image>
+                    </Button>
+                    <Button Margin="1" Padding="0" Name="History_View" ToolTip="{Binding Path=ViewHistory, Source={StaticResource Resources}}" Click="History_View_Click">
+                        <Image Name="History_Image" Height="32" Width="32" Source="../Resources/Icons/HistoryOff.png" />
+                    </Button>
+                    <Popup Placement="Bottom" Name="HistoryList" StaysOpen="False" Closed="HistoryList_Closed" Opened="HistoryList_Opened">
+                        <Border Background="White" BorderBrush="Maroon" BorderThickness="1">
+                            <ListView Name="History_ListView" Margin="5" Width="250" Height="250" ItemsSource="{Binding}" SelectionChanged="History_ListView_SelectionChanged">
+                                <ListView.View>
+                                    <GridView AllowsColumnReorder="False" ColumnHeaderToolTip="{Binding Path=ImageHistory, Source={StaticResource Resources}}">
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=number}" Header="{Binding Path=Step, Source={StaticResource Resources}}" Width="0"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=category}" Header="{Binding Path=Category, Source={StaticResource Resources}}" Width="90"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=description}" Header="{Binding Path=Description, Source={StaticResource Resources}}" Width="130"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </Border>
+                    </Popup>
+                </ToolBar>
+                <ToolBar Name="Buffer_ToolBar" VerticalAlignment="Top" HorizontalAlignment="Left" MaxWidth="200" Band="0" BandIndex="2" />
+                <ToolBar Name="ColorMapping_ToolBar" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <ComboBox Margin="2" Name="PseudoColor_ComboBox" Width="150" Height="32" ToolTip="{Binding Path=PseudoColorMappings, Source={StaticResource Resources}}" SelectionChanged="ColorMapping_SelectionChanged">
+                        <ComboBoxItem Name ="None" ToolTip="{Binding Path=None, Source={StaticResource Resources}}" IsSelected="True">
+                            <Rectangle Margin="1" Width="130" Height="26">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="Black" Offset="0" />
+                                        <GradientStop Color="White" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </ComboBoxItem>
+                    </ComboBox>
+                </ToolBar>
+                <ToolBar Name="Filter_ToolBar" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <ToolBar Name="Macro_Toolbar" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed" >
+                    <Button Margin="1" Padding="0" ToolTip="{Binding Path=EditSnapshots, Source={StaticResource Resources}}" Click="MacroEdit_Button_Click">
+                        <Canvas Height="32" Width="32">
+                            <Image Name="MacroEdit_Image" Height="32" Width="32" Source="../Resources/Icons/Empty.png" />
+                            <Label Name="MacroEdit_Text" Canvas.Top="3" FontWeight="DemiBold" FontSize="12" Content="{Binding Path=Edit, Source={StaticResource Resources}}"></Label>
+                        </Canvas>
+                        
+                    </Button>
+                    <Popup Name="MacroEditPopup" StaysOpen="False" Placement="Bottom" Closed="MacroEditPopup_Closed">
+                        <DockPanel Width="280" Height="250" Background="White" HorizontalAlignment="Stretch">
+                            <GroupBox Header="{Binding Path=UserMacros, Source={StaticResource Resources}}" Margin="5">
+                                <Grid Margin="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="42" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Margin="10,5,0,0" Text="{Binding Path=MacroName, Source={StaticResource Resources}}" VerticalAlignment="Bottom"/>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                        <TextBox Name="MacroNameField" Margin="7" Width="150" Height="Auto" MaxLines="1" VerticalContentAlignment="Center" MaxLength="16"></TextBox>
+                                        <Button Name="AddMacro" Margin="5" Width="32" Height="32" Click="AddMacro_Click" Content="{Binding Path=Plus_Sign, Source={StaticResource Resources}}"></Button>
+                                        <Button Name="RemoveMacro" Margin="5" Width="32" Height="32" Click="RemoveMacro_Click" Content="{Binding Path=Minus_Sign, Source={StaticResource Resources}}"></Button>
+                                    </StackPanel>
+                                    <TextBlock Grid.Row="2" Margin="10,5,0,0" Text="{Binding Path=ExistingMacros, Source={StaticResource Resources}}" VerticalAlignment="Bottom" />
+                                    <ListView Name="MacroList" Grid.Row="3" Margin="5" Width="Auto" Height="Auto" SelectionChanged="MacroList_SelectionChanged" MouseLeftButtonUp="MacroList_MouseLeftButtonUp">
+                                        <ListView.View>
+                                            <GridView AllowsColumnReorder="False" ColumnHeaderToolTip="{Binding Path=UserMacros, Source={StaticResource Resources}}">
+                                                <GridViewColumn Header="{Binding Path=Title, Source={StaticResource Resources}}" DisplayMemberBinding="{Binding Path=Name}" Width="160"/>
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </Grid>
+                            </GroupBox>
+                        </DockPanel>
+                    </Popup>
+                </ToolBar>
+                <ToolBar Name="XRayDualEnergy_ToolBar" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button Margin="1" Padding="0" Name="HighEnergy" Background="Transparent" ToolTip="{Binding Path=HighEnergy, Source={StaticResource Resources}}" Click="DualEnergy_Button_Click">
+                        <Image Name="HEImage" Height="32" Width="32" Source="../Resources/Icons/HEOff.png"></Image>
+                    </Button>
+                    <Button Margin="1" Padding="0" Name="LowEnergy" Background="Transparent" ToolTip="{Binding Path=LowEnergy, Source={StaticResource Resources}}" Click="DualEnergy_Button_Click">
+                        <Image Name="LEImage" Height="32" Width="32" Source="../Resources/Icons/LEOff.png"></Image>
+                    </Button>
+                    <Button Name="Trimat" Margin="1" Padding="0" Background="Transparent" ToolTip="{Binding Path=Trimat, Source={StaticResource Resources}}"  Click="DualEnergy_Button_Click">
+                        <Canvas Width="32" Height="32">
+                            <Image Height="32" Width="32" Source="../Resources/Icons/Empty.png"></Image>
+                            <Path Data="M 14 4 L 14 17 3 24  Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 0" Center="0,0" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="Red" Offset="1"></GradientStop>
+                                            <GradientStop Color="DarkRed" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 17 4 L 17 17 29 24 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="DarkGreen" Offset="0"></GradientStop>
+                                            <GradientStop Color="LightGreen" Offset="1"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 16 20 L 4 27 28 27 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="1, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="DarkBlue" Offset="1"></GradientStop>
+                                            <GradientStop Color="LightBlue" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                    </Button>
+                    <Button Name="MetalStrip" Margin="1" Padding="0" Background="Transparent" ToolTip="{Binding Path=MetalStrip, Source={StaticResource Resources}}" Click="DualEnergy_Button_Click">
+                        <Canvas Width="32" Height="32">
+                            <Image Height="32" Width="32" Source="../Resources/Icons/Empty.png"></Image>
+                            <Path Data="M 14 4 L 14 17 3 24  Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 0" Center="0,0" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="Red" Offset="1"></GradientStop>
+                                            <GradientStop Color="DarkRed" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 17 4 L 17 17 29 24 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="DarkGreen" Offset="0"></GradientStop>
+                                            <GradientStop Color="LightGreen" Offset="1"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 16 20 L 4 27 28 27 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="1, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="LightBlue" Offset="1"></GradientStop>
+                                            <GradientStop Color="White" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                    </Button>
+                    <Button Name="InorganicStrip" Margin="1" Padding="0" Background="Transparent" ToolTip="{Binding Path=InorganicStrip, Source={StaticResource Resources}}"  Click="DualEnergy_Button_Click">
+                        <Canvas Width="32" Height="32">
+                            <Image Height="32" Width="32" Source="../Resources/Icons/Empty.png"></Image>
+                            <Path Data="M 14 4 L 14 17 3 24  Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 0" Center="0,0" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="Pink" Offset="1"></GradientStop>
+                                            <GradientStop Color="White" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 17 4 L 17 17 29 24 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="DarkGreen" Offset="0"></GradientStop>
+                                            <GradientStop Color="LightGreen" Offset="1"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 16 20 L 4 27 28 27 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="1, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="DarkBlue" Offset="1"></GradientStop>
+                                            <GradientStop Color="LightBlue" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                    </Button>
+                    <Button Name="OrganicStrip" Margin="1" Padding="0" Background="Transparent" ToolTip="{Binding Path=OrganicStrip, Source={StaticResource Resources}}"  Click="DualEnergy_Button_Click">
+                        <Canvas Width="32" Height="32">
+                            <Image Height="32" Width="32" Source="../Resources/Icons/Empty.png"></Image>
+                            <Path Data="M 14 4 L 14 17 3 24  Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 0" Center="0,0" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="Red" Offset="1"></GradientStop>
+                                            <GradientStop Color="DarkRed" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 17 4 L 17 17 29 24 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="LightGreen" Offset="0"></GradientStop>
+                                            <GradientStop Color="White" Offset="1"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 16 20 L 4 27 28 27 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="1, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="DarkBlue" Offset="1"></GradientStop>
+                                            <GradientStop Color="LightBlue" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                    </Button>
+                    <Button Margin="1" Padding="0" Background="Transparent" Visibility="Collapsed" ToolTip="{Binding Path=Quadmat, Source={StaticResource Resources}}"  Click="DualEnergy_Button_Click" Name="Quadmat"> <!-- WAS SET TO COLLAPSED Visibility="Collapsed">-->
+                        <Canvas Width="32" Height="32">
+                            <Image Height="32" Width="32" Source="../Resources/Icons/Empty.png"></Image>
+                            <Path Data="M 14 4 L 14 17 3 24  Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 0" Center="0,0" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="Red" Offset="1"></GradientStop>
+                                            <GradientStop Color="DarkRed" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 17 4 L 17 17 29 24 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="0, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="Red" Offset="1"></GradientStop>
+                                            <GradientStop Color="DarkRed" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Data="M 16 20 L 4 27 28 27 Z" StrokeThickness="1" StrokeLineJoin="Round" Stroke="Black">
+                                <Path.Fill>
+                                    <RadialGradientBrush GradientOrigin="1, 1" Center="0,1" RadiusX="1" RadiusY="1">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="Red" Offset="1"></GradientStop>
+                                            <GradientStop Color="DarkRed" Offset="0"></GradientStop>
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                        </Canvas>
+                    </Button>
+                </ToolBar>
+            </ToolBarOverflowPanel>
+        </Border>
+        <AdornerDecorator Grid.Row="1">
+            <DockPanel x:Name="Magnifier_Panel" Background="Transparent">
+                <Border x:Name="PanZoom_Border" BorderThickness="1,0,1,1" BorderBrush="Black">
+                    <DockPanel x:Name="PseudoColor_Panel">
+                        <DockPanel x:Name="XrayImage_Panel">
+                            <DockPanel x:Name="Trimat_Panel">
+                                <DockPanel x:Name="PanZoomBounds">
+                                    <controls:PanZoomPanel x:Name="PanAndZoomControl"
+                                                        ClipToBounds="True"
+                                                        Background="White"
+                                                        MouseEventsEnabled="True"
+                                                        MaxZoom="16.0"
+                                                        MinZoom="0.0625">
+                                        <controls:PanZoomPanel.Overview>
+                                            <controls:Overview ScreenPosition="TopRight" BorderBrush="{StaticResource RedMaroonRedGradient}">
+                                                <controls:Overview.Effect>
+                                                    <common:XrayImageEffect />
+                                                </controls:Overview.Effect>
+                                            </controls:Overview>
+                                        </controls:PanZoomPanel.Overview>
+                                        <Image x:Name="MainImage" Stretch="None" />
+                                    </controls:PanZoomPanel>
+                                </DockPanel>
+                            </DockPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+        </AdornerDecorator>
+        <Popup PopupAnimation="Fade" AllowsTransparency="True" Name="SaveImagePopup" Placement="Center" StaysOpen="False" Closed="SaveImage_Closed" Opened="SaveImage_Opened" >
+            <Border BorderBrush="Maroon" BorderThickness="2">
+                <Border.Background>
+                    <RadialGradientBrush GradientOrigin="0, 0" Center="0,0" RadiusX="1" RadiusY="1">
+                        <RadialGradientBrush.GradientStops>
+                            <GradientStop Color="#E8E8E8" Offset="0"></GradientStop>
+                            <GradientStop Color="#FFFFFF" Offset="1"></GradientStop>
+                        </RadialGradientBrush.GradientStops>
+                    </RadialGradientBrush>
+                </Border.Background>
+                <DockPanel Name="ImagePopupDockPanel" Margin="5" HorizontalAlignment="Stretch">
+                    <local:XRayImagePreview x:Name="ImagePreview" DockPanel.Dock="Top" ></local:XRayImagePreview>
+                    <StackPanel Margin="0,10"  HorizontalAlignment="Center" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Orientation="Horizontal">
+                        <Button Margin="5" Height="25" Padding="5 0" Click="SaveImagePrintBtn_Click" Content="{Binding Path=SaveImageAs_Ellipsis, Source={StaticResource Resources}}"></Button>
+                        <Button Margin="5" Height="25" Width="85" Click="SaveImageCancelBtn_Click" Content="{Binding Path=Cancel, Source={StaticResource Resources}}"></Button>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

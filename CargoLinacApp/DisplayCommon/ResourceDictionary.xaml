@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cultures="clr-namespace:L3.Cargo.Linac.Display.Common;assembly=L3.Cargo.Linac.Display.Common">
+
+    <!-- Resources ODP contains the current instance of the WPFLocalize.Properties.Resources class.
+       Used in bindings to get localized strings and automatic updates when the culture is updated -->
+    <ObjectDataProvider x:Key="Resources" ObjectType="{x:Type cultures:CultureResources}" MethodName="GetResourceInstance"/>
+
+    <!-- CultureResources ODP provides access to list of currently available cultures -->
+    <ObjectDataProvider x:Key="CultureResourcesDS" ObjectType="{x:Type cultures:CultureResources}"/>
+
+</ResourceDictionary>

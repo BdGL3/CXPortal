@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.ManifestImages.UserControl1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:my="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+    Height="Auto" Width="Auto" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="237" d:DesignWidth="404">
+    <DockPanel Name="MainPanel" Height="Auto" Width="Auto">
+        <TabControl Height="Auto" Name="ManifestTab" Width="Auto" />
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,51 @@
+﻿<Window x:Class="L3.Cargo.WSCommunications.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:L3.Cargo.WSCommunications"
+    Title="WSComm" Loaded="Window_Loaded" mc:Ignorable="d"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="500" Width="445" Closing="Window_Closing"
+    Icon="WSComm.ico">
+    <Window.Resources>
+        <local:CaseWSCollection x:Key="casewscollection" />
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Name="menu1" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Configure Network" Click="MenuItem_Click_2" />
+                <MenuItem Header="Exit" Click="MenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="Areas">
+                <MenuItem Header="Manual Coding">
+                    <MenuItem Name="MCAreaEnable" Header="Enable" Click="MCAreaEnable_Click" />
+                    <MenuItem Name="MCAreaDisable" Header="Disable" Click="MCAreaDisable_Click" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About ..." Click="MenuItem_Click_1" />
+            </MenuItem>
+        </Menu>
+        <Border BorderThickness="1" BorderBrush="Black" DockPanel.Dock="Top" Margin="12,12,12,0">
+            <StackPanel Orientation="Horizontal" >
+                <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" MinWidth="150">
+                    <Ellipse Margin="15" Width="16" Height="16" Name="ConnectStatus" Fill="Red"/>
+                    <TextBlock Name="CargoHostNameText" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Ellipse Margin="15" Width="16" Height="16" Name="ManualCodingStatus" Fill="Red"/>
+                    <TextBlock Name="ManualCodingText" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <ListView DockPanel.Dock="Top" Margin="12,12,12,12" ItemsSource="{Binding Source={StaticResource ResourceKey=casewscollection}}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Case" HeaderStringFormat="Case" Width="125" DisplayMemberBinding="{Binding Path=Case}"/>
+                    <GridViewColumn Header="Area" HeaderStringFormat="Area" Width="125" DisplayMemberBinding="{Binding Path=Area}"/>
+                    <GridViewColumn Header="WS"   HeaderStringFormat="WS" Width="125"   DisplayMemberBinding="{Binding Path=WS}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</Window>

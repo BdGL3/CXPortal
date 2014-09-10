@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="L3.Cargo.Workstation.Plugins.XRayImageBase.XRayImage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:L3.Cargo.Workstation.Plugins.XRayImageBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/L3.Cargo.Common;component/ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel Background="Transparent">
+        <DockPanel.ContextMenu>
+            <ContextMenu Name="XRayView_ContextMenu">
+                <MenuItem Name="PanZoom_MenuItem" Click="PanZoom_MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="..\Resources\Icons\checkmark.gif" HorizontalAlignment="Center"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\Resources\Icons\PanZoom.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12" Text="{Binding Path=PanAndZoom, Source={StaticResource Resources}}"></TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Annotation_MenuItem" Click="Annotation_MenuItem_Click">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\Resources\Icons\Annotation.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12" Text="{Binding Path=Annotation, Source={StaticResource Resources}}"></TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Measurements_MenuItem" Click="Measurements_MenuItem_Click">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\Resources\Icons\Marker.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12" Text="{Binding Path=Measurements, Source={StaticResource Resources}}"></TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Magnifier_MenuItem" Click="Magnifier_MenuItem_Click">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\Resources\Icons\Magnify.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12" Text="{Binding Path=Magnifier, Source={StaticResource Resources}}"></TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="AOI_MenuItem" Click="AOI_MenuItem_Click">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\Resources\Icons\aoi.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12" Text="{Binding Path=AreaOfInterest, Source={StaticResource Resources}}"></TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <Separator />
+                <MenuItem Name="PanAndZoom_Normal" Click="PanAndZoom_Normal_MenuItem_Click" Visibility="Visible">
+                    <MenuItem.Icon>
+                        <Image Source="..\Resources\Icons\checkmark.gif" HorizontalAlignment="Center" Visibility="Collapsed"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\Resources\Icons\PanZoom.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12" Text="{Binding Path=One_Colon_One, Source={StaticResource Resources}}"></TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="PanAndZoom_FitToScreen" Click="PanAndZoom_FitToScreen_MenuItem_Click" Visibility="Visible">
+                    <MenuItem.Icon>
+                        <Image Source="..\Resources\Icons\checkmark.gif" HorizontalAlignment="Center" Visibility="Collapsed"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\Resources\Icons\PanZoom.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12" Text="{Binding Path=FitToScreen, Source={StaticResource Resources}}"></TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Annotation_Rectangle" Click="Annotation_Rectangle_MenuItem_Click" Visibility="Collapsed">
+                    <MenuItem.Icon>
+                        <Image Source="..\Resources\Icons\checkmark.gif" HorizontalAlignment="Center"></Image>
+                    </MenuItem.Icon>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\Resources\Icons\PanZoom.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12" Text="{Binding Path=Rectangle, Source={StaticResource Resources}}"></TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Annotation_Ellipse" Click="Annotation_Ellipse_MenuItem_Click" Visibility="Collapsed">
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\Resources\Icons\PanZoom.png" HorizontalAlignment="Center" Height="24"></Image>
+                            <TextBlock Margin="3" FontSize="12" Text="{Binding Path=Ellipse, Source={StaticResource Resources}}"></TextBlock>
+                        </StackPanel>
+                    </MenuItem.Header>
+                </MenuItem>
+                <Separator Name="Options_Menu_Seperator" />
+                <MenuItem Name="Annotation_Show" Click="Annotation_Show_MenuItem_Click" Visibility="Collapsed">
+                    <MenuItem.Header>
+                        <TextBlock Margin="3" FontSize="12" Text="{Binding Path=ShowAnnotation, Source={StaticResource Resources}}"></TextBlock>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Annotation_Hide" Click="Annotation_Hide_MenuItem_Click">
+                    <MenuItem.Header>
+                        <TextBlock Margin="3" FontSize="12" Text="{Binding Path=HideAnnotation, Source={StaticResource Resources}}"></TextBlock>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Measurement_Show" Click="Measurement_Show_MenuItem_Click" Visibility="Collapsed">
+                    <MenuItem.Header>
+                        <TextBlock Margin="3" FontSize="12" Text="{Binding Path=ShowMeasurements, Source={StaticResource Resources}}"></TextBlock>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Name="Measurement_Hide" Click="Measurement_Hide_MenuItem_Click">
+                    <MenuItem.Header>
+                        <TextBlock Margin="3" FontSize="12" Text="{Binding Path=HideMeasurements, Source={StaticResource Resources}}"></TextBlock>
+                    </MenuItem.Header>
+                </MenuItem>
+            </ContextMenu>
+        </DockPanel.ContextMenu>
+        <local:XRayView x:Name="MainXRayView" />
+    </DockPanel>
+</UserControl>
